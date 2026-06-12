@@ -16,7 +16,11 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%230a0a0a%22/%3E%3Ctext x=%2250%22 y=%2266%22 font-family=%22Georgia,serif%22 font-size=%2244%22 fill=%22%23e8e4dc%22 text-anchor=%22middle%22%3E33%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://i0.wp.com" crossorigin>
+<link rel="dns-prefetch" href="https://i0.wp.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
 <style>
 /* ============================================================
@@ -251,11 +255,74 @@ body.lang-en [data-lang="block-it"]{display:none}
   .cta-bar{flex-direction:column;align-items:flex-start;gap:1.5rem;padding:2rem 1.5rem}
   .footer{flex-direction:column;gap:1rem;padding:1.5rem}
   .ticker{padding:1.2rem 1.5rem}
-  .sec-header{padding:1.5rem}
+  .sec-header{padding:1.5rem;flex-wrap:wrap;gap:.8rem}
+  /* Hero: più respiro verticale, titoli scalati */
+  .hero{min-height:auto!important}
+  .hero-h1{font-size:2.6rem!important}
+  .hero-sub{font-size:15px}
+  .hero-pills{gap:.4rem}
+  .pill{font-size:9px;padding:.25rem .6rem}
+  /* Split: testo prima, immagine dopo, padding ridotto */
+  .split-text{padding:2.5rem 1.5rem}
+  .split-h2{font-size:1.7rem}
+  /* Metric / col: 2 colonne su tablet, gestione bordi */
+  .metric{padding:1.5rem 1.2rem}
+  .metric-n{font-size:1.7rem}
+  /* Quote section */
+  .quote-sec blockquote{font-size:1.4rem}
+  /* Ticker: scroll orizzontale invece di wrap caotico */
+  .ticker{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ticker::-webkit-scrollbar{display:none}
+  /* Statement */
+  .statement{height:auto;min-height:280px}
+  .statement-text{font-size:1.5rem}
+  /* Tweet */
+  .tweet-text{font-size:.95rem}
+  /* Banner draft: più compatto su mobile */
+  #draft-banner{padding:.7rem 1rem!important}
+  #draft-banner > div{font-size:11px!important}
 }
+
+/* ── SMARTPHONE PICCOLI (≤480px) ── */
+@media(max-width:480px){
+  .nav{padding:1rem 1.2rem}
+  .nav-logo{font-size:12px;letter-spacing:.18em}
+  .tab{padding:.75rem .8rem;font-size:9.5px;letter-spacing:.12em}
+  .hero-body{padding:0 1.2rem 2.5rem}
+  .hero-h1{font-size:2.1rem!important;line-height:1.1}
+  .hero-tag{font-size:9px;letter-spacing:.2em}
+  .hero-sub{font-size:14px}
+  .col3,.col4{grid-template-columns:1fr}
+  .col3>*,.col4>*{border-right:none!important;border-bottom:var(--bds)}
+  .col3>*:last-child,.col4>*:last-child{border-bottom:none}
+  .split-h2{font-size:1.45rem}
+  .svc-name{font-size:1.05rem}
+  .svc-row{gap:1rem;padding:1.1rem 1.2rem}
+  .metric-n{font-size:1.5rem}
+  .panel{height:300px}
+  .panel-title{font-size:1.4rem}
+  .quote-sec{padding:2.5rem 1.2rem}
+  .quote-sec blockquote{font-size:1.25rem}
+  .statement-text{font-size:1.3rem}
+  .cta-text{font-size:1.2rem}
+  .contact-block{padding:2rem 1.2rem}
+  .badge{font-size:9px}
+  /* Gear table: forza impilamento totale */
+  [style*="grid-template-columns:220px"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:repeat(3,1fr)"],[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;gap:1.5rem!important}
+  /* Project cards: impila immagine/testo */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+  /* Signal chain: verticale */
+  .ha-chain-flow{flex-direction:column;align-items:stretch!important;gap:.5rem}
+  .ha-chain-flow > div{flex-direction:column!important;width:100%}
+  .ha-chain-node{width:100%;text-align:center}
+  .ha-chain-arr{transform:rotate(90deg);padding:.3rem 0!important}
+}
+
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 :focus-visible{outline:2px solid rgba(232,228,220,.6);outline-offset:3px}
 </style>
+<link rel="preload" as="image" href="https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_001-Grande.png?resize=1600%2C1060&ssl=1" fetchpriority="high">
 </head>
 <body class="lang-it">
 
@@ -480,12 +547,16 @@ body.lang-en [data-lang="block-it"]{display:none}
   .ha-chain{padding:2rem 1.5rem}
   .ha-sources{grid-template-columns:1fr}
   .ha-src{border-right:none;border-bottom:var(--bds)}
+  .ha-comp-name{font-size:1.4rem}
+  .ha-hero{height:auto;min-height:420px}
+  /* Gear: la riga categoria+contenuto si impila */
+  .ha-comp-row[style*="direction:rtl"]{direction:ltr!important}
 }
 </style>
 
   <!-- HERO -->
   <section class="ha-hero">
-    <div class="ha-hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.05) 0%,rgba(10,10,10,.50) 100%),url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-BK805.jpeg?resize=1400%2C1018&ssl=1') center/cover"></div>
+    <div class="ha-hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-BK805.jpeg?resize=1400%2C1018&ssl=1" style=""></div>
     <div class="ha-hero-body">
       <div class="hero-tag"><span data-lang="it">Hi-End Audio · Trastevere, Roma</span><span data-lang="en">Hi-End Audio · Trastevere, Rome</span></div>
       <h1 class="hero-h1"><span data-lang="it">Una boutique<br>del suono,<br><em>curata da noi.</em></span><span data-lang="en">A sound boutique,<br>curated<br><em>by us.</em></span></h1>
@@ -562,7 +633,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: OMA AC1 -->
   <div class="ha-comp-row">
     <div class="ha-comp-img">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-AC1.jpeg?resize=900%2C720&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-AC1.jpeg?resize=900%2C720&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)">Oswalds Mill Audio · Roma, Trastevere</span></div>
     </div>
     <div class="ha-comp-txt">
@@ -582,7 +653,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: Anatase (reversed) -->
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Anatase.jpeg?resize=900%2C601&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Anatase.jpeg?resize=900%2C601&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Ardesia della Pennsylvania · 40 kg</span><span data-lang="en">Pennsylvania slate · 40 kg</span></span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
@@ -602,7 +673,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: Black Knight -->
   <div class="ha-comp-row">
     <div class="ha-comp-img">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-BK805-1.jpeg?resize=900%2C652&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-BK805-1.jpeg?resize=900%2C652&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Valvola 807 in modalità triodo</span><span data-lang="en">807 valve in triode mode</span></span></div>
     </div>
     <div class="ha-comp-txt">
@@ -621,7 +692,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: dCS Bartok (reversed) -->
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/bar-020-2-scaled-1.jpg?resize=900%2C600&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/bar-020-2-scaled-1.jpg?resize=900%2C600&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)">dCS Ring DAC™ · Cambridge, UK</span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
@@ -640,7 +711,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: DartZeel -->
   <div class="ha-comp-row">
     <div class="ha-comp-img">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/lhc-208-front-top-left-800x5902-1.png?resize=900%2C663&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/lhc-208-front-top-left-800x5902-1.png?resize=900%2C663&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Stato solido svizzero · Ginevra</span><span data-lang="en">Swiss solid-state · Geneva</span></span></div>
     </div>
     <div class="ha-comp-txt">
@@ -658,7 +729,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: DeVille FSC (reversed) -->
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/FSC-DeVille-1.jpeg?resize=900%2C1098&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/FSC-DeVille-1.jpeg?resize=900%2C1098&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Frassino Pennsylvania torrefatto</span><span data-lang="en">Toasted Pennsylvania ash</span></span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
@@ -676,7 +747,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: OMA Mini -->
   <div class="ha-comp-row">
     <div class="ha-comp-img">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Mini.jpeg?resize=900%2C1125&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Mini.jpeg?resize=900%2C1125&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)">95 dB / 1W / 1m · 144 cm</span></div>
     </div>
     <div class="ha-comp-txt">
@@ -695,7 +766,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- COMPONENT: Studer + OMA PD1 (reversed) -->
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/Studer_A812.jpg?resize=900%2C675&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/Studer_A812.jpg?resize=900%2C675&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)">Studer A812 · 1985–1996</span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
@@ -713,7 +784,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <!-- PHONO STAGE -->
   <div class="ha-comp-row">
     <div class="ha-comp-img">
-      <div class="ha-comp-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/1_00_Phonostage-signal-chassis.jpg?resize=900%2C678&ssl=1')"></div>
+      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/1_00_Phonostage-signal-chassis.jpg?resize=900%2C678&ssl=1" style=""></div>
       <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Noce nero massello + Ardesia levigata</span><span data-lang="en">Solid black walnut + polished slate</span></span></div>
     </div>
     <div class="ha-comp-txt">
@@ -763,7 +834,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 <!-- ══════════════════════════ PAGE: LOCATION ══════════════════════════ -->
 <div class="page" id="page-location">
   <section class="hero" style="height:70vh;min-height:500px">
-    <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.05) 0%,rgba(10,10,10,.50) 100%),url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-17.10.55-2-1.jpeg?resize=1400%2C934&ssl=1') center/cover"></div>
+    <div class="hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-17.10.55-2-1.jpeg?resize=1400%2C934&ssl=1" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Location · Trastevere, Roma</span><span data-lang="en">Location · Trastevere, Rome</span></div>
       <h1 class="hero-h1">
@@ -816,7 +887,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       </a>
     </div>
     <div class="split-img">
-      <div class="split-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.26.10.png?resize=800%2C994&ssl=1')"></div>
+      <div class="split-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.26.10.png?resize=800%2C994&ssl=1" style=""></div>
       <div class="split-img-ov">
         <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb);margin-bottom:.4rem"><span data-lang="it">Documentario Fremantle</span><span data-lang="en">Fremantle Documentary</span></div>
         <div style="font-family:var(--fd);font-size:.95rem;color:rgba(232,228,220,.82)">Fiorello – Carrà Documentary · Fremantle</div>
@@ -830,9 +901,9 @@ body.lang-en [data-lang="block-it"]{display:none}
       <a class="btn" href="https://studio33club.com/audio-video-productions/" target="_blank" rel="noopener"><span data-lang="it">Vedi tutti →</span><span data-lang="en">See all →</span></a>
     </div>
     <div class="video-grid">
-      <div class="vcard"><div class="vbg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.41.png?resize=900%2C671&ssl=1')"></div><div class="vplay"></div><div class="vcontent"><div class="vtag">TV Series</div><div class="vname">Rome Sweet Home · HBO Canada</div></div></div>
-      <div class="vcard"><div class="vbg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-alle-13.44.07.jpg?resize=600%2C358&ssl=1')"></div><div class="vplay"></div><div class="vcontent"><div class="vtag">Comedy TV</div><div class="vname">Edoardo Ferrario · Gialappa Show TV8</div></div></div>
-      <div class="vcard"><div class="vbg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/0f6c2e38-d9f6-4f2a-83eb-952c74df7aa8.jpg?resize=600%2C1067&ssl=1')"></div><div class="vplay"></div><div class="vcontent"><div class="vtag"><span data-lang="it">Spot Cinema</span><span data-lang="en">Cinema Spot</span></div><div class="vname">Digital Angels · Regione Lazio</div></div></div>
+      <div class="vcard"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.41.png?resize=900%2C671&ssl=1" style=""></div><div class="vplay"></div><div class="vcontent"><div class="vtag">TV Series</div><div class="vname">Rome Sweet Home · HBO Canada</div></div></div>
+      <div class="vcard"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-alle-13.44.07.jpg?resize=600%2C358&ssl=1" style=""></div><div class="vplay"></div><div class="vcontent"><div class="vtag">Comedy TV</div><div class="vname">Edoardo Ferrario · Gialappa Show TV8</div></div></div>
+      <div class="vcard"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/0f6c2e38-d9f6-4f2a-83eb-952c74df7aa8.jpg?resize=600%2C1067&ssl=1" style=""></div><div class="vplay"></div><div class="vcontent"><div class="vtag"><span data-lang="it">Spot Cinema</span><span data-lang="en">Cinema Spot</span></div><div class="vname">Digital Angels · Regione Lazio</div></div></div>
     </div>
   </section>
 
@@ -849,7 +920,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <!-- Control room image + intro -->
     <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd)">
       <div style="position:relative;overflow:hidden;min-height:320px">
-        <div style="position:absolute;inset:0;background:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/Screenshot-2025-11-14-alle-11.35.56.png?resize=900%2C1146&ssl=1') center/cover;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
+        <div data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/Screenshot-2025-11-14-alle-11.35.56.png?resize=900%2C1146&ssl=1" style="position:absolute;inset:0;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
         <div style="position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:2rem 2.5rem">
           <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Sala regia · Studio 33</span><span data-lang="en">Control room · Studio 33</span></span>
         </div>
@@ -1039,7 +1110,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div style="padding:2.5rem 3rem;border-left:none;display:flex;flex-direction:column;justify-content:center;gap:1rem">
         <a href="https://youtu.be/w2tf1YFWsoU" target="_blank" rel="noopener"
            style="display:block;position:relative;overflow:hidden;border:.5px solid rgba(232,228,220,.15);text-decoration:none;cursor:pointer">
-          <div style="background:url('https://img.youtube.com/vi/w2tf1YFWsoU/maxresdefault.jpg') center/cover;height:220px;filter:grayscale(8%) brightness(.75)"></div>
+          <div data-bg="https://img.youtube.com/vi/w2tf1YFWsoU/maxresdefault.jpg" style="height:220px;filter:grayscale(8%) brightness(.75)"></div>
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
             <div style="width:56px;height:56px;border-radius:50%;border:.5px solid rgba(232,228,220,.5);background:rgba(10,10,10,.55);display:flex;align-items:center;justify-content:center">
               <div style="width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent rgba(232,228,220,.88);margin-left:4px"></div>
@@ -1093,7 +1164,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 <!-- ══════════════════════════ PAGE: PRODUZIONE ══════════════════════════ -->
 <div class="page" id="page-prod">
   <section class="hero" style="height:65vh;min-height:460px">
-    <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.05) 0%,rgba(10,10,10,.50) 100%),url('https://studio33club.com/wp-content/uploads/2025/12/93BAAF71-099C-45C1-9326-3F9BF2290312.jpeg') center/cover"></div>
+    <div class="hero-bg" data-bg="https://studio33club.com/wp-content/uploads/2025/12/93BAAF71-099C-45C1-9326-3F9BF2290312.jpeg" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Produzione Audio &amp; Video · Roma Trastevere</span><span data-lang="en">Audio &amp; Video Production · Rome Trastevere</span></div>
       <h1 class="hero-h1">
@@ -1180,7 +1251,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <!-- PROJECT 1: Giorgio Poi & Luca Marinelli -->
     <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd)">
       <div style="position:relative;overflow:hidden;min-height:420px">
-        <div style="position:absolute;inset:0;background:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=900%2C882&ssl=1') center/cover;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
+        <div data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=900%2C882&ssl=1" style="position:absolute;inset:0;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
         <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 2.5rem">
           <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Maggio 2025 · Videoclip</span><span data-lang="en">May 2025 · Music video</span></span>
         </div>
@@ -1200,7 +1271,7 @@ body.lang-en [data-lang="block-it"]{display:none}
         </div>
         <a href="https://youtu.be/TAIl1kGzfgY" target="_blank" rel="noopener"
            style="display:block;position:relative;overflow:hidden;border:.5px solid rgba(232,228,220,.15);text-decoration:none;cursor:pointer">
-          <div style="background:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=900%2C882&ssl=1') center/cover;height:220px;filter:grayscale(8%) brightness(.75)"></div>
+          <div data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=900%2C882&ssl=1" style="height:220px;filter:grayscale(8%) brightness(.75)"></div>
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
             <div style="width:56px;height:56px;border-radius:50%;border:.5px solid rgba(232,228,220,.5);background:rgba(10,10,10,.55);display:flex;align-items:center;justify-content:center">
               <div style="width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent rgba(232,228,220,.88);margin-left:4px"></div>
@@ -1219,7 +1290,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <!-- PROJECT 2: Alex Britti -->
     <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd);direction:rtl">
       <div style="position:relative;overflow:hidden;min-height:420px;direction:ltr">
-        <div style="position:absolute;inset:0;background:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1') center/cover;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
+        <div data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1" style="position:absolute;inset:0;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
         <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 2.5rem">
           <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Giugno 2025 · Presentazione</span><span data-lang="en">June 2025 · Presentation</span></span>
         </div>
@@ -1238,7 +1309,7 @@ body.lang-en [data-lang="block-it"]{display:none}
         </div>
         <a href="https://studio33club.com/2025/06/05/alex-britti-a-studio-33/" target="_blank" rel="noopener"
            style="display:block;position:relative;overflow:hidden;border:.5px solid rgba(232,228,220,.15);text-decoration:none;cursor:pointer">
-          <div style="background:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1') center/cover;height:220px;filter:grayscale(8%) brightness(.75);transition:filter .3s"></div>
+          <div data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1" style="height:220px;filter:grayscale(8%) brightness(.75);transition:filter .3s"></div>
           <!-- play button -->
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
             <div style="width:56px;height:56px;border-radius:50%;border:.5px solid rgba(232,228,220,.5);background:rgba(10,10,10,.55);display:flex;align-items:center;justify-content:center;transition:background .3s">
@@ -1258,7 +1329,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <!-- PROJECT 3: Jeremiah Chiu & Marta Sofia Honer -->
     <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd)">
       <div style="position:relative;overflow:hidden;min-height:420px">
-        <div style="position:absolute;inset:0;background:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=900%2C506&ssl=1') center/cover;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
+        <div data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=900%2C506&ssl=1" style="position:absolute;inset:0;filter:grayscale(8%) brightness(.82);transition:transform .6s ease"></div>
         <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 2.5rem">
           <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb)"><span data-lang="it">Novembre 2025 · Live concert</span><span data-lang="en">November 2025 · Live concert</span></span>
         </div>
@@ -1297,7 +1368,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 <!-- ══════════════════════════ PAGE: FORMAZIONE ══════════════════════════ -->
 <div class="page" id="page-form">
   <section class="hero" style="height:65vh;min-height:460px">
-    <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.05) 0%,rgba(10,10,10,.58) 100%),url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/Screenshot-2025-10-29-alle-12.20.26.png?resize=1400%2C534&ssl=1') center/cover"></div>
+    <div class="hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/Screenshot-2025-10-29-alle-12.20.26.png?resize=1400%2C534&ssl=1" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Formazione · Studio 33 × Tékhne</span><span data-lang="en">Training · Studio 33 × Tékhne</span></div>
       <h1 class="hero-h1">
@@ -1348,7 +1419,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       </a>
     </div>
     <div class="split-img">
-      <div class="split-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/633f336ca15b5c18673d0d5630d93999d88db7bb.jpg?resize=800%2C445&ssl=1')"></div>
+      <div class="split-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/633f336ca15b5c18673d0d5630d93999d88db7bb.jpg?resize=800%2C445&ssl=1" style=""></div>
       <div class="split-img-ov">
         <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,220,.65);font-family:var(--fb);margin-bottom:.4rem"><span data-lang="it">Sede romana</span><span data-lang="en">Rome campus</span></div>
         <div style="font-family:var(--fd);font-size:.95rem;color:rgba(232,228,220,.82)">Studio 33 · Via della Paglia 3a, Trastevere</div>
@@ -1539,9 +1610,9 @@ body.lang-en [data-lang="block-it"]{display:none}
   <section style="border-top:var(--bd)">
     <div class="sec-header"><div class="lbl"><span data-lang="it">Artisti e produzioni notevoli</span><span data-lang="en">Notable artists &amp; productions</span></div></div>
     <div class="video-grid">
-      <a class="vcard" href="https://studio33club.com/2025/06/05/alex-britti-a-studio-33/" target="_blank" rel="noopener"><div class="vbg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1')"></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span> 2025</div><div class="vname">Alex Britti</div><div class="vdate"><span data-lang="it">Presentazione concerto Terme di Caracalla</span><span data-lang="en">Concert presentation at Terme di Caracalla</span></div></div></a>
-      <a class="vcard" href="https://studio33club.com/2025/05/15/giorgio-poi-e-luca-marinelli-in-studio-33/" target="_blank" rel="noopener"><div class="vbg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=500%2C489&ssl=1')"></div><div class="vcontent"><div class="vtag"><span data-lang="it">Maggio</span><span data-lang="en">May</span> 2025</div><div class="vname">Giorgio Poi &amp; Luca Marinelli</div><div class="vdate"><span data-lang="it">Videoclip "Solo per Gioco" · Bomba Dischi</span><span data-lang="en">Music video "Solo per Gioco" · Bomba Dischi</span></div></div></a>
-      <a class="vcard" href="https://studio33club.com/2025/10/28/jeremiah-chiu-marta-sofia-honer-live/" target="_blank" rel="noopener"><div class="vbg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=500%2C281&ssl=1')"></div><div class="vcontent"><div class="vtag"><span data-lang="it">Ottobre</span><span data-lang="en">October</span> 2025</div><div class="vname">Jeremiah Chiu &amp; Marta Sofia Honer</div><div class="vdate">Live · International Anthem</div></div></a>
+      <a class="vcard" href="https://studio33club.com/2025/06/05/alex-britti-a-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span> 2025</div><div class="vname">Alex Britti</div><div class="vdate"><span data-lang="it">Presentazione concerto Terme di Caracalla</span><span data-lang="en">Concert presentation at Terme di Caracalla</span></div></div></a>
+      <a class="vcard" href="https://studio33club.com/2025/05/15/giorgio-poi-e-luca-marinelli-in-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=500%2C489&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Maggio</span><span data-lang="en">May</span> 2025</div><div class="vname">Giorgio Poi &amp; Luca Marinelli</div><div class="vdate"><span data-lang="it">Videoclip "Solo per Gioco" · Bomba Dischi</span><span data-lang="en">Music video "Solo per Gioco" · Bomba Dischi</span></div></div></a>
+      <a class="vcard" href="https://studio33club.com/2025/10/28/jeremiah-chiu-marta-sofia-honer-live/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=500%2C281&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Ottobre</span><span data-lang="en">October</span> 2025</div><div class="vname">Jeremiah Chiu &amp; Marta Sofia Honer</div><div class="vdate">Live · International Anthem</div></div></a>
     </div>
   </section>
 
@@ -1614,7 +1685,18 @@ function showPage(id) {
   currentPage = id;
   document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
   var el = document.getElementById('page-' + id);
-  if (el) el.classList.add('active');
+  if (el) {
+    el.classList.add('active');
+    // Lazy-load: attiva le immagini data-bg di questa pagina solo ora
+    el.querySelectorAll('[data-bg]').forEach(function(node) {
+      var url = node.getAttribute('data-bg');
+      if (url && !node.dataset.bgLoaded) {
+        var existing = node.getAttribute('style') || '';
+        node.setAttribute('style', existing + ';background-image:url(\'' + url + '\');background-size:cover;background-position:center;');
+        node.dataset.bgLoaded = '1';
+      }
+    });
+  }
   document.querySelectorAll('.tab').forEach(function(t) {
     t.classList.toggle('is-active', t.dataset.page === id);
   });
