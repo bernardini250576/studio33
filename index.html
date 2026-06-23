@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio 33 – Trastevere, Rome</title>
-<meta name="description" content="Studio 33 – Hub creativo a Trastevere, Roma. Hi-End Audio, Location, Produzione, Formazione.">
+<title>Studio 33 Trastevere · Hi-End Audio, Location Shooting e Produzione a Roma</title>
+<meta name="description" content="Studio 33 a Trastevere, Roma. Impianto Hi-End Audio Oswalds Mill Audio, location per shooting cinematografico, studio di produzione audio e video, scuola di musicoterapia Tékhne. Dal 2021.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ffffff">
-<meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Studio 33 – Trastevere, Rome">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Studio 33 Trastevere · Hi-End Audio, Location e Produzione a Roma">
 <meta property="og:description" content="Vision finds fidelity. Hub creativo a Trastevere, Roma.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%23ffffff%22/%3E%3Ctext x=%2250%22 y=%2266%22 font-family=%22system-ui,sans-serif%22 font-size=%2244%22 fill=%22%231a1a1a%22 text-anchor=%22middle%22%3E33%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://i0.wp.com" crossorigin>
 <link rel="dns-prefetch" href="https://i0.wp.com">
+<link rel="canonical" href="https://bernardini250576.github.io/studio33/">
 <link rel="preconnect" href="https://rsms.me">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -423,8 +424,53 @@ body.lang-en [data-lang="block-it"]{display:none}
   .proj-modal-body{padding:1.5rem}
   .proj-modal-title{font-size:1.3rem}
 }
+
+/* ── NAV PRENOTA (voce evidenziata) ── */
+.nav-book{color:var(--w)!important;border-bottom:.5px solid rgba(26,26,26,.4);padding-bottom:2px!important}
+.nav-book:hover{opacity:.7}
+.drawer-book{color:var(--w)!important;font-weight:500!important}
 </style>
 <link rel="preload" as="image" href="https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_001-Grande.png?resize=1600%2C1060&ssl=1" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Studio 33",
+  "description": "Hub creativo a Trastevere, Roma. Hi-End Audio Oswalds Mill Audio, location per shooting cinematografico, studio di produzione audio e video, scuola di musicoterapia Tékhne.",
+  "url": "https://studio33club.com",
+  "telephone": "+393347029456",
+  "email": "shout@studio33club.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via della Paglia 3a",
+    "postalCode": "00153",
+    "addressLocality": "Roma",
+    "addressRegion": "RM",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.8901,
+    "longitude": 12.4698
+  },
+  "openingHours": "Mo-Sa 09:00-20:00",
+  "priceRange": "€€€",
+  "sameAs": [
+    "https://www.instagram.com/studio33trastevere/",
+    "https://www.youtube.com/@studio33trastevere"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servizi Studio 33",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hi-End Audio Listening Room", "description": "Impianto Oswalds Mill Audio per sessioni di ascolto hi-fi"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Location per Shooting", "description": "250 mq per produzioni foto, video, cinematografiche e streaming"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Produzione Audio e Video", "description": "Studio di produzione audio/video, branded podcast, audio branding"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Formazione Musicoterapia", "description": "Scuola di musicoterapia Tékhne, percorso triennale certificato UNI 11592:2023"}}
+    ]
+  }
+}
+</script>
 </head>
 <body class="lang-it">
 
@@ -453,6 +499,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <li><a href="#" onclick="showPage('prod');return false"     id="nl-prod"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a></li>
     <li><a href="#" onclick="showPage('form');return false"     id="nl-form"><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a></li>
     <li><a href="#" onclick="showPage('res');return false"      id="nl-res"><span data-lang="it">Resonance</span><span data-lang="en">Resonance</span></a></li>
+    <li><a href="#" onclick="showPage('book');return false" id="nl-book" class="nav-book"><span data-lang="it">Prenota</span><span data-lang="en">Book</span></a></li>
   </ul>
 
   <div class="nav-right">
@@ -476,6 +523,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <a href="#" onclick="showPage('prod');closeDrawer()"    ><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a>
     <a href="#" onclick="showPage('form');closeDrawer()"    ><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a>
     <a href="#" onclick="showPage('res');closeDrawer()"     ><span data-lang="it">Resonance</span><span data-lang="en">Resonance</span></a>
+    <a href="#" onclick="showPage('book');closeDrawer()" class="drawer-book"><span data-lang="it">Prenota →</span><span data-lang="en">Book →</span></a>
   </nav>
   <div class="drawer-lang">
     <span onclick="setLang('it')">IT</span>
@@ -500,8 +548,8 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span data-lang="it">Un hub creativo indipendente dove la musica torna ad essere l'evento principale, non lo sfondo. 250 mq nel cuore di Trastevere.</span>
         <span data-lang="en">An independent creative hub where music becomes the main event, not the background. 250 sqm in the heart of Trastevere.</span>
       </p>
-      <a class="btn" href="#" onclick="showPage('res');return false">
-        <span data-lang="it">Scopri lo spazio</span><span data-lang="en">Discover the space</span>
+      <a class="btn" href="#" onclick="showPage('book');return false">
+        <span data-lang="it">Prenota una visita →</span><span data-lang="en">Book a visit →</span>
       </a>
     </div>
   </section>
@@ -532,8 +580,8 @@ body.lang-en [data-lang="block-it"]{display:none}
     </div>
     <div>
       <p style="font-size:15px;line-height:1.82;color:rgba(26,26,26,0.9);font-family:var(--fb)">
-        <span data-lang="it">Studio 33 è un think-tank musicale e creativo radicato nel cuore di Trastevere. Ex studio fotografico tra i vicoli di Roma, diventato oggi uno dei centri di gravità della creatività sonora della città.</span>
-        <span data-lang="en">Studio 33 is a music and creative think-tank rooted in the heart of Trastevere. Once a photography studio among Rome's alleys, now one of the city's main centres of sonic creativity.</span>
+        <span data-lang="it">Uno spazio dove musica, immagine e suono si incontrano davvero. Ex studio fotografico tra i vicoli di Roma — dal 2021, uno dei riferimenti per chi fa produzione di qualità a Trastevere.</span>
+        <span data-lang="en">A space where music, image and sound genuinely meet. Once a photography studio among Rome's alleys — since 2021, one of the references for quality production in Trastevere.</span>
       </p>
       <p style="font-size:15px;line-height:1.82;color:rgba(26,26,26,0.9);font-family:var(--fb);margin-top:.9rem">
         <span data-lang="it">Un salotto curato nei minimi dettagli dove perdersi tra migliaia di vinili, con spazio per produzioni artistiche, esperienze di ascolto hi-end e formazione professionale.</span>
@@ -546,7 +594,23 @@ body.lang-en [data-lang="block-it"]{display:none}
   </section>
 
   <section style="border-top:var(--bd)">
-    <a class="svc-row" href="#" onclick="showPage('location');return false"><span class="svc-num">01</span><span class="svc-name"><span data-lang="it">Shooting Foto &amp; Cinematografico</span><span data-lang="en">Photo &amp; Film Shooting</span></span><span class="svc-arr">→</span></a>
+   
+  <!-- CLIENTI NOTEVOLI -->
+  <div style="border-top:var(--bd);padding:1.8rem 3rem">
+    <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.28);margin-bottom:1.2rem;font-family:var(--fb)"><span data-lang="it">Hanno scelto Studio 33</span><span data-lang="en">They chose Studio 33</span></div>
+    <div style="display:flex;gap:2.5rem;flex-wrap:wrap;align-items:center">
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">NPR</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">AS Roma</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">Monocle</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">HBO Canada</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">Pirelli</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">AMREF</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">Fremantle</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">History Channel</span>
+    </div>
+  </div>
+
+ <a class="svc-row" href="#" onclick="showPage('location');return false"><span class="svc-num">01</span><span class="svc-name"><span data-lang="it">Shooting Foto &amp; Cinematografico</span><span data-lang="en">Photo &amp; Film Shooting</span></span><span class="svc-arr">→</span></a>
     <a class="svc-row" href="#" onclick="showPage('audio');return false"><span class="svc-num">02</span><span class="svc-name"><span data-lang="it">Hi-End Audio Listening Room</span><span data-lang="en">Hi-End Audio Listening Room</span></span><span class="svc-arr">→</span></a>
     <a class="svc-row" href="#" onclick="showPage('prod');return false"><span class="svc-num">03</span><span class="svc-name"><span data-lang="it">Produzione Audio &amp; Video</span><span data-lang="en">Audio &amp; Video Production</span></span><span class="svc-arr">→</span></a>
     <a class="svc-row" href="#" onclick="showPage('prod');return false"><span class="svc-num">04</span><span class="svc-name"><span data-lang="it">Podcast &amp; Branded Audio</span><span data-lang="en">Podcast &amp; Branded Audio</span></span><span class="svc-arr">→</span></a>
@@ -682,6 +746,7 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span data-lang="en">Several systems assembled with one single purpose: making the listening experience faithful to the message of original recordings, without sacrificing musicality.</span>
       </p>
       <a class="btn" href="mailto:shout@studio33club.com"><span data-lang="it">Prenota una demo gratuita</span><span data-lang="en">Book a free demo</span></a>
+    <p style="font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.55)!important;margin-top:.8rem;font-family:var(--fb)"><span data-lang="it">Disponibile su prenotazione · calendario aperto</span><span data-lang="en">Available by appointment · calendar open</span></p>
     </div>
   </section>
 
@@ -1019,7 +1084,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <div class="hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-17.10.55-2-1.jpeg?resize=1568%2C1046&ssl=1" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Location · Trastevere, Roma</span><span data-lang="en">Location · Trastevere, Rome</span></div>
-      <h1 class="hero-h1">
+      <h1 class="hero-h1" aria-label="Location per Shooting a Roma — Studio Fotografico Trastevere">
         <span data-lang="it">La location ideale<br>per shooting <em>a Roma.</em></span>
         <span data-lang="en">The ideal location<br>for shooting <em>in Rome.</em></span>
       </h1>
@@ -1098,7 +1163,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <div>
       <div class="lbl" style="margin-bottom:1.2rem"><span data-lang="it">Studio 33 in azione</span><span data-lang="en">Studio 33 in action</span></div>
       <h2 style="font-size:1.5rem;font-weight:400;line-height:1.25;color:var(--w);margin-bottom:1rem;letter-spacing:-.01em">
-        <span data-lang="it">Fiorello, Renzo Arbore,<br>HBO Canada, <em style="font-style:italic;color:rgba(26,26,26,.5)">Regione Lazio.</em></span>
+        <span data-lang="it">Produzioni internazionali<br>scelgono Studio 33. <em style="font-style:italic;color:rgba(26,26,26,.5)">Ogni anno.</em></span>
         <span data-lang="en">Fiorello, Renzo Arbore,<br>HBO Canada, <em style="font-style:italic;color:rgba(26,26,26,.5)">Regione Lazio.</em></span>
       </h2>
       <p style="font-size:14px;line-height:1.8;color:rgba(26,26,26,.58)"><span data-lang="it">Produzioni di livello internazionale scelgono Studio 33 per la sua atmosfera unica nel cuore di Trastevere. Documentari, spot, serie TV: ogni format trova lo spazio giusto.</span><span data-lang="en">International-level productions choose Studio 33 for its unique atmosphere in the heart of Trastevere. Documentaries, spots, TV series: every format finds the right space.</span></p>
@@ -1668,7 +1733,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <div class="hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/Screenshot-2025-10-29-alle-12.20.26.png?resize=1400%2C534&ssl=1" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Formazione · Studio 33 × Tékhne</span><span data-lang="en">Training · Studio 33 × Tékhne</span></div>
-      <h1 class="hero-h1">
+      <h1 class="hero-h1" aria-label="Scuola di Musicoterapia a Roma — Corso Triennale Certificato Tékhne">
         <span data-lang="it">Dove il suono<br>è terapia per<br><em>il corpo e la mente.</em></span>
         <span data-lang="en">Where sound<br>is therapy for<br><em>body and mind.</em></span>
       </h1>
@@ -1948,6 +2013,169 @@ body.lang-en [data-lang="block-it"]{display:none}
   </div>
 </div>
 
+
+<!-- ══════════════════════════ PAGE: PRENOTA / BOOK ══════════════════════════ -->
+<div class="page" id="page-book">
+
+<style>
+/* ── PRENOTA ── */
+.book-hero{padding:4rem 3rem 3.5rem;border-bottom:var(--bd);background:var(--nero-s)}
+.book-grid{display:grid;grid-template-columns:1.3fr 1fr;border-bottom:var(--bd)}
+.book-form-col{padding:3.5rem 3rem;border-right:var(--bd)}
+.book-info-col{padding:3.5rem 3rem}
+.bk-field{margin-bottom:1.4rem}
+.bk-label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,.5);margin-bottom:.5rem}
+.bk-input,.bk-select,.bk-textarea{width:100%;background:#fff;border:.5px solid rgba(26,26,26,.2);color:var(--w);font-family:var(--fb);font-size:15px;padding:.75rem 1rem;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
+.bk-input:focus,.bk-select:focus,.bk-textarea:focus{outline:none;border-color:rgba(26,26,26,.55)}
+.bk-input::placeholder,.bk-textarea::placeholder{color:rgba(26,26,26,.3)}
+.bk-textarea{resize:vertical;min-height:110px;line-height:1.6}
+.bk-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='1' fill='none' opacity='.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-color:#fff;padding-right:2.5rem;cursor:pointer}
+.bk-select option{background:#fff;color:#1a1a1a}
+.bk-row-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.bk-submit{width:100%;background:var(--w);color:#fff;font-family:var(--fb);font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:background .2s;margin-top:.5rem}
+.bk-submit:hover{background:rgba(26,26,26,.85)}
+.bk-submit:disabled{opacity:.5;cursor:wait}
+.bk-consent{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:1.4rem;font-size:12.5px;line-height:1.55;color:rgba(26,26,26,.55)}
+.bk-consent input{margin-top:.25rem;flex-shrink:0;accent-color:#1a1a1a}
+.bk-success{display:none;padding:2rem;border:.5px solid rgba(26,26,26,.15);background:rgba(26,26,26,.03);text-align:center;margin-top:1.2rem}
+.bk-success.show{display:block}
+.book-info-item{padding:1.1rem 0;border-bottom:.5px solid rgba(26,26,26,.07)}
+.book-info-item:first-child{border-top:.5px solid rgba(26,26,26,.07)}
+.book-info-k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.38);margin-bottom:.35rem}
+.book-info-v{font-size:1rem;color:rgba(26,26,26,.78);line-height:1.5}
+.book-info-v a{border-bottom:.5px solid rgba(26,26,26,.2);padding-bottom:1px;transition:border-color .2s}
+.book-info-v a:hover{border-color:var(--w)}
+.book-services{margin-top:2rem;padding:1.5rem;background:var(--nero-s);border:.5px solid rgba(26,26,26,.08)}
+.book-services-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.4);margin-bottom:.8rem}
+.book-services-list{list-style:none;font-size:13px;line-height:1.9;color:rgba(26,26,26,.6)}
+.book-services-list li::before{content:"→";margin-right:.5rem;color:rgba(26,26,26,.25)}
+@media(max-width:900px){
+  .book-hero{padding:2.5rem 1.5rem 2rem}
+  .book-grid{grid-template-columns:1fr}
+  .book-form-col{border-right:none;border-bottom:var(--bd);padding:2.5rem 1.5rem}
+  .book-info-col{padding:2.5rem 1.5rem}
+  .bk-row-2{grid-template-columns:1fr}
+}
+</style>
+
+  <div class="book-hero">
+    <div class="lbl" style="margin-bottom:1rem"><span data-lang="it">Prenotazione · Richiesta appuntamento</span><span data-lang="en">Booking · Appointment request</span></div>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1;color:var(--w);letter-spacing:-.02em;margin-bottom:1rem">
+      <span data-lang="it">Prenota uno spazio,<br>una sessione, <em style="font-style:italic;color:rgba(26,26,26,.5)">un'esperienza.</em></span>
+      <span data-lang="en">Book a space,<br>a session, <em style="font-style:italic;color:rgba(26,26,26,.5)">an experience.</em></span>
+    </h1>
+    <p style="font-size:15px;line-height:1.75;color:rgba(26,26,26,.58);max-width:540px">
+      <span data-lang="it">Compila il modulo: ti risponderemo entro 48 ore con disponibilità e preventivo. Per urgenze, contattaci direttamente via WhatsApp.</span>
+      <span data-lang="en">Fill in the form: we'll reply within 48 hours with availability and a quote. For urgent requests, contact us directly via WhatsApp.</span>
+    </p>
+  </div>
+
+  <div class="book-grid">
+    <div class="book-form-col">
+      <!--
+        SETUP FORMSPREE (gratuito, 50 invii/mese)
+        1. Vai su https://formspree.io → crea account
+        2. Nuovo form → email: shout@studio33club.com
+        3. Copia l'ID (es. xpzgkqyw)
+        4. Sostituisci YOUR_FORM_ID qui sotto
+      -->
+      <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="bk-row-2">
+          <div class="bk-field">
+            <label class="bk-label" for="bk-name"><span data-lang="it">Nome e cognome</span><span data-lang="en">Full name</span></label>
+            <input class="bk-input" type="text" id="bk-name" name="nome" required autocomplete="name">
+          </div>
+          <div class="bk-field">
+            <label class="bk-label" for="bk-email">Email</label>
+            <input class="bk-input" type="email" id="bk-email" name="email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="bk-row-2">
+          <div class="bk-field">
+            <label class="bk-label" for="bk-phone"><span data-lang="it">Telefono / WhatsApp</span><span data-lang="en">Phone / WhatsApp</span></label>
+            <input class="bk-input" type="tel" id="bk-phone" name="telefono" autocomplete="tel">
+          </div>
+          <div class="bk-field">
+            <label class="bk-label" for="bk-type"><span data-lang="it">Tipo di richiesta</span><span data-lang="en">Request type</span></label>
+            <select class="bk-select" id="bk-type" name="tipo" required>
+              <option value="" disabled selected>—</option>
+              <option value="location">Location / Shooting</option>
+              <option value="hi-end-audio">Hi-End Audio Listening</option>
+              <option value="produzione"><span data-lang="it">Produzione Audio/Video</span><span data-lang="en">Audio/Video Production</span></option>
+              <option value="podcast">Podcast / Hypercast</option>
+              <option value="evento"><span data-lang="it">Evento / Affitto spazio</span><span data-lang="en">Event / Space rental</span></option>
+              <option value="formazione">Formazione Tékhne</option>
+              <option value="altro"><span data-lang="it">Altro</span><span data-lang="en">Other</span></option>
+            </select>
+          </div>
+        </div>
+        <div class="bk-row-2">
+          <div class="bk-field">
+            <label class="bk-label" for="bk-date"><span data-lang="it">Data preferita</span><span data-lang="en">Preferred date</span></label>
+            <input class="bk-input" type="date" id="bk-date" name="data">
+          </div>
+          <div class="bk-field">
+            <label class="bk-label" for="bk-people"><span data-lang="it">N° persone</span><span data-lang="en">No. of people</span></label>
+            <input class="bk-input" type="number" id="bk-people" name="persone" min="1" placeholder="1">
+          </div>
+        </div>
+        <div class="bk-field">
+          <label class="bk-label" for="bk-msg"><span data-lang="it">Descrivi il tuo progetto</span><span data-lang="en">Describe your project</span></label>
+          <textarea class="bk-textarea" id="bk-msg" name="messaggio" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Nuova richiesta — Studio 33">
+        <input type="text" name="_gotcha" style="display:none">
+        <label class="bk-consent">
+          <input type="checkbox" required>
+          <span>
+            <span data-lang="it">Acconsento al trattamento dei dati per rispondere a questa richiesta (GDPR). I dati non saranno usati per marketing né ceduti a terzi.</span>
+            <span data-lang="en">I consent to data processing to respond to this request (GDPR). Data will not be used for marketing or shared with third parties.</span>
+          </span>
+        </label>
+        <button type="submit" class="bk-submit" id="bk-btn">
+          <span data-lang="it">Invia richiesta</span><span data-lang="en">Send request</span>
+        </button>
+      </form>
+      <div class="bk-success" id="bk-success">
+        <div style="font-size:1.2rem;font-weight:500;color:var(--w);margin-bottom:.5rem"><span data-lang="it">Richiesta inviata.</span><span data-lang="en">Request sent.</span></div>
+        <p style="font-size:14px;color:rgba(26,26,26,.55)"><span data-lang="it">Grazie. Ti risponderemo entro 48 ore all'indirizzo indicato.</span><span data-lang="en">Thank you. We'll reply within 48 hours to the address you provided.</span></p>
+      </div>
+    </div>
+
+    <div class="book-info-col">
+      <div class="lbl" style="margin-bottom:1.2rem"><span data-lang="it">Contatti diretti</span><span data-lang="en">Direct contacts</span></div>
+      <div class="book-info-item">
+        <div class="book-info-k">WhatsApp</div>
+        <div class="book-info-v"><a href="https://wa.me/393347029456" target="_blank" rel="noopener">+39 334 7029456</a></div>
+      </div>
+      <div class="book-info-item">
+        <div class="book-info-k">Email</div>
+        <div class="book-info-v"><a href="mailto:shout@studio33club.com">shout@studio33club.com</a></div>
+      </div>
+      <div class="book-info-item">
+        <div class="book-info-k"><span data-lang="it">Indirizzo</span><span data-lang="en">Address</span></div>
+        <div class="book-info-v">Via della Paglia 3a<br>00153 Roma — Trastevere</div>
+      </div>
+      <div class="book-info-item">
+        <div class="book-info-k"><span data-lang="it">Risposta entro</span><span data-lang="en">Response within</span></div>
+        <div class="book-info-v" style="color:rgba(26,26,26,.55)"><span data-lang="it">48 ore lavorative</span><span data-lang="en">48 working hours</span></div>
+      </div>
+      <div class="book-services">
+        <div class="book-services-title"><span data-lang="it">Puoi prenotare</span><span data-lang="en">You can book</span></div>
+        <ul class="book-services-list">
+          <li><span data-lang="it">Sessioni di ascolto Hi-End Audio</span><span data-lang="en">Hi-End Audio listening sessions</span></li>
+          <li><span data-lang="it">Location per shooting foto/video</span><span data-lang="en">Location for photo/video shoots</span></li>
+          <li><span data-lang="it">Produzione audio e video</span><span data-lang="en">Audio and video production</span></li>
+          <li><span data-lang="it">Podcast e audio branding</span><span data-lang="en">Podcast and audio branding</span></li>
+          <li><span data-lang="it">Affitto spazio per eventi</span><span data-lang="en">Space rental for events</span></li>
+          <li><span data-lang="it">Info corso musicoterapia Tékhne</span><span data-lang="en">Tékhne music therapy course info</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 </main>
 
 <footer class="footer" style="flex-direction:column;align-items:stretch;gap:1.2rem;padding-bottom:5rem">
@@ -2027,6 +2255,38 @@ function showPage(id) {
 showPage('home');
 setLang('it');
 
+// ── BOOKING FORM ──
+(function(){
+  var form = document.getElementById('bookingForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('bk-btn');
+    var action = form.getAttribute('action');
+    if(action.indexOf('YOUR_FORM_ID') !== -1){
+      var msg = document.body.classList.contains('lang-en')
+        ? 'Form not connected yet. Email shout@studio33club.com or WhatsApp +39 334 7029456'
+        : 'Form non ancora collegato. Scrivi a shout@studio33club.com o via WhatsApp +39 334 7029456';
+      alert(msg); return;
+    }
+    btn.disabled = true;
+    fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if(r.ok){
+          form.style.display='none';
+          document.getElementById('bk-success').classList.add('show');
+        } else {
+          alert('Errore invio. Riprova o scrivi a shout@studio33club.com');
+          btn.disabled=false;
+        }
+      }).catch(function(){
+        alert('Errore di rete. Scrivi a shout@studio33club.com');
+        btn.disabled=false;
+      });
+  });
+})();
+
+
 // ── PROJECT MODAL ──
 var projData = [{"slug": "a-deep-listening-afternoon", "title": "A Deep Listening Afternoon", "date": "2 Marzo 2026", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2026/03/Time-Is-Away_web-1200x630-1.jpg?resize=900%2C473&ssl=1", "url": "https://studio33club.com/2026/03/02/a-deep-listening-afternoon/", "desc": "Una sessione di ascolto profondo con Time Is Away presso Studio 33 Trastevere."}, {"slug": "as-roma", "title": "AS Roma in Studio 33", "date": "5 Dicembre 2025", "tag": "Video Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/image-3.png?resize=900%2C720&ssl=1", "url": "https://studio33club.com/2025/12/05/as-roma-in-studio-33/", "desc": "AS Roma sceglie Studio 33 per una produzione video esclusiva nel cuore di Trastevere."}, {"slug": "almost-famous", "title": "Almost Famous feat.555", "date": "13 Novembre 2025", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-17.10.55-2-1.jpeg?resize=900%2C600&ssl=1", "url": "https://studio33club.com/2025/11/13/almost-famous-feat-555/", "desc": "Live session con 555 presso Studio 33 Trastevere."}, {"slug": "jeremiah-chiu", "title": "Jeremiah Chiu & Marta Sofia Honer", "date": "28 Ottobre 2025", "tag": "Live Recording", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=900%2C506&ssl=1", "url": "https://studio33club.com/2025/10/28/jeremiah-chiu-marta-sofia-honer-live/", "desc": "Live recording per International Anthem. Album Different Rooms, 15 novembre 2025."}, {"slug": "npr", "title": "NPR in Studio 33", "date": "27 Giugno 2025", "tag": "Media Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/Screenshot-2025-06-27-alle-11.08.21.png?resize=900%2C487&ssl=1", "url": "https://studio33club.com/2025/06/27/npr-in-studio-33/", "desc": "NPR World Cafe sceglie Studio 33 per una sessione di registrazione a Roma."}, {"slug": "alex-britti", "title": "Alex Britti a Studio 33", "date": "5 Giugno 2025", "tag": "Live Session", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1", "url": "https://studio33club.com/2025/06/05/alex-britti-a-studio-33/", "desc": "Alex Britti in sessione a Studio 33 in preparazione del concerto alle Terme di Caracalla."}, {"slug": "giorgio-poi", "title": "Giorgio Poi & Luca Marinelli", "date": "15 Maggio 2025", "tag": "Video Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=900%2C882&ssl=1", "url": "https://studio33club.com/2025/05/15/giorgio-poi-e-luca-marinelli-in-studio-33/", "desc": "Videoclip 'Solo per Gioco' (Bomba Dischi) con Giorgio Poi e Luca Marinelli, dal film Paternal Leave."}, {"slug": "dust-grooves", "title": "Dust & Grooves vol.2", "date": "21 Marzo 2025", "tag": "Editorial", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/03/DGV2-Book-Mockup.png?resize=900%2C637&ssl=1", "url": "https://studio33club.com/2025/03/21/compra-la-tua-copia-di-dustgrooves-vol-2/", "desc": "Disponibile la seconda edizione del libro Dust & Grooves."}, {"slug": "frigidaire", "title": "Sostieni Frigidaire 2025", "date": "25 Gennaio 2025", "tag": "Creative Project", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2025/01/image.png?resize=900%2C675&ssl=1", "url": "https://studio33club.com/2025/01/25/sostieni-la-mostra-frigidaire-2025-crowdfunding-creativo/", "desc": "Crowdfunding creativo per supportare la Mostra Frigidaire 2025."}, {"slug": "rome-mint-list", "title": "Studio 33 in Rome Mint List", "date": "17 Aprile 2024", "tag": "Press", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2024/04/Studio33-%C2%A9Manon-Houston_ML-feed.jpg?resize=900%2C594&ssl=1", "url": "https://studio33club.com/2024/04/17/studio-33-featured-in-rome-mint-list/", "desc": "Studio 33 è featured nella Rome Mint List, la selezione dei luoghi più esclusivi di Roma."}, {"slug": "hyperituals-2", "title": "HYPERITUALS VOL. 2 – BLACK SAINT", "date": "5 Marzo 2023", "tag": "Audio Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2023/03/a0376602440_10.jpg?resize=900%2C900&ssl=1", "url": "https://studio33club.com/2023/03/05/hyperituals-vol-2-black-saint-is-here/", "desc": "Il secondo volume della serie Hyperituals — Black Saint — è disponibile."}, {"slug": "saverio-raimondo", "title": "Saverio Raimondo Live at Studio 33", "date": "20 Gennaio 2023", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2023/01/55DB1386-84A2-4978-9F8F-ACE8DD5A4350.jpeg?resize=900%2C900&ssl=1", "url": "https://studio33club.com/2023/01/20/saverio-raimondo-live-at-studio-33/", "desc": "Saverio Raimondo porta il suo stand-up a Studio 33 in un evento live esclusivo."}, {"slug": "hypercast", "title": "Hypercast. The podcast service company.", "date": "17 Gennaio 2022", "tag": "Podcast", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2022/01/bg-3.png?resize=900%2C900&ssl=1", "url": "https://studio33club.com/2022/01/17/hypercast-the-podcast-service-company/", "desc": "Nasce Hypercast, la podcast service company di Studio 33 specializzata in branded podcast."}, {"slug": "hyperjazz", "title": "Hyperjazz Weekender 2021", "date": "23 Dicembre 2021", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2021/11/HJ-horizontal-1-1.png?resize=900%2C508&ssl=1", "url": "https://studio33club.com/2021/12/23/hyperjazz-weekender-11-12-dicembre-2021/", "desc": "Due giorni di jazz e musica sperimentale all'11 e 12 dicembre 2021."}, {"slug": "amref", "title": "Studio 33 × AMREF", "date": "21 Giugno 2021", "tag": "Branded Podcast", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2021/06/AMREF_LAfrica-non-e-un-Paese_1-1170x1170-1.png?resize=900%2C900&ssl=1", "url": "https://studio33club.com/2021/06/21/il-leone-la-gazzella-e-i-miti-da-sfatare-sullafrica-studio-33-x-amref/", "desc": "Branded podcast 'L'Africa non è un Paese' per AMREF Health Africa."}, {"slug": "music-cities", "title": "Music & the Cities. Il podcast.", "date": "22 Marzo 2021", "tag": "Podcast", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2021/01/pexels-photo-4156905.jpeg?resize=900%2C600&ssl=1", "url": "https://studio33club.com/2021/03/22/music-the-cities/", "desc": "Un podcast sui suoni e le città — come la musica definisce i luoghi del mondo."}, {"slug": "khalab", "title": "KHALAB × Real World Records", "date": "4 Marzo 2021", "tag": "Artist Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2021/03/7a7e5d84-4e07-496f-b533-2b47d55e4cd6.jpg?resize=900%2C900&ssl=1", "url": "https://studio33club.com/2021/03/04/khalab-il-produttore-italiano-annuncia-un-nuovo-album-ed-entra-nel-roster-della-real-world-di-peter-gabriel-dal-23-aprile-in-vinile-digitale-e-cd/", "desc": "KHALAB annuncia un nuovo album ed entra nel roster Real World Records di Peter Gabriel."}, {"slug": "pigiama-rave", "title": "Pigiama Rave", "date": "26 Gennaio 2021", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2021/01/pigima-studio33-1.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2021/01/26/pigiama-rave/", "desc": "Pigiama Rave a Studio 33 — una notte di musica in versione intima e sperimentale."}, {"slug": "linecheck", "title": "Studio 33 × Linecheck 2020", "date": "23 Novembre 2020", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/11/Schermata-2020-11-23-alle-11.26.37.png?resize=900%2C986&ssl=1", "url": "https://studio33club.com/2020/11/23/studio-33-x-linecheck-2020/", "desc": "Studio 33 partecipa a Linecheck 2020, il festival internazionale della musica e dell'innovazione."}, {"slug": "scrambler", "title": "Scrambler Ducati", "date": "15 Ottobre 2020", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/scrambler-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/15/scrambler-ducati/", "desc": "Audio branding per Scrambler Ducati."}, {"slug": "black-noise", "title": "Black Noise 2084", "date": "15 Ottobre 2020", "tag": "Audio Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/black-noise-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/15/black-noise-2084/", "desc": "Produzione audio per il progetto artistico Black Noise 2084."}, {"slug": "intersos", "title": "Spot Radio – Intersos", "date": "15 Ottobre 2020", "tag": "Spot Radio", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/intersos-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/15/spot-radio-intersos/", "desc": "Spot radio per INTERSOS, organizzazione umanitaria internazionale."}, {"slug": "place-to-be", "title": "Place to Be – Studio 33 × IMF", "date": "15 Ottobre 2020", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/placetob-1.jpg?resize=900%2C900&ssl=1", "url": "https://studio33club.com/2020/10/15/place-to-be/", "desc": "Studio 33 in collaborazione con IMF per Place to Be, evento musicale a Trastevere."}, {"slug": "roots-history", "title": "\"Roots\" per History Channel", "date": "15 Ottobre 2020", "tag": "Original Score", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/roots-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/15/roots-per-history/", "desc": "Colonna sonora originale per la serie Roots, History Channel."}, {"slug": "pirelli", "title": "Pirelli Natural Rubber", "date": "15 Ottobre 2020", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/pirelli-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/15/pirelli-natural-rubber/", "desc": "Audio branding e produzione per la campagna Pirelli Natural Rubber."}, {"slug": "hockeytown", "title": "OST – Hockeytown", "date": "15 Ottobre 2020", "tag": "Original Score", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/hockey-550x100-1.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/15/ost-hockeytown/", "desc": "Original soundtrack per il progetto cinematografico Hockeytown."}, {"slug": "parco-musica", "title": "Parco della Musica Records", "date": "14 Ottobre 2020", "tag": "Audio Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/STAR-HIP-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/parco-della-musica-records/", "desc": "Produzione audio per Parco della Musica Records."}, {"slug": "alitalia", "title": "Alitalia", "date": "14 Ottobre 2020", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/alitalia-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/alitalia/", "desc": "Audio branding e produzione per Alitalia."}, {"slug": "hellmanns", "title": "Hellmann's", "date": "14 Ottobre 2020", "tag": "Audio Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/helmanss-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/hellmanns/", "desc": "Produzione audio e spot per Hellmann's."}, {"slug": "soundreef", "title": "Soundreef Waves", "date": "14 Ottobre 2020", "tag": "Voiceover", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/soundreefwaves-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/soundreef-waves/", "desc": "Voiceover e produzione audio per il podcast Soundreef Waves."}, {"slug": "mit", "title": "M.I.T. – Meet in Town Festival", "date": "14 Ottobre 2020", "tag": "Live Event", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/mit-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/m-i-t-meet-in-town-festival/", "desc": "Produzione audio per il Meet in Town Festival."}, {"slug": "ghostbusters", "title": "Spot Radio – Ghostbusters", "date": "14 Ottobre 2020", "tag": "Spot Radio", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/ghost-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/spot-radio-ghostbusters/", "desc": "Spot radio per la campagna Ghostbusters."}, {"slug": "pallini", "title": "Pallini Limoncello", "date": "14 Ottobre 2020", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/pallini-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/pallini-limoncello/", "desc": "Audio branding per Pallini Limoncello."}, {"slug": "18app", "title": "18app", "date": "14 Ottobre 2020", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/18app-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/18app/", "desc": "Audio branding per 18app, il bonus cultura per i giovani."}, {"slug": "shallows", "title": "Spot Radio – The Shallows", "date": "14 Ottobre 2020", "tag": "Spot Radio", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/shallows-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/spot-radio-the-shallows/", "desc": "Spot radio per il film The Shallows."}, {"slug": "innovazione", "title": "Innovazionesuonabene", "date": "14 Ottobre 2020", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/innovazione-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/innovazionesuonabene/", "desc": "Produzione audio per il progetto Innovazionesuonabene."}, {"slug": "industria-40", "title": "Voiceover per Industria 4.0", "date": "14 Ottobre 2020", "tag": "Voiceover", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/ministero-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/voiceover-per-industria-4-0/", "desc": "Voiceover per la campagna ministeriale Industria 4.0."}, {"slug": "voiceover-soundreef", "title": "Voiceover per Soundreef", "date": "14 Ottobre 2020", "tag": "Voiceover", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/soundreef-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/14/voiceover-per-soundreef/", "desc": "Voiceover per Soundreef, la piattaforma di gestione dei diritti musicali."}, {"slug": "khalifa", "title": "Khalifa International Stadium", "date": "13 Ottobre 2020", "tag": "Original Score", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/khalifa-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/13/original-soundtrack-khalifa-international-stadium/", "desc": "Colonna sonora originale per il Khalifa International Stadium, Qatar."}, {"slug": "favola-cosmica", "title": "La Favola Cosmica", "date": "10 Ottobre 2020", "tag": "Original Score", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/favola-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/10/la-favola-cosmica/", "desc": "Colonna sonora originale per La Favola Cosmica."}, {"slug": "mibact", "title": "MUSEITALIANI – MIBACT", "date": "3 Ottobre 2020", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/mibact-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/03/695/", "desc": "Audio branding per MUSEITALIANI, progetto del Ministero dei Beni Culturali."}, {"slug": "double-espace", "title": "Double Espace", "date": "1 Ottobre 2020", "tag": "Audio Production", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/double-espace-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2020/10/01/double-espace/", "desc": "Produzione audio per Double Espace."}, {"slug": "eti", "title": "ETI – Teatri del Tempo Presente", "date": "1 Ottobre 2019", "tag": "Original Score", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/eti-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2019/10/01/eti-teatri-del-tempo-presente/", "desc": "Colonna sonora originale per ETI – Teatri del Tempo Presente."}, {"slug": "nastro", "title": "Nastro Say Yes To IT", "date": "1 Ottobre 2019", "tag": "Audio Branding", "img": "https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/nastro-550.png?resize=900%2C164&ssl=1", "url": "https://studio33club.com/2019/10/01/nastro-say-yes-to-it/", "desc": "Audio branding per Nastro – Say Yes To IT."}];
 
@@ -2068,5 +2328,17 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
     </div>
   </div>
 </div>
+
+<!-- WhatsApp fisso -->
+<a href="https://wa.me/393347029456" target="_blank" rel="noopener" id="wa-fixed"
+   aria-label="Contattaci su WhatsApp"
+   style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s"
+   onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(37,211,102,.45)'"
+   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,.35)'">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.529 5.849L.057 23.5l5.797-1.522A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.853 0-3.587-.5-5.084-1.37l-.364-.215-3.438.902.917-3.349-.236-.386A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
 </body>
 </html>
