@@ -429,6 +429,15 @@ body.lang-en [data-lang="block-it"]{display:none}
 .nav-book{color:var(--w)!important;border-bottom:.5px solid rgba(26,26,26,.4);padding-bottom:2px!important}
 .nav-book:hover{opacity:.7}
 .drawer-book{color:var(--w)!important;font-weight:500!important}
+
+/* ── NAV ACTIVE STATE ── */
+.nav-links a.active{color:var(--w)!important;border-bottom:1.5px solid var(--w);padding-bottom:2px}
+
+/* ── BACK TO TOP ── */
+#btt{position:fixed;bottom:5.5rem;right:1.5rem;z-index:390;width:40px;height:40px;background:#fff;border:.5px solid rgba(26,26,26,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 2px 8px rgba(26,26,26,.08)}
+#btt.show{opacity:1;pointer-events:auto}
+#btt:hover{background:var(--nero-s)}
+#btt svg{width:14px;height:14px;stroke:rgba(26,26,26,.5);fill:none;stroke-width:2}
 </style>
 <link rel="preload" as="image" href="https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_001-Grande.png?resize=1600%2C1060&ssl=1" fetchpriority="high">
 <script type="application/ld+json">
@@ -583,10 +592,7 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span data-lang="it">Uno spazio dove musica, immagine e suono si incontrano davvero. Ex studio fotografico tra i vicoli di Roma — dal 2021, uno dei riferimenti per chi fa produzione di qualità a Trastevere.</span>
         <span data-lang="en">A space where music, image and sound genuinely meet. Once a photography studio among Rome's alleys — since 2021, one of the references for quality production in Trastevere.</span>
       </p>
-      <p style="font-size:15px;line-height:1.82;color:rgba(26,26,26,0.9);font-family:var(--fb);margin-top:.9rem">
-        <span data-lang="it">Un salotto curato nei minimi dettagli dove perdersi tra migliaia di vinili, con spazio per produzioni artistiche, esperienze di ascolto hi-end e formazione professionale.</span>
-        <span data-lang="en">A meticulously curated living room where you can lose yourself among thousands of vinyl records, with space for artistic productions, hi-end listening experiences and professional training.</span>
-      </p>
+      
       <a class="btn" href="#" onclick="showPage('res');return false" style="margin-top:1.6rem;display:inline-block">
         <span data-lang="it">About Studio 33</span><span data-lang="en">About Studio 33</span>
       </a>
@@ -624,8 +630,8 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span data-lang="it">La musica come strumento di <em>uguaglianza</em> e rispetto delle diversità.</span>
         <span data-lang="en">Music as a tool for <em>equality</em> and respect for diversity.</span>
       </p>
-      <a class="btn" href="#" onclick="showPage('res');return false">
-        <span data-lang="it">Leggi la nostra storia</span><span data-lang="en">Read our story</span>
+      <a class="btn" href="#" onclick="showPage('book');return false">
+        <span data-lang="it">Prenota una visita →</span><span data-lang="en">Book a visit →</span>
       </a>
     </div>
   </section>
@@ -636,11 +642,11 @@ body.lang-en [data-lang="block-it"]{display:none}
         <div class="lbl" style="margin-bottom:1.5rem"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></div>
         <h2 class="split-h2"><span data-lang="it">Boutique<br><em>production house</em><br>nel centro di Roma.</span><span data-lang="en">Boutique<br><em>production house</em><br>in the heart of Rome.</span></h2>
         <p style="font-size:15px;line-height:1.78;color:rgba(26,26,26,0.9);font-family:var(--fb);margin-top:1.2rem;margin-bottom:2rem">
-          <span data-lang="it">Tecnologia broadcast-quality in un ambiente intimo e creativo. Dalla pre-produzione al master finale, tutto in un unico spazio a Trastevere.</span>
-          <span data-lang="en">Broadcast-quality technology in an intimate and creative setting. From pre-production to the final master, everything in one single space in Trastevere.</span>
+          <span data-lang="it">Tecnologia broadcast-quality in un ambiente intimo e creativo. Dalla pre-produzione al master finale — tutto nello stesso spazio, a Trastevere.</span>
+          <span data-lang="en">Broadcast-quality technology in an intimate and creative setting. From pre-production to the final master — everything in the same space, in Trastevere.</span>
         </p>
         <a class="btn" href="#" onclick="showPage('prod');return false">
-          <span data-lang="it">Scopri la produzione</span><span data-lang="en">Discover production</span>
+          <span data-lang="it">Vedi i 44 lavori →</span><span data-lang="en">See 44 works →</span>
         </a>
       </div>
       <div class="split-img">
@@ -654,18 +660,15 @@ body.lang-en [data-lang="block-it"]{display:none}
   </section>
 
   <div class="ticker">
-    <span class="ticker-item">NPR World Cafe</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">AS Roma</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">Fineco Bank</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">Pirelli</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">AMREF</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">Scrambler Ducati</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">Khalifa International Stadium</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">History Channel</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">MIBACT</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">Monocle</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">International Anthem</span>
-  </div>
+	<span class="ticker-item"><span data-lang="it">Shooting foto &amp; video</span><span data-lang="en">Photo &amp; video shooting</span></span><span class="ticker-dot">·</span>
+	<span class="ticker-item">Hi-End Audio Listening</span><span class="ticker-dot">·</span>
+	<span class="ticker-item"><span data-lang="it">Produzione audio &amp; video</span><span data-lang="en">Audio &amp; video production</span></span><span class="ticker-dot">·</span>
+	<span class="ticker-item">Branded Podcast</span><span class="ticker-dot">·</span>
+	<span class="ticker-item">Audio Branding &amp; Score</span><span class="ticker-dot">·</span>
+	<span class="ticker-item">Live &amp; Streaming 4K</span><span class="ticker-dot">·</span>
+	<span class="ticker-item"><span data-lang="it">Affitto spazio eventi</span><span data-lang="en">Event space rental</span></span><span class="ticker-dot">·</span>
+	<span class="ticker-item"><span data-lang="it">Formazione Musicoterapia</span><span data-lang="en">Music Therapy Training</span></span>
+</div>
 
   <section class="contact-strip">
     <div class="contact-block">
@@ -1007,8 +1010,8 @@ body.lang-en [data-lang="block-it"]{display:none}
       <span data-lang="it">Prenota una <em>demo con consulenza gratuita.</em></span>
       <span data-lang="en">Book a <em>free demo and consultation.</em></span>
     </p>
-    <a class="btn" href="mailto:shout@studio33club.com">
-      <span data-lang="it">Contattaci per un appuntamento</span><span data-lang="en">Contact us for an appointment</span>
+    <a class="btn" href="#" onclick="showPage('book');return false">
+      <span data-lang="it">Prenota la tua sessione →</span><span data-lang="en">Book your session →</span>
     </a>
   </div>
 </div>
@@ -1095,7 +1098,10 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span class="pill">Streaming 4K</span>
         <span class="pill"><span data-lang="it">Spot pubblicitari</span><span data-lang="en">Ad spots</span></span>
       </div>
-      <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:13px"></i> Location Kit PDF</a>
+      <div style="display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center">
+        <a class="btn" href="https://wa.me/393347029456?text=Ciao%2C+vorrei+informazioni+sulla+location+di+Studio+33" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:13px"></i> <span data-lang="it">Richiedi disponibilità</span><span data-lang="en">Check availability</span></a>
+        <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:13px"></i> Location Kit PDF</a>
+      </div>
     </div>
   </section>
 
@@ -1103,9 +1109,9 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="loc-intro">
     <div class="loc-text">
       <div class="lbl" style="margin-bottom:1.4rem"><span data-lang="it">Lo spazio</span><span data-lang="en">The space</span></div>
-      <p><span data-lang="it">Studio 33 è la location perfetta per shooting a Roma: una <strong>piattaforma creativa interdisciplinare</strong> per produzioni audiovisive professionali, video, streaming, proiezione 4K e audio di alta qualità.</span><span data-lang="en">Studio 33 is the perfect location for shooting in Rome: a <strong>multidisciplinary creative platform</strong> for professional audiovisual productions, video, streaming, 4K projection and high-quality audio.</span></p>
+      <p><span data-lang="it">Offriamo la location perfetta per shooting a Roma: <strong>uno spazio professionale per ogni tipo di produzione audiovisiva</strong> — video, streaming, proiezione 4K e audio di alta qualità.</span><span data-lang="en">We offer the perfect location for shooting in Rome: <strong>a professional space for every type of audiovisual production</strong> — video, streaming, 4K projection and high-quality audio.</span></p>
       <p><span data-lang="it">Gli ambienti in stile contemporaneo offrono massima flessibilità e possono essere personalizzati con una selezione di arredi e props per scenari unici. Le <strong>ampie finestre su strada</strong> garantiscono luce naturale e atmosfera luminosa.</span><span data-lang="en">Contemporary-style spaces offer maximum flexibility and can be customised with a selection of furniture and props for unique scenarios. <strong>Large street-facing windows</strong> guarantee natural light and a bright atmosphere.</span></p>
-      <p><span data-lang="it">Studio fotografico di <strong>fama mondiale dagli anni '80</strong>, in cui hanno lavorato Giacomelli, Toscani e Avedon. Nel 2019 completamente rinnovato secondo il concept della designer croata Ana Gugić.</span><span data-lang="en">A <strong>world-renowned photography studio since the '80s</strong>, where Giacomelli, Toscani and Avedon all worked. Fully renovated in 2019 to a concept by Croatian designer Ana Gugić.</span></p>
+      <p><span data-lang="it">Il nostro studio fotografico è di <strong>fama mondiale dagli anni '80</strong> — Giacomelli, Toscani e Avedon hanno lavorato qui. Nel 2019 completamente rinnovato secondo il concept della designer croata Ana Gugić.</span><span data-lang="en">Our photography studio has been <strong>world-renowned since the '80s</strong> — Giacomelli, Toscani and Avedon have all worked here. Fully renovated in 2019 to a concept by Croatian designer Ana Gugić.</span></p>
       <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
         <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:12px"></i> Location Kit</a>
         <a class="btn" href="https://wa.me/393347029456" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:12px"></i> WhatsApp</a>
@@ -1113,15 +1119,15 @@ body.lang-en [data-lang="block-it"]{display:none}
     </div>
     <div class="loc-gallery">
       <div class="loc-gallery-item wide">
-        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.41.png?resize=750%2C559&ssl=1" alt="Rome Sweet Home – HBO Canada" loading="lazy">
+        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.41.png?resize=750%2C559&ssl=1" alt="Location shooting Roma – Rome Sweet Home HBO Canada – Studio 33 Trastevere" loading="lazy">
         <div class="loc-gallery-caption">Rome Sweet Home – HBO Canada</div>
       </div>
       <div class="loc-gallery-item">
-        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.53.png?resize=750%2C559&ssl=1" alt="Rome Sweet Home – HBO Canada" loading="lazy">
+        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.53.png?resize=750%2C559&ssl=1" alt="Location shooting Roma – Rome Sweet Home HBO Canada – Studio 33 Trastevere" loading="lazy">
         <div class="loc-gallery-caption">Control Room</div>
       </div>
       <div class="loc-gallery-item">
-        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-alle-13.44.07.jpg?resize=750%2C448&ssl=1" alt="Edoardo Ferrario Gialappa Show" loading="lazy">
+        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-alle-13.44.07.jpg?resize=750%2C448&ssl=1" alt="Location riprese TV Roma – Edoardo Ferrario Gialappa Show TV8 – Studio 33" loading="lazy">
         <div class="loc-gallery-caption">Edoardo Ferrario – Gialappa Show TV8</div>
       </div>
     </div>
@@ -1155,7 +1161,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="loc-video">
     <div>
       <a class="loc-video-thumb" href="https://www.youtube.com/watch?v=w2tf1YFWsoU" target="_blank" rel="noopener">
-        <img src="https://img.youtube.com/vi/w2tf1YFWsoU/hqdefault.jpg" alt="Arkage con Renzo Arbore – Lega del Filo d'Oro" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://img.youtube.com/vi/w2tf1YFWsoU/mqdefault.jpg'">
+        <img src="https://img.youtube.com/vi/w2tf1YFWsoU/hqdefault.jpg" alt="Studio produzione video Roma – Arkage con Renzo Arbore – Studio 33 Trastevere" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://img.youtube.com/vi/w2tf1YFWsoU/mqdefault.jpg'">
         <div class="loc-video-play"><div class="loc-video-play-btn"></div></div>
       </a>
       <div class="loc-video-caption"><span data-lang="it">Arkage con Renzo Arbore per la Lega del Filo d'Oro — guarda su YouTube</span><span data-lang="en">Arkage with Renzo Arbore for Lega del Filo d'Oro — watch on YouTube</span></div>
@@ -2255,6 +2261,16 @@ function showPage(id) {
 showPage('home');
 setLang('it');
 
+// Back to top
+(function(){
+  var btn = document.getElementById('btt');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('show', window.scrollY > 400);
+  }, {passive:true});
+})();
+
+
 // ── BOOKING FORM ──
 (function(){
   var form = document.getElementById('bookingForm');
@@ -2340,5 +2356,17 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.529 5.849L.057 23.5l5.797-1.522A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.853 0-3.587-.5-5.084-1.37l-.364-.215-3.438.902.917-3.349-.236-.386A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
 </a>
+
+<!-- Back to top -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Torna in cima">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
 </body>
 </html>
+    <div style="border-top:var(--bds);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+      <p style="font-size:15px;color:rgba(26,26,26,.58);font-family:var(--fb);max-width:480px">
+        <span data-lang="it">La stessa cura che Monocle e NPR hanno raccontato — disponibile per il tuo prossimo progetto.</span>
+        <span data-lang="en">The same quality that Monocle and NPR have written about — available for your next project.</span>
+      </p>
+      <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Prenota una visita →</span><span data-lang="en">Book a visit →</span></a>
+    </div>
