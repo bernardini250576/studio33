@@ -35,17 +35,17 @@
 :root{
   --nero:#ffffff;--nero-s:#f7f7f5;--nero-m:#f0efed;
   --w:#1a1a1a;
-  --w60:rgba(26,26,26,.95);--w50:rgba(26,26,26,.94);
-  --w40:rgba(26,26,26,.86);--w30:rgba(26,26,26,.86);
-  --w20:rgba(26,26,26,.70);--w15:rgba(26,26,26,.84);
-  --w08:rgba(26,26,26,.12);
-  --bd:0.5px solid rgba(26,26,26,.13);
+  --w60:rgba(26,26,26,.88);--w50:rgba(26,26,26,.78);
+  --w40:rgba(26,26,26,.68);--w30:rgba(26,26,26,0.86);
+  --w20:rgba(26,26,26,0.8);--w15:rgba(26,26,26,0.84);
+  --w08:rgba(26,26,26,0.34);
+  --bd:0.5px solid rgba(26,26,26,0.35);
   --bds:0.5px solid rgba(26,26,26,.09);
   --fd:'Inter',system-ui,-apple-system,sans-serif;
   --fb:'Inter',system-ui,-apple-system,sans-serif;
 }
 html{scroll-behavior:smooth}
-body{background:var(--nero);color:var(--w);font-family:var(--fb);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--nero);color:var(--w);font-family:var(--fb);font-size:18.7px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 
@@ -58,22 +58,22 @@ body.lang-it [data-lang="block-en"]{display:none}
 body.lang-en [data-lang="block-it"]{display:none}
 
 /* UTILITY */
-.lbl{font-family:var(--fb);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--w30)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fb);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--w);border-bottom:.5px solid rgba(26,26,26,.70);padding-bottom:3px;transition:border-color .25s;cursor:pointer}
+.lbl{font-family:var(--fb);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--w30)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fb);font-size:12.1px;letter-spacing:.22em;text-transform:uppercase;color:var(--w);border-bottom:.5px solid rgba(26,26,26,0.8);padding-bottom:3px;transition:border-color .25s;cursor:pointer}
 .btn:hover{border-bottom-color:var(--w);opacity:.8}
-.pill{font-family:var(--fb);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,26,26,.84);border:.5px solid var(--w20);padding:.28rem .8rem}
-.badge{display:inline-block;font-family:var(--fb);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.4);border:.5px solid var(--w15);padding:.32rem .85rem;width:fit-content}
+.pill{font-family:var(--fb);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,26,26,0.84);border:.5px solid var(--w20);padding:.28rem .8rem}
+.badge{display:inline-block;font-family:var(--fb);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,0.62);border:.5px solid var(--w15);padding:.32rem .85rem;width:fit-content}
 
 /* PAGE ROUTING */
 .page{display:none}.page.active{display:block}
 
 /* NAV */
 .nav{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 3rem;border-bottom:var(--bd);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px)}
-.nav-logo{font-family:var(--fd);font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+.nav-logo{font-family:var(--fd);font-size:14.3px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-family:var(--fb);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--w40);transition:color .2s;padding-bottom:2px;text-decoration:none}
+.nav-links a{font-family:var(--fb);font-size:14.3px;letter-spacing:.12em;text-transform:uppercase;color:var(--w40);transition:color .2s;padding-bottom:2px;text-decoration:none}
 .nav-links a:hover{color:var(--w);opacity:.8}.nav-links a.active{color:var(--w);border-bottom:.5px solid var(--w)}
-.nav-lang{display:flex;gap:.8rem;font-family:var(--fb);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--w30)}
+.nav-lang{display:flex;gap:.8rem;font-family:var(--fb);font-size:12.1px;letter-spacing:.18em;text-transform:uppercase;color:var(--w30)}
 .nav-lang span{cursor:pointer;padding:.1rem .3rem;transition:color .2s;border-bottom:.5px solid transparent}
 .nav-lang span.active{color:var(--w);border-bottom-color:var(--w)}
 
@@ -82,13 +82,13 @@ body.lang-en [data-lang="block-it"]{display:none}
 
 /* HERO */
 .hero{position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 8s ease}
-.hero:hover .hero-bg{transform:scale(1.015)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:none}
+
 .hero-body{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 4rem}
-.hero-tag{font-family:var(--fb);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,26,26,.4);margin-bottom:1rem}
-.hero-h1{font-family:var(--fd);font-size:clamp(2.4rem,6vw,4.8rem);font-weight:300;line-height:1.06;color:var(--w);letter-spacing:-.015em;margin-bottom:1.4rem}
-.hero-h1 em{font-style:italic;color:rgba(26,26,26,.84)}
-.hero-sub{font-family:var(--fb);font-size:16px;line-height:1.72;color:rgba(26,26,26,.95);max-width:500px;margin-bottom:2rem}
+.hero-tag{font-family:var(--fb);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,26,26,0.62);margin-bottom:1rem}
+.hero-h1{font-family:var(--fd);font-size:clamp(2.64rem,6.0vw,5.28rem);font-weight:300;line-height:1.06;color:var(--w);letter-spacing:-.015em;margin-bottom:1.4rem}
+.hero-h1 em{font-style:italic;color:rgba(26,26,26,0.84)}
+.hero-sub{font-family:var(--fb);font-size:17.6px;line-height:1.72;color:rgba(26,26,26,.82);max-width:500px;margin-bottom:2rem}
 .hero-pills{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
 
 /* LAYOUT BLOCKS */
@@ -101,128 +101,128 @@ body.lang-en [data-lang="block-it"]{display:none}
 /* METRIC */
 .metric{padding:2rem;transition:background .2s}
 .metric:hover{background:rgba(26,26,26,.05)}
-.metric-n{font-family:var(--fd);font-size:2.2rem;font-weight:400;color:rgba(26,26,26,.46);line-height:1;margin-bottom:.5rem}
-.metric-title{font-family:var(--fd);font-size:.88rem;color:rgba(26,26,26,.92);margin-bottom:.3rem}
-.metric-sub{font-size:13px;line-height:1.6;color:rgba(26,26,26,.95);font-family:var(--fb)}
+.metric-n{font-family:var(--fd);font-size:2.42rem;font-weight:400;color:rgba(26,26,26,0.68);line-height:1;margin-bottom:.5rem}
+.metric-title{font-family:var(--fd);font-size:0.968rem;color:rgba(26,26,26,.85);margin-bottom:.3rem}
+.metric-sub{font-size:14.3px;line-height:1.6;color:rgba(26,26,26,.82);font-family:var(--fb)}
 
 /* PANELS */
 .panels{display:grid;grid-template-columns:1fr 1fr;border-top:var(--bd)}
 .panel{position:relative;height:380px;overflow:hidden;cursor:pointer}
 .panel+.panel{border-left:var(--bd)}
-.panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(10%) brightness(.78);transition:transform .7s ease,filter .7s ease}
-.panel:hover .panel-bg{transform:scale(1.04);filter:grayscale(0%) brightness(.88)}
+.panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(10%) brightness(.78);transition:filter .3s ease}
+.panel:hover .panel-bg{filter:brightness(.82)}
 .panel-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding:2rem 2.5rem}
-.panel-tag{font-family:var(--fb);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,26,26,.4);margin-bottom:.5rem}
-.panel-title{font-family:var(--fd);font-size:1.7rem;font-weight:400;color:var(--w);line-height:1.2;margin-bottom:1.1rem}
-.panel-link{font-family:var(--fb);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.84);border-bottom:.5px solid var(--w20);padding-bottom:2px;display:inline-block}
+.panel-tag{font-family:var(--fb);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,26,26,0.62);margin-bottom:.5rem}
+.panel-title{font-family:var(--fd);font-size:1.87rem;font-weight:400;color:var(--w);line-height:1.2;margin-bottom:1.1rem}
+.panel-link{font-family:var(--fb);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.84);border-bottom:.5px solid var(--w20);padding-bottom:2px;display:inline-block}
 
 /* SPLIT */
 .split{display:grid;grid-template-columns:1fr 1fr;border-top:var(--bd)}
 .split-text{padding:4rem 3rem;border-right:var(--bd)}
 .split-img{position:relative;overflow:hidden;min-height:360px}
-.split-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.75);transition:transform .65s ease}
-.split-img:hover .split-img-bg{transform:scale(1.03)}
+.split-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.75);transition:none}
+
 .split-img-ov{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 2.5rem}
-.split-h2{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:400;line-height:1.18;color:var(--w);margin-bottom:1.2rem}
+.split-h2{font-family:var(--fd);font-size:clamp(1.76rem,3.0vw,2.53rem);font-weight:400;line-height:1.18;color:var(--w);margin-bottom:1.2rem}
 .split-h2 em{font-style:italic;color:var(--w50)}
-.split-body{font-size:16px;line-height:1.9;color:rgba(26,26,26,.86);font-family:var(--fb)}
+.split-body{font-size:17.6px;line-height:1.9;color:rgba(26,26,26,0.86);font-family:var(--fb)}
 .split-body p+p{margin-top:.9rem}
 
 /* SERVICE ROWS */
 .svc-row{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:2rem;padding:1.5rem 3rem;border-bottom:var(--bds);cursor:pointer;transition:background .2s;color:inherit;text-decoration:none}
 .svc-row:hover{background:rgba(26,26,26,.05)}
-.svc-num{font-family:var(--fd);font-size:11px;color:rgba(26,26,26,.2);letter-spacing:.1em}
-.svc-name{font-family:var(--fd);font-size:1.2rem;font-weight:400;color:var(--w)}
-.svc-arr{font-size:15px;color:rgba(26,26,26,.2);transition:transform .2s,color .2s}
+.svc-num{font-family:var(--fd);font-size:12.1px;color:rgba(26,26,26,0.42);letter-spacing:.1em}
+.svc-name{font-family:var(--fd);font-size:1.32rem;font-weight:400;color:var(--w)}
+.svc-arr{font-size:16.5px;color:rgba(26,26,26,0.42);transition:transform .2s,color .2s}
 .svc-row:hover .svc-arr{transform:translateX(5px);color:var(--w60)}
 
 /* VIDEO GRID */
 .video-grid{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:var(--bd)}
 .vcard{position:relative;overflow:hidden;cursor:pointer;border-right:var(--bds);min-height:250px;text-decoration:none;display:block}
 .vcard:last-child{border-right:none}
-.vbg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(10%) brightness(.72);transition:transform .55s ease,filter .55s ease}
-.vcard:hover .vbg{transform:scale(1.04);filter:grayscale(0%) brightness(.85)}
-.vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border:.5px solid rgba(26,26,26,.46);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;z-index:3}
+.vbg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(10%) brightness(.72);transition:filter .3s ease}
+.vcard:hover .vbg{filter:brightness(.82)}
+.vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border:.5px solid rgba(26,26,26,0.68);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;z-index:3}
 .vcard:hover .vplay{opacity:1}
-.vplay::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:7px 0 7px 13px;border-color:transparent transparent transparent rgba(26,26,26,.95);margin-left:3px}
+.vplay::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:7px 0 7px 13px;border-color:transparent transparent transparent rgba(255,255,255,.92);margin-left:3px}
 .vcontent{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding:1.5rem 1.8rem;min-height:250px}
-.vtag{font-family:var(--fb);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.84);margin-bottom:.3rem}
-.vname{font-family:var(--fd);font-size:1rem;color:rgba(26,26,26,.95);line-height:1.3}
-.vdate{font-family:var(--fb);font-size:11px;color:rgba(26,26,26,.67);margin-top:.3rem}
+.vtag{font-family:var(--fb);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.84);margin-bottom:.3rem}
+.vname{font-family:var(--fd);font-size:1.1rem;color:rgba(26,26,26,.82);line-height:1.3}
+.vdate{font-family:var(--fb);font-size:12.1px;color:rgba(26,26,26,0.77);margin-top:.3rem}
 
 /* PODCAST EPISODES */
 .ep{display:grid;grid-template-columns:44px 1fr;gap:.9rem;align-items:start;padding:1.2rem 0;border-bottom:var(--bds)}
 .ep:first-of-type{border-top:var(--bds)}
-.ep-n{font-family:var(--fd);font-size:1rem;color:rgba(26,26,26,.70);text-align:center;padding-top:2px}
-.ep-client{font-family:var(--fb);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,26,26,.56);margin-bottom:.22rem}
-.ep-title{font-family:var(--fd);font-size:.93rem;color:rgba(26,26,26,.7);line-height:1.4}
-.ep-type{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--fb);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,.67);margin-top:.35rem}
+.ep-n{font-family:var(--fd);font-size:1.1rem;color:rgba(26,26,26,0.8);text-align:center;padding-top:2px}
+.ep-client{font-family:var(--fb);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,26,26,.55);margin-bottom:.22rem}
+.ep-title{font-family:var(--fd);font-size:1.023rem;color:rgba(26,26,26,0.8);line-height:1.4}
+.ep-type{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--fb);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,0.77);margin-top:.35rem}
 
 /* PRESS */
 .press-grid{display:grid;grid-template-columns:1fr 1fr 1fr}
 .press-card{padding:2.2rem 2rem;border-right:var(--bds);border-bottom:var(--bds);transition:background .2s;text-decoration:none;color:inherit;display:block}
 .press-card:hover{background:rgba(26,26,26,.05)}
 .press-card:nth-child(3n){border-right:none}
-.press-outlet{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.95);margin-bottom:.7rem;font-family:var(--fb);display:flex;align-items:center;gap:.5rem}
-.press-outlet::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(26,26,26,.2);flex-shrink:0}
-.press-title{font-family:var(--fd);font-size:1rem;color:rgba(26,26,26,.92);line-height:1.4;margin-bottom:.6rem}
-.press-desc{font-size:13px;line-height:1.65;color:rgba(26,26,26,.84);font-family:var(--fb);margin-bottom:1rem}
-.press-link{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,.67);font-family:var(--fb);border-bottom:.5px solid rgba(26,26,26,.12);padding-bottom:2px;display:inline-block;transition:color .2s,border-color .2s}
-.press-card:hover .press-link{color:var(--w60);border-color:rgba(26,26,26,.86)}
+.press-outlet{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.82);margin-bottom:.7rem;font-family:var(--fb);display:flex;align-items:center;gap:.5rem}
+.press-outlet::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(26,26,26,0.42);flex-shrink:0}
+.press-title{font-family:var(--fd);font-size:1.1rem;color:rgba(26,26,26,.85);line-height:1.4;margin-bottom:.6rem}
+.press-desc{font-size:14.3px;line-height:1.65;color:rgba(26,26,26,0.84);font-family:var(--fb);margin-bottom:1rem}
+.press-link{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,0.77);font-family:var(--fb);border-bottom:.5px solid rgba(26,26,26,0.34);padding-bottom:2px;display:inline-block;transition:color .2s,border-color .2s}
+.press-card:hover .press-link{color:var(--w60);border-color:rgba(26,26,26,0.86)}
 
 /* GEAR */
-.gear-list{list-style:none;font-size:13px;line-height:2.1;color:rgba(26,26,26,.86);font-family:var(--fb)}
-.gear-list li::before{content:'—';margin-right:.5rem;color:rgba(26,26,26,.95)}
-.gear-model{color:rgba(26,26,26,.86)}
+.gear-list{list-style:none;font-size:14.3px;line-height:2.1;color:rgba(26,26,26,0.86);font-family:var(--fb)}
+.gear-list li::before{content:'—';margin-right:.5rem;color:rgba(26,26,26,.82)}
+.gear-model{color:rgba(26,26,26,0.86)}
 
 /* DOWNLOAD */
-.dl-file{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 1.5rem;border:.5px solid rgba(26,26,26,.12);transition:border-color .2s,background .2s;text-decoration:none;color:inherit}
-.dl-file:hover{border-color:rgba(26,26,26,.86);background:rgba(26,26,26,.05)}
-.dl-icon{font-size:22px;color:rgba(26,26,26,.3)}
-.dl-fname{font-family:var(--fd);font-size:.95rem;color:rgba(26,26,26,.95)}
-.dl-fmeta{font-size:11px;color:rgba(26,26,26,.95);font-family:var(--fb);margin-top:.2rem;letter-spacing:.06em}
+.dl-file{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 1.5rem;border:.5px solid rgba(26,26,26,0.34);transition:border-color .2s,background .2s;text-decoration:none;color:inherit}
+.dl-file:hover{border-color:rgba(26,26,26,0.86);background:rgba(26,26,26,.05)}
+.dl-icon{font-size:24.2px;color:rgba(26,26,26,0.52)}
+.dl-fname{font-family:var(--fd);font-size:1.045rem;color:rgba(26,26,26,.82)}
+.dl-fmeta{font-size:12.1px;color:rgba(26,26,26,.82);font-family:var(--fb);margin-top:.2rem;letter-spacing:.06em}
 
 /* NORM ROWS */
 .norm-row{display:flex;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:var(--bds)}
 .norm-row:first-of-type{border-top:var(--bds)}
-.norm-code{font-family:var(--fd);font-size:.85rem;color:rgba(26,26,26,.3);width:130px;flex-shrink:0}
-.norm-desc{font-size:13.5px;line-height:1.6;color:rgba(26,26,26,.84);font-family:var(--fb)}
+.norm-code{font-family:var(--fd);font-size:0.935rem;color:rgba(26,26,26,0.52);width:130px;flex-shrink:0}
+.norm-desc{font-size:14.9px;line-height:1.6;color:rgba(26,26,26,0.84);font-family:var(--fb)}
 
 /* SHARED SECTIONS */
 .sec-header{display:flex;justify-content:space-between;align-items:baseline;padding:2rem 3rem 1.6rem;border-bottom:var(--bds)}
 .statement{position:relative;height:320px;overflow:hidden;border-top:var(--bd)}
 .statement-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(15%) brightness(.55)}
 .statement-content{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 3rem;gap:3rem}
-.statement-text{font-family:var(--fd);font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:400;color:var(--w);line-height:1.3;max-width:480px}
+.statement-text{font-family:var(--fd);font-size:clamp(1.76rem,3.2vw,2.64rem);font-weight:400;color:var(--w);line-height:1.3;max-width:480px}
 .statement-text em{font-style:italic;color:var(--w50)}
 .quote-sec{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:5rem 3rem;border-top:var(--bd);border-bottom:var(--bd)}
-.quote-sec blockquote{font-family:var(--fd);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:400;font-style:italic;line-height:1.45;color:rgba(26,26,26,.95)}
-.quote-attr{font-family:var(--fb);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.3);margin-top:1.4rem}
+.quote-sec blockquote{font-family:var(--fd);font-size:clamp(1.65rem,2.8vw,2.2rem);font-weight:400;font-style:italic;line-height:1.45;color:rgba(26,26,26,.82)}
+.quote-attr{font-family:var(--fb);font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.52);margin-top:1.4rem}
 .ticker{border-top:var(--bds);padding:1.4rem 3rem;display:flex;gap:2.2rem;flex-wrap:wrap;align-items:center;border-bottom:var(--bd)}
-.ticker-item{font-family:var(--fb);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,26,26,.48);white-space:nowrap;transition:color .2s}
+.ticker-item{font-family:var(--fb);font-size:12.7px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,26,26,0.7);white-space:nowrap;transition:color .2s}
 .ticker-item:hover{color:var(--w50)}
-.ticker-dot{color:rgba(26,26,26,.1);font-size:9px}
+.ticker-dot{color:rgba(26,26,26,0.32);font-size:9.9px}
 .cta-bar{display:flex;justify-content:space-between;align-items:center;padding:2.8rem 3rem;border-top:var(--bd);border-bottom:var(--bd)}
-.cta-text{font-family:var(--fd);font-size:clamp(1.2rem,2vw,1.55rem);font-weight:400;color:rgba(26,26,26,.86)}
+.cta-text{font-family:var(--fd);font-size:clamp(1.32rem,2.0vw,1.71rem);font-weight:400;color:rgba(26,26,26,0.86)}
 .cta-text em{font-style:italic;color:var(--w)}
-.tweet{border:.5px solid rgba(26,26,26,.12);padding:2rem 2rem 1.5rem}
+.tweet{border:.5px solid rgba(26,26,26,0.34);padding:2rem 2rem 1.5rem}
 .tweet-source{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem}
 .tweet-logo{width:32px;height:32px;border-radius:50%;background:rgba(26,26,26,.08);display:flex;align-items:center;justify-content:center}
-.tweet-name{font-family:var(--fd);font-size:.85rem;color:rgba(26,26,26,.7)}
-.tweet-handle{font-size:11px;color:rgba(26,26,26,.95);font-family:var(--fb);letter-spacing:.06em}
-.tweet-text{font-family:var(--fd);font-size:1.05rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,.95);margin-bottom:1.2rem}
-.tweet-date{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,26,26,.67);font-family:var(--fb)}
+.tweet-name{font-family:var(--fd);font-size:0.935rem;color:rgba(26,26,26,0.8)}
+.tweet-handle{font-size:12.1px;color:rgba(26,26,26,.82);font-family:var(--fb);letter-spacing:.06em}
+.tweet-text{font-family:var(--fd);font-size:1.155rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,.82);margin-bottom:1.2rem}
+.tweet-date{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,26,26,0.77);font-family:var(--fb)}
 .contact-strip{display:grid;grid-template-columns:1fr 1fr;border-top:var(--bd)}
 .contact-block{padding:3rem 3rem}
 .contact-block+.contact-block{border-left:var(--bd)}
-.contact-label{font-family:var(--fb);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,26,26,.95);margin-bottom:1rem}
-.contact-value{font-family:var(--fd);font-size:1.1rem;color:rgba(26,26,26,.94);line-height:1.7}
-.contact-value a{border-bottom:.5px solid rgba(26,26,26,.18);padding-bottom:1px;transition:border-color .2s}
+.contact-label{font-family:var(--fb);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,26,26,.82);margin-bottom:1rem}
+.contact-value{font-family:var(--fd);font-size:1.21rem;color:rgba(26,26,26,0.94);line-height:1.7}
+.contact-value a{border-bottom:.5px solid rgba(26,26,26,0.4);padding-bottom:1px;transition:border-color .2s}
 .contact-value a:hover{border-color:var(--w50)}
 .footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid rgba(26,26,26,.08)}
-.footer-copy{font-family:var(--fb);font-size:11px;letter-spacing:.1em;color:rgba(26,26,26,.48);text-transform:uppercase}
+.footer-copy{font-family:var(--fb);font-size:12.1px;letter-spacing:.1em;color:rgba(26,26,26,0.7);text-transform:uppercase}
 .footer-links{display:flex;gap:1.8rem;list-style:none}
-.footer-links a{font-family:var(--fb);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,.67);transition:color .2s}
+.footer-links a{font-family:var(--fb);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,0.77);transition:color .2s}
 .footer-links a:hover{color:var(--w50)}
 
 /* RESPONSIVE */
@@ -249,54 +249,54 @@ body.lang-en [data-lang="block-it"]{display:none}
   .sec-header{padding:1.5rem;flex-wrap:wrap;gap:.8rem}
   /* Hero: più respiro verticale, titoli scalati */
   .hero{min-height:auto!important}
-  .hero-h1{font-size:2.6rem!important}
-  .hero-sub{font-size:15px}
+  .hero-h1{font-size:2.86rem!important}
+  .hero-sub{font-size:16.5px}
   .hero-pills{gap:.4rem}
-  .pill{font-size:9px;padding:.25rem .6rem}
+  .pill{font-size:9.9px;padding:.25rem .6rem}
   /* Split: testo prima, immagine dopo, padding ridotto */
   .split-text{padding:2.5rem 1.5rem}
-  .split-h2{font-size:1.7rem}
+  .split-h2{font-size:1.87rem}
   /* Metric / col: 2 colonne su tablet, gestione bordi */
   .metric{padding:1.5rem 1.2rem}
-  .metric-n{font-size:1.7rem}
+  .metric-n{font-size:1.87rem}
   /* Quote section */
-  .quote-sec blockquote{font-size:1.4rem}
+  .quote-sec blockquote{font-size:1.54rem}
   /* Ticker: scroll orizzontale invece di wrap caotico */
   .ticker{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
   .ticker::-webkit-scrollbar{display:none}
   /* Statement */
   .statement{height:auto;min-height:280px}
-  .statement-text{font-size:1.5rem}
+  .statement-text{font-size:1.65rem}
   /* Tweet */
-  .tweet-text{font-size:.95rem}
+  .tweet-text{font-size:1.045rem}
   /* Banner draft: più compatto su mobile */
   #draft-banner{padding:.7rem 1rem!important}
-  #draft-banner > div{font-size:11px!important}
+  #draft-banner > div{font-size:12.1px!important}
 }
 
 /* ── SMARTPHONE PICCOLI (≤480px) ── */
 @media(max-width:480px){
   .nav{padding:1rem 1.2rem}
-  .nav-logo{font-size:12px;letter-spacing:.18em}
+  .nav-logo{font-size:13.2px;letter-spacing:.18em}
   .hero-body{padding:0 1.2rem 2.5rem}
-  .hero-h1{font-size:2.1rem!important;line-height:1.1}
-  .hero-tag{font-size:9px;letter-spacing:.2em}
-  .hero-sub{font-size:14px}
+  .hero-h1{font-size:2.31rem!important;line-height:1.1}
+  .hero-tag{font-size:9.9px;letter-spacing:.2em}
+  .hero-sub{font-size:15.4px}
   .col3,.col4{grid-template-columns:1fr}
   .col3>*,.col4>*{border-right:none!important;border-bottom:var(--bds)}
   .col3>*:last-child,.col4>*:last-child{border-bottom:none}
-  .split-h2{font-size:1.45rem}
-  .svc-name{font-size:1.05rem}
+  .split-h2{font-size:1.595rem}
+  .svc-name{font-size:1.155rem}
   .svc-row{gap:1rem;padding:1.1rem 1.2rem}
-  .metric-n{font-size:1.5rem}
+  .metric-n{font-size:1.65rem}
   .panel{height:300px}
-  .panel-title{font-size:1.4rem}
+  .panel-title{font-size:1.54rem}
   .quote-sec{padding:2.5rem 1.2rem}
-  .quote-sec blockquote{font-size:1.25rem}
-  .statement-text{font-size:1.3rem}
-  .cta-text{font-size:1.2rem}
+  .quote-sec blockquote{font-size:1.375rem}
+  .statement-text{font-size:1.43rem}
+  .cta-text{font-size:1.32rem}
   .contact-block{padding:2rem 1.2rem}
-  .badge{font-size:9px}
+  .badge{font-size:9.9px}
   /* Gear table: forza impilamento totale */
   [style*="grid-template-columns:220px"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:repeat(3,1fr)"],[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;gap:1.5rem!important}
@@ -323,13 +323,13 @@ body.lang-en [data-lang="block-it"]{display:none}
 .nav-drawer{position:fixed;inset:0 0 0 auto;width:min(320px,88vw);background:var(--nero);border-left:var(--bd);z-index:300;display:flex;flex-direction:column;padding:2rem 1.8rem;gap:0;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
 .nav-drawer.open{transform:translateX(0)}
 .drawer-links{display:flex;flex-direction:column;gap:0;flex:1;padding-top:1rem}
-.drawer-links a{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--w40);padding:1.1rem 0;border-bottom:var(--bds);transition:color .2s;text-decoration:none;display:block}
+.drawer-links a{font-size:16.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--w40);padding:1.1rem 0;border-bottom:var(--bds);transition:color .2s;text-decoration:none;display:block}
 .drawer-links a:hover{color:var(--w)}
 .drawer-links a:last-child{border-bottom:none}
-.drawer-lang{display:flex;gap:1.2rem;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--w30);padding-top:1.5rem;border-top:var(--bd);margin-top:auto}
+.drawer-lang{display:flex;gap:1.2rem;font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:var(--w30);padding-top:1.5rem;border-top:var(--bd);margin-top:auto}
 .drawer-lang span{cursor:pointer;transition:color .2s}
 .drawer-lang span:hover{color:var(--w)}
-.nav-overlay{position:fixed;inset:0;background:rgba(26,26,26,.70);backdrop-filter:blur(2px);z-index:250;opacity:0;pointer-events:none;transition:opacity .3s}
+.nav-overlay{position:fixed;inset:0;background:rgba(26,26,26,0.8);backdrop-filter:blur(2px);z-index:250;opacity:0;pointer-events:none;transition:opacity .3s}
 .nav-overlay.open{opacity:1;pointer-events:auto}
 
 @media(max-width:900px){
@@ -338,7 +338,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   .nav{padding:1.1rem 1.5rem}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
-:focus-visible{outline:2px solid rgba(26,26,26,.6);outline-offset:3px}
+:focus-visible{outline:2px solid rgba(26,26,26,0.75);outline-offset:3px}
 
 /* ── TESTO SOPRA FOTO: sempre bianco ── */
 .hero-body .hero-tag,.hero-body .hero-h1,.hero-body .hero-sub,.hero-body .btn,
@@ -372,8 +372,8 @@ body.lang-en [data-lang="block-it"]{display:none}
 .video-grid{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:var(--bd);align-items:stretch}
 .vcard{position:relative;overflow:hidden;min-height:280px;display:block;text-decoration:none}
 .vbg{position:absolute;inset:0;background-size:cover;background-position:center;
-     filter:brightness(.72);transition:transform .55s ease,filter .55s ease}
-.vcard:hover .vbg{transform:scale(1.04);filter:brightness(.88)}
+     filter:brightness(.72);transition:filter .3s ease}
+.vcard:hover .vbg{filter:brightness(.82)}
 .vcontent{position:relative;z-index:2;display:flex;flex-direction:column;
           justify-content:flex-end;height:100%;padding:1.5rem 1.8rem;min-height:280px}
 @media(max-width:900px){
@@ -387,15 +387,15 @@ body.lang-en [data-lang="block-it"]{display:none}
 .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .split-img{position:relative;overflow:hidden;min-height:420px}
 .split-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;
-              filter:brightness(.78);transition:transform .65s ease,filter .65s ease}
-.split-img:hover .split-img-bg{transform:scale(1.03);filter:brightness(.9)}
+              filter:brightness(.78);transition:filter .3s ease}
+.split-img:hover .split-img-bg{filter:brightness(.84)}
 .split-img-ov{position:relative;z-index:2;height:100%;display:flex;
               flex-direction:column;justify-content:flex-end;padding:2rem 2.5rem}
 .panels{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .panel{position:relative;overflow:hidden;min-height:400px;display:block;text-decoration:none}
 .panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;
-          filter:brightness(.72);transition:transform .7s ease,filter .7s ease}
-.panel:hover .panel-bg{transform:scale(1.04);filter:brightness(.88)}
+          filter:brightness(.72);transition:filter .3s ease}
+.panel:hover .panel-bg{filter:brightness(.82)}
 .panel-content{position:relative;z-index:2;display:flex;flex-direction:column;
                justify-content:flex-end;height:100%;padding:2rem 2.5rem}
 @media(max-width:900px){
@@ -409,24 +409,24 @@ body.lang-en [data-lang="block-it"]{display:none}
 /* ── PROJECT MODAL ── */
 .proj-modal-overlay{position:fixed;inset:0;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
 .proj-modal-overlay.open{opacity:1;pointer-events:auto}
-.proj-modal{background:#fff;border:.5px solid rgba(26,26,26,.12);max-width:860px;width:calc(100% - 2rem);max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 8px 40px rgba(26,26,26,.12)}
+.proj-modal{background:#fff;border:.5px solid rgba(26,26,26,0.34);max-width:860px;width:calc(100% - 2rem);max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 8px 40px rgba(26,26,26,0.34)}
 .proj-modal-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:rgba(26,26,26,.06)}
 .proj-modal-body{padding:2rem 2.5rem 2.5rem}
-.proj-modal-tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.38);margin-bottom:.6rem;display:block}
-.proj-modal-title{font-size:1.6rem;font-weight:500;color:var(--w);line-height:1.2;margin-bottom:.5rem;letter-spacing:-.02em}
-.proj-modal-date{font-size:12px;color:rgba(26,26,26,.35);margin-bottom:1.2rem;display:block}
-.proj-modal-desc{font-size:15px;line-height:1.8;color:rgba(26,26,26,.68);margin-bottom:1.8rem}
-.proj-modal-link{display:inline-flex;align-items:center;gap:.5rem;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--w);border-bottom:.5px solid rgba(26,26,26,.3);padding-bottom:2px;text-decoration:none;transition:border-color .2s}
+.proj-modal-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.6);margin-bottom:.6rem;display:block}
+.proj-modal-title{font-size:1.76rem;font-weight:500;color:var(--w);line-height:1.2;margin-bottom:.5rem;letter-spacing:-.02em}
+.proj-modal-date{font-size:13.2px;color:rgba(26,26,26,0.57);margin-bottom:1.2rem;display:block}
+.proj-modal-desc{font-size:16.5px;line-height:1.8;color:rgba(26,26,26,0.78);margin-bottom:1.8rem}
+.proj-modal-link{display:inline-flex;align-items:center;gap:.5rem;font-size:12.1px;letter-spacing:.18em;text-transform:uppercase;color:var(--w);border-bottom:.5px solid rgba(26,26,26,0.52);padding-bottom:2px;text-decoration:none;transition:border-color .2s}
 .proj-modal-link:hover{border-color:var(--w)}
-.proj-modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;background:rgba(255,255,255,.9);border:.5px solid rgba(26,26,26,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:rgba(26,26,26,.5);line-height:1;transition:background .2s;z-index:10}
+.proj-modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;background:rgba(255,255,255,.9);border:.5px solid rgba(26,26,26,0.37);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17.6px;color:rgba(26,26,26,0.72);line-height:1;transition:background .2s;z-index:10}
 .proj-modal-close:hover{background:#fff;color:var(--w)}
 @media(max-width:600px){
   .proj-modal-body{padding:1.5rem}
-  .proj-modal-title{font-size:1.3rem}
+  .proj-modal-title{font-size:1.43rem}
 }
 
 /* ── NAV PRENOTA (voce evidenziata) ── */
-.nav-book{color:var(--w)!important;border-bottom:.5px solid rgba(26,26,26,.4);padding-bottom:2px!important}
+.nav-book{color:var(--w)!important;border-bottom:.5px solid rgba(26,26,26,0.62);padding-bottom:2px!important}
 .nav-book:hover{opacity:.7}
 .drawer-book{color:var(--w)!important;font-weight:500!important}
 
@@ -434,39 +434,264 @@ body.lang-en [data-lang="block-it"]{display:none}
 .nav-links a.active{color:var(--w)!important;border-bottom:1.5px solid var(--w);padding-bottom:2px}
 
 /* ── BACK TO TOP ── */
-#btt{position:fixed;bottom:5.5rem;right:1.5rem;z-index:390;width:40px;height:40px;background:#fff;border:.5px solid rgba(26,26,26,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 2px 8px rgba(26,26,26,.08)}
+#btt{position:fixed;bottom:5.5rem;right:1.5rem;z-index:390;width:40px;height:40px;background:#fff;border:.5px solid rgba(26,26,26,0.37);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 2px 8px rgba(26,26,26,.08)}
 #btt.show{opacity:1;pointer-events:auto}
 #btt:hover{background:var(--nero-s)}
-#btt svg{width:14px;height:14px;stroke:rgba(26,26,26,.5);fill:none;stroke-width:2}
+#btt svg{width:14px;height:14px;stroke:rgba(26,26,26,0.72);fill:none;stroke-width:2}
 
-/* ── VIDEO REEL SECTION ── */
-.reel-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--bd)}
-.reel-card{position:relative;overflow:hidden;cursor:pointer;border-right:var(--bds);aspect-ratio:9/16;background:#0a0a0a}
-.reel-card:last-child{border-right:none}
-.reel-thumb{width:100%;height:100%;object-fit:cover;filter:brightness(.72);transition:filter .4s,transform .5s}
-.reel-card:hover .reel-thumb{filter:brightness(.9);transform:scale(1.03)}
-.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border:.5px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);transition:background .2s,transform .2s;z-index:3}
-.reel-card:hover .reel-play{background:rgba(0,0,0,.6);transform:translate(-50%,-50%) scale(1.1)}
-.reel-play::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent rgba(255,255,255,.9);margin-left:3px}
-.reel-info{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.65));z-index:2}
-.reel-tag{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);display:block;margin-bottom:.25rem}
-.reel-title{font-size:.9rem;font-weight:500;color:#fff;line-height:1.2;letter-spacing:-.01em}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Modale video */
 .video-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:600;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
 .video-modal-overlay.open{opacity:1;pointer-events:auto}
 .video-modal{position:relative;width:min(900px,95vw)}
 .video-modal video{width:100%;display:block;max-height:85vh;object-fit:contain}
-.video-modal-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,.6);font-size:13px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:color .2s}
+.video-modal-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,.6);font-size:14.3px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:color .2s}
 .video-modal-close:hover{color:#fff}
 @media(max-width:900px){
-  .reel-grid{grid-template-columns:1fr 1fr}
-  .reel-card:nth-child(2n){border-right:none}
-  .reel-card:nth-child(n+3){border-top:var(--bds)}
+  
+  
+  
 }
 @media(max-width:480px){
-  .reel-grid{grid-template-columns:1fr}
-  .reel-card{border-right:none;border-bottom:var(--bds);aspect-ratio:16/9}
+  
+  
+}
+
+/* ══════════════════════════════════════════════════════════
+   RAFFINAMENTO TIPOGRAFICO E VISIVO — livello editoriale
+   ══════════════════════════════════════════════════════════ */
+
+/* Tipografia: tracking ottico e leading calibrati */
+body{font-feature-settings:'kern' 1,'liga' 1,'calt' 1;text-rendering:optimizeLegibility;letter-spacing:-.003em}
+h1,h2,h3,.hero-h1,.split-h2,.panel-title,.ha-comp-name,.proj-title{letter-spacing:-.022em;font-weight:400}
+.hero-h1{letter-spacing:-.032em;line-height:1.02}
+p,.split-body,.hero-sub,.ha-comp-desc{letter-spacing:-.006em;max-width:68ch}
+
+/* Label e micro-testo: tracking ampio per leggibilità */
+.lbl,.badge,.pill,.reel-tag,.proj-tag,.press-outlet,.metric-title,
+.gear-col-title,.book-info-k,.bk-label,.space-name{letter-spacing:.16em;font-weight:500}
+
+/* Numeri e metriche: allineamento tabellare */
+.metric-n,.space-mq{font-variant-numeric:tabular-nums;letter-spacing:-.04em;font-weight:200}
+
+/* Immagini: rendering nitido, nessun movimento */
+.hero-bg,.panel-bg,.split-img-bg,.vbg,.proj-img,.reel-thumb,
+.ha-comp-img-bg,.loc-gallery-item img,.ha-hero-bg{
+  image-rendering:auto;backface-visibility:hidden;transform:none!important
+}
+
+/* Overlay foto: solo dove manca il gradiente inline */
+.panel-bg::after,.split-img-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.10) 0%,rgba(0,0,0,.45) 100%)
+}
+
+/* Card: bordi netti, nessuna ombra diffusa */
+.proj-card,.press-card,.metric,.space-item,.gear-col{
+  transition:background .18s ease
+}
+.proj-card:hover,.press-card:hover,.metric:hover{background:rgba(26,26,26,.025)}
+
+/* Bottoni: tratto più definito */
+.btn{font-weight:500;letter-spacing:.2em;border-bottom-width:1px;padding-bottom:4px}
+.btn:hover{border-bottom-color:currentColor;opacity:1}
+
+/* Nav: peso e spaziatura editoriale */
+.nav-logo{font-weight:600;letter-spacing:.24em}
+.nav-links a{font-weight:450;letter-spacing:.1em}
+.nav-links a.active{font-weight:550}
+
+/* Sezioni: respiro verticale uniforme */
+.sec-header{padding-top:3rem;padding-bottom:1.8rem}
+.split-text,.bk-form-col,.book-info-col{padding-top:4.5rem;padding-bottom:4.5rem}
+
+/* Griglie: gutter ottico costante */
+.proj-grid,.reel-grid,.press-grid{gap:0}
+.proj-body{padding:1.3rem 1.4rem 1.6rem}
+
+/* Blockquote editoriale */
+blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
+
+/* Liste: allineamento e ritmo */
+.gear-list li,.book-services-list li{line-height:2.1;letter-spacing:-.004em}
+
+/* Form: campi con altezza confortevole */
+.bk-input,.bk-select,.bk-textarea{padding:.95rem 1.1rem;line-height:1.5}
+
+/* Separatori: peso uniforme */
+:root{--bd:1px solid rgba(26,26,26,.13);--bds:1px solid rgba(26,26,26,.08)}
+
+/* Selezione testo */
+::selection{background:rgba(26,26,26,.12);color:#0d0d0d}
+
+/* Scrollbar discreta (desktop) */
+@media(hover:hover){
+  ::-webkit-scrollbar{width:11px;height:11px}
+  ::-webkit-scrollbar-track{background:transparent}
+  ::-webkit-scrollbar-thumb{background:rgba(26,26,26,.16);border:3px solid #fff;border-radius:6px}
+  ::-webkit-scrollbar-thumb:hover{background:rgba(26,26,26,.3)}
+}
+
+/* Mobile: tipografia proporzionale */
+@media(max-width:900px){
+  body{font-size:17.5px;line-height:1.65}
+  .sec-header{padding-top:2.2rem;padding-bottom:1.4rem}
+  .split-text,.bk-form-col,.book-info-col{padding-top:3rem;padding-bottom:3rem}
+  p,.split-body{max-width:none}
+}
+
+/* ── HERO HI-END AUDIO: testo su foto sempre bianco ── */
+.ha-hero-body .hero-tag{color:rgba(255,255,255,.62)!important}
+.ha-hero-body .hero-h1{color:#fff!important}
+.ha-hero-body .hero-h1 em{color:rgba(255,255,255,.68)!important}
+.ha-hero-body .hero-sub{color:rgba(255,255,255,.88)!important}
+.ha-hero-body p{color:rgba(255,255,255,.88)!important}
+.ha-hero-body .btn{color:#fff!important;border-bottom-color:rgba(255,255,255,.5)!important}
+.ha-hero-body .btn:hover{border-bottom-color:#fff!important}
+.ha-hero-body .pill{color:rgba(255,255,255,.75)!important;border-color:rgba(255,255,255,.35)!important}
+.ha-hero-body .lbl{color:rgba(255,255,255,.62)!important}
+/* Gradiente leggibilità sotto il testo */
+.ha-hero-bg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.62) 100%)}
+
+/* ══════════════════════════════════════════════════════════
+   REGOLA UNIVERSALE — testo sopra foto sempre bianco
+   Copre ogni contenitore con z-index sopra un'immagine
+   ══════════════════════════════════════════════════════════ */
+.hero-body,.ha-hero-body,.panel-content,.vcontent,
+.statement-content,.split-img-ov,.reel-info,.ha-comp-img-ov{
+  color:#fff
+}
+.hero-body *,.ha-hero-body *,.panel-content *,.vcontent *,
+.statement-content *,.split-img-ov *,
+/* Gerarchia leggibilità su foto */
+.hero-body h1,.ha-hero-body h1,.panel-title,.statement-text,
+.reel-title,.vname{color:#fff!important;text-shadow:0 1px 24px rgba(0,0,0,.35)}
+.hero-body h1 em,.ha-hero-body h1 em,.statement-text em{color:rgba(255,255,255,.72)!important}
+.hero-body p,.ha-hero-body p,.hero-sub{color:rgba(255,255,255,.9)!important}
+.hero-tag,.reel-tag,.vtag,.panel-tag,
+.hero-body .lbl,.ha-hero-body .lbl{color:rgba(255,255,255,.66)!important}
+.hero-body .btn,.ha-hero-body .btn,.statement-content .btn,.panel-link{
+  color:#fff!important;border-bottom-color:rgba(255,255,255,.5)!important
+}
+.hero-body .btn:hover,.ha-hero-body .btn:hover,.statement-content .btn:hover{
+  border-bottom-color:#fff!important
+}
+.hero-body .pill,.ha-hero-body .pill{
+  color:rgba(255,255,255,.78)!important;border-color:rgba(255,255,255,.34)!important
+}
+.ha-comp-img-ov .ha-brand-tag{
+  color:rgba(255,255,255,.85)!important;border-color:rgba(255,255,255,.35)!important
+}
+/* Il play button resta bianco su qualunque foto */
+.reel-play,.vplay,.loc-video-play-btn{border-color:rgba(255,255,255,.55)!important}
+
+/* ══════════════════════════════════════════════════════════
+   PULIZIA MINIMALISTA — meno linee, più aria, gerarchia netta
+   ══════════════════════════════════════════════════════════ */
+
+/* 1. BORDI: uno solo, sottilissimo. Via i doppi tratti */
+:root{--bd:1px solid rgba(26,26,26,.09);--bds:1px solid rgba(26,26,26,.06)}
+.col2>*,.col3>*,.col4>*{border-right:none}
+.col2,.col3,.col4{gap:0}
+.metric{border-right:var(--bds)}
+.col4>.metric:last-child,.col3>*:last-child{border-right:none}
+
+/* 2. ARIA: spaziature ampie e costanti */
+.hero-body{padding:0 4rem 5rem}
+.split-text{padding:6rem 4rem}
+.sec-header{padding:4.5rem 4rem 2rem;border-bottom:none}
+.metric{padding:3rem 2.4rem}
+.svc-row{padding:2rem 4rem}
+.cta-bar{padding:4.5rem 4rem}
+.contact-block{padding:4rem}
+.quote-sec{padding:7rem 4rem;gap:5rem}
+.ticker{padding:2rem 4rem}
+.footer{padding:3rem 4rem}
+.ha-comp-txt{padding:4rem 3.5rem}
+.ha-chain{padding:4rem}
+.gear-col{padding:3rem 2.6rem}
+.proj-body{padding:1.5rem 1.6rem 2rem}
+
+/* 3. TIPOGRAFIA: pesi leggeri, gerarchia per scala non per decorazione */
+.hero-h1,.split-h2,.panel-title{font-weight:200}
+.metric-n,.space-mq{font-weight:100;color:rgba(26,26,26,.14)}
+.lbl{color:rgba(26,26,26,.4);letter-spacing:.24em;font-weight:400}
+.split-h2{font-size:clamp(1.7rem,2.6vw,2.4rem);line-height:1.15}
+.metric-title{font-weight:400;font-size:.95rem;color:rgba(26,26,26,.8)}
+.metric-sub{color:rgba(26,26,26,.52);line-height:1.65}
+.split-body{color:rgba(26,26,26,.62);line-height:1.85}
+
+/* 4. VIA GLI EFFETTI: nessun hover di sfondo, solo opacità */
+.metric:hover,.proj-card:hover,.press-card:hover,.svc-row:hover,
+.ha-src:hover,.space-item:hover{background:none}
+.proj-card:hover .proj-img,.press-card:hover,.svc-row:hover{opacity:.62}
+.proj-card,.press-card,.svc-row,.metric{transition:opacity .22s ease}
+
+/* 5. IMMAGINI: nessun filtro grigio, resa naturale */
+.proj-img,.loc-gallery-item img,.vg-media img{filter:none}
+.panel-bg,.split-img-bg,.hero-bg,.ha-hero-bg{filter:none}
+
+/* 6. BOTTONI: tratto essenziale */
+.btn{border-bottom:1px solid rgba(26,26,26,.28);padding-bottom:5px;letter-spacing:.22em;font-size:11px}
+.btn:hover{border-bottom-color:rgba(26,26,26,.9)}
+
+/* 7. NAV: leggera, staccata */
+.nav{padding:2rem 4rem;border-bottom:var(--bds);background:rgba(255,255,255,.94)}
+.nav-links{gap:2.6rem}
+.nav-links a{font-size:12px;letter-spacing:.14em;color:rgba(26,26,26,.55)}
+.nav-links a:hover,.nav-links a.active{color:var(--w)}
+.nav-links a.active{border-bottom:1px solid var(--w)}
+.nav-logo{font-size:12px;letter-spacing:.3em;font-weight:500}
+
+/* 8. GRIGLIE: separatori interni minimi */
+.proj-grid,.press-grid,.vg-grid{border-top:var(--bds)}
+.proj-card,.press-card{border-right:var(--bds);border-bottom:var(--bds)}
+
+/* 9. QUOTE: respiro editoriale */
+.quote-sec blockquote{font-weight:200;font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.4}
+.quote-attr{color:rgba(26,26,26,.42);letter-spacing:.24em}
+
+/* 10. FOOTER: silenzioso */
+.footer-copy,.footer-links a{color:rgba(26,26,26,.34);font-size:11px;letter-spacing:.12em}
+.footer-links a:hover{color:rgba(26,26,26,.7)}
+
+/* 11. Ticker: discreto */
+.ticker-item{color:rgba(26,26,26,.34);font-size:11.5px;letter-spacing:.16em}
+.ticker-item:hover{color:rgba(26,26,26,.7)}
+.ticker-dot{color:rgba(26,26,26,.16)}
+
+/* 12. Via il back-to-top e riduci il WhatsApp */
+#btt{display:none}
+#wa-fixed{width:46px;height:46px;bottom:2rem;right:2rem;box-shadow:none;border:1px solid rgba(26,26,26,.08)}
+
+/* 13. Banner bozza: minimo ingombro */
+#draft-banner{padding:.65rem 1.6rem!important}
+#draft-banner>div{font-size:10.5px!important;line-height:1.45!important}
+
+@media(max-width:900px){
+  .hero-body{padding:0 1.5rem 3rem}
+  .split-text,.sec-header,.cta-bar,.contact-block,.quote-sec,
+  .ticker,.footer,.ha-comp-txt,.ha-chain,.gear-col{padding-left:1.5rem;padding-right:1.5rem}
+  .split-text{padding-top:3.5rem;padding-bottom:3.5rem}
+  .sec-header{padding-top:3rem;padding-bottom:1.5rem}
+  .quote-sec{padding-top:4rem;padding-bottom:4rem;gap:2.5rem}
+  .cta-bar{padding-top:3rem;padding-bottom:3rem}
+  .svc-row{padding:1.5rem}
+  .nav{padding:1.2rem 1.5rem}
+  #wa-fixed{bottom:1.2rem;right:1.2rem}
 }
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
@@ -514,12 +739,12 @@ body.lang-en [data-lang="block-it"]{display:none}
 <body class="lang-it">
 
 <!-- ══ BANNER BOZZA + PRIVACY (GDPR) — dismissibile, nessun cookie ══ -->
-<div id="draft-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(14,14,14,.97);backdrop-filter:blur(10px);border-top:.5px solid rgba(26,26,26,0.42);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--fb)">
-  <div style="font-size:12px;line-height:1.5;color:rgba(26,26,26,0.95);max-width:760px">
+<div id="draft-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(14,14,14,.97);backdrop-filter:blur(10px);border-top:.5px solid rgba(26,26,26,0.74);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--fb)">
+  <div style="font-size:14.5px;line-height:1.5;color:rgba(26,26,26,.82);max-width:760px">
     <span data-lang="it"><strong style="color:#1a1a1a;letter-spacing:.05em">ANTEPRIMA / BOZZA</strong> — Restyling non ufficiale a scopo dimostrativo. Questa pagina carica font (Google Fonts), icone (jsDelivr) e immagini (WordPress.com): tali servizi possono ricevere il tuo indirizzo IP. Nessun cookie, tracker o raccolta dati è attivo su questa bozza.</span>
     <span data-lang="en"><strong style="color:#1a1a1a;letter-spacing:.05em">PREVIEW / DRAFT</strong> — Unofficial restyling for demo purposes. This page loads fonts (Google Fonts), icons (jsDelivr) and images (WordPress.com): these services may receive your IP address. No cookies, trackers or data collection are active on this draft.</span>
   </div>
-  <button onclick="document.getElementById('draft-banner').style.display='none';return false" style="flex-shrink:0;font-family:var(--fb);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#1a1a1a;background:none;border:.5px solid rgba(26,26,26,0.67);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(26,26,26,.4)'" onmouseout="this.style.borderColor='rgba(26,26,26,.25)'">
+  <button onclick="document.getElementById('draft-banner').style.display='none';return false" style="flex-shrink:0;font-family:var(--fb);font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:#1a1a1a;background:none;border:.5px solid rgba(26,26,26,0.87);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(26,26,26,0.62)'" onmouseout="this.style.borderColor='rgba(26,26,26,0.47)'">
     <span data-lang="it">Ho capito</span><span data-lang="en">Got it</span>
   </button>
 </div>
@@ -537,6 +762,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <li><a href="#" onclick="showPage('location');return false" id="nl-location"><span data-lang="it">Location</span><span data-lang="en">Location</span></a></li>
     <li><a href="#" onclick="showPage('prod');return false"     id="nl-prod"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a></li>
     <li><a href="#" onclick="showPage('form');return false"     id="nl-form"><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a></li>
+    <li><a href="#" onclick="showPage('video');return false"    id="nl-video"><span data-lang="it">Video</span><span data-lang="en">Video</span></a></li>
     <li><a href="#" onclick="showPage('res');return false"      id="nl-res"><span data-lang="it">Resonance</span><span data-lang="en">Resonance</span></a></li>
     <li><a href="#" onclick="showPage('book');return false" id="nl-book" class="nav-book"><span data-lang="it">Prenota</span><span data-lang="en">Book</span></a></li>
   </ul>
@@ -561,6 +787,7 @@ body.lang-en [data-lang="block-it"]{display:none}
     <a href="#" onclick="showPage('location');closeDrawer()"><span data-lang="it">Location</span><span data-lang="en">Location</span></a>
     <a href="#" onclick="showPage('prod');closeDrawer()"    ><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a>
     <a href="#" onclick="showPage('form');closeDrawer()"    ><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a>
+    <a href="#" onclick="showPage('video');closeDrawer()"   ><span data-lang="it">Video</span><span data-lang="en">Video</span></a>
     <a href="#" onclick="showPage('res');closeDrawer()"     ><span data-lang="it">Resonance</span><span data-lang="en">Resonance</span></a>
     <a href="#" onclick="showPage('book');closeDrawer()" class="drawer-book"><span data-lang="it">Prenota →</span><span data-lang="en">Book →</span></a>
   </nav>
@@ -597,7 +824,6 @@ body.lang-en [data-lang="block-it"]{display:none}
     <a class="panel" href="#" onclick="showPage('audio');return false">
       <div class="panel-bg" style="background-image:url('https://bernardini250576.github.io/studio33/prod-panel.jpg')"></div>
       <div class="panel-content">
-        <div class="panel-tag">Hi-End Audio</div>
         <h2 class="panel-title">Oswalds Mill<br>Audio System</h2>
         <span class="panel-link"><span data-lang="it">Listening Room →</span><span data-lang="en">Listening Room →</span></span>
       </div>
@@ -605,7 +831,6 @@ body.lang-en [data-lang="block-it"]{display:none}
     <a class="panel" href="#" onclick="showPage('location');return false">
       <div class="panel-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_012.jpg?resize=900%2C600&ssl=1')"></div>
       <div class="panel-content">
-        <div class="panel-tag">Location</div>
         <h2 class="panel-title">250 <span data-lang="it">mq</span><span data-lang="en">sqm</span><br><span data-lang="it">a Trastevere</span><span data-lang="en">in Trastevere</span></h2>
         <span class="panel-link"><span data-lang="it">Location Kit →</span><span data-lang="en">Location Kit →</span></span>
       </div>
@@ -618,7 +843,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div class="quote-attr">— Friedrich Nietzsche</div>
     </div>
     <div>
-      <p style="font-size:15px;line-height:1.82;color:rgba(26,26,26,0.9);font-family:var(--fb)">
+      <p style="font-size:18.2px;line-height:1.82;color:rgba(26,26,26,.72);font-family:var(--fb)">
         <span data-lang="it">Uno spazio dove musica, immagine e suono si incontrano davvero. Ex studio fotografico tra i vicoli di Roma — dal 2021, uno dei riferimenti per chi fa produzione di qualità a Trastevere.</span>
         <span data-lang="en">A space where music, image and sound genuinely meet. Once a photography studio among Rome's alleys — since 2021, one of the references for quality production in Trastevere.</span>
       </p>
@@ -633,16 +858,16 @@ body.lang-en [data-lang="block-it"]{display:none}
    
   <!-- CLIENTI NOTEVOLI -->
   <div style="border-top:var(--bd);padding:1.8rem 3rem">
-    <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.28);margin-bottom:1.2rem;font-family:var(--fb)"><span data-lang="it">Hanno scelto Studio 33</span><span data-lang="en">They chose Studio 33</span></div>
+    <div style="font-size:12.1px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,0.72);margin-bottom:1.2rem;font-family:var(--fb)"><span data-lang="it">Hanno scelto Studio 33</span><span data-lang="en">They chose Studio 33</span></div>
     <div style="display:flex;gap:2.5rem;flex-wrap:wrap;align-items:center">
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">NPR</span>
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">AS Roma</span>
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">Monocle</span>
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">HBO Canada</span>
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">Pirelli</span>
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">AMREF</span>
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">Fremantle</span>
-      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,.3)">History Channel</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">NPR</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">AS Roma</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">Monocle</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">HBO Canada</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">Pirelli</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">AMREF</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">Fremantle</span>
+      <span style="font-size:15.7px;font-weight:600;letter-spacing:.06em;color:rgba(26,26,26,0.74)">History Channel</span>
     </div>
   </div>
 
@@ -671,7 +896,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div class="split-text">
         <div class="lbl" style="margin-bottom:1.5rem"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></div>
         <h2 class="split-h2"><span data-lang="it">Boutique<br><em>production house</em><br>nel centro di Roma.</span><span data-lang="en">Boutique<br><em>production house</em><br>in the heart of Rome.</span></h2>
-        <p style="font-size:15px;line-height:1.78;color:rgba(26,26,26,0.9);font-family:var(--fb);margin-top:1.2rem;margin-bottom:2rem">
+        <p style="font-size:18.2px;line-height:1.78;color:rgba(26,26,26,.72);font-family:var(--fb);margin-top:1.2rem;margin-bottom:2rem">
           <span data-lang="it">Tecnologia broadcast-quality in un ambiente intimo e creativo. Dalla pre-produzione al master finale — tutto nello stesso spazio, a Trastevere.</span>
           <span data-lang="en">Broadcast-quality technology in an intimate and creative setting. From pre-production to the final master — everything in the same space, in Trastevere.</span>
         </p>
@@ -681,10 +906,6 @@ body.lang-en [data-lang="block-it"]{display:none}
       </div>
       <div class="split-img">
         <div class="split-img-bg" style="background-image:url('https://studio33club.com/wp-content/uploads/2025/12/93BAAF71-099C-45C1-9326-3F9BF2290312.jpeg')"></div>
-        <div class="split-img-ov">
-          <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb);margin-bottom:.4rem"><span data-lang="it">In collaborazione con</span><span data-lang="en">In partnership with</span></div>
-          <div style="font-family:var(--fd);font-size:.95rem;color:rgba(26,26,26,0.95)">CUT&amp; Editing · Camera Tech · Hypercast</div>
-        </div>
       </div>
     </div>
   </section>
@@ -720,40 +941,40 @@ body.lang-en [data-lang="block-it"]{display:none}
 
 <style>
 .ha-hero{position:relative;height:520px;overflow:hidden;border-bottom:var(--bd)}
-.ha-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.82);transition:transform 8s ease}
-.ha-hero:hover .ha-hero-bg{transform:scale(1.015)}
+.ha-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.82);transition:none}
+
 .ha-hero-body{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 3.5rem}
 .ha-comp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd)}
 .ha-comp-img{position:relative;overflow:hidden;min-height:320px}
-.ha-comp-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.82);transition:transform .6s ease,filter .6s ease}
-.ha-comp-row:hover .ha-comp-img-bg{transform:scale(1.03);filter:grayscale(0%) brightness(.9)}
+.ha-comp-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.82);transition:filter .3s ease}
+.ha-comp-row:hover .ha-comp-img-bg{filter:brightness(.9)}
 .ha-comp-img-ov{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:1.8rem 2.5rem}
 .ha-comp-txt{padding:3rem 3rem;display:flex;flex-direction:column;justify-content:center}
-.ha-comp-cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb);margin-bottom:.6rem}
-.ha-comp-name{font-family:var(--fd);font-size:1.7rem;font-weight:400;color:#1a1a1a;margin-bottom:1.2rem;line-height:1.15}
-.ha-comp-desc{font-size:14.5px;line-height:1.82;color:rgba(26,26,26,0.95);font-family:var(--fb)}
+.ha-comp-cat{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb);margin-bottom:.6rem}
+.ha-comp-name{font-family:var(--fd);font-size:1.87rem;font-weight:400;color:#1a1a1a;margin-bottom:1.2rem;line-height:1.15}
+.ha-comp-desc{font-size:16px;line-height:1.82;color:rgba(26,26,26,.82);font-family:var(--fb)}
 .ha-spec{margin-top:1.4rem;display:flex;flex-direction:column;gap:.5rem}
-.ha-spec-row{display:flex;gap:.8rem;font-size:12.5px;font-family:var(--fb)}
-.ha-spec-k{color:rgba(26,26,26,0.95);width:90px;flex-shrink:0;letter-spacing:.06em}
-.ha-spec-v{color:rgba(26,26,26,0.95)}
-.ha-brand-tag{display:inline-block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;border:.5px solid rgba(26,26,26,0.54);padding:.25rem .7rem;color:rgba(26,26,26,0.95);font-family:var(--fb);margin-top:1.4rem;width:fit-content}
+.ha-spec-row{display:flex;gap:.8rem;font-size:13.8px;font-family:var(--fb)}
+.ha-spec-k{color:rgba(26,26,26,.82);width:90px;flex-shrink:0;letter-spacing:.06em}
+.ha-spec-v{color:rgba(26,26,26,.82)}
+.ha-brand-tag{display:inline-block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(26,26,26,.28);padding:.25rem .7rem;color:rgba(26,26,26,.82);font-family:var(--fb);margin-top:1.4rem;width:fit-content}
 .ha-chain{border-bottom:var(--bd);padding:2.5rem 3rem}
 .ha-chain-flow{display:flex;align-items:center;gap:0;flex-wrap:wrap;margin-top:1.2rem}
-.ha-chain-node{padding:.65rem 1.1rem;border:.5px solid rgba(26,26,26,0.45);font-family:var(--fb);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,0.95);white-space:nowrap;transition:border-color .2s,background .2s}
-.ha-chain-node:hover{border-color:rgba(26,26,26,0.95);background:rgba(26,26,26,0.18)}
-.ha-chain-node small{display:block;font-size:10px;color:rgba(26,26,26,0.9);letter-spacing:.06em;text-transform:none;margin-top:.2rem}
-.ha-chain-arr{font-size:14px;color:rgba(26,26,26,0.57);padding:0 .5rem}
+.ha-chain-node{padding:.65rem 1.1rem;border:1px solid rgba(26,26,26,.22);font-family:var(--fb);font-size:13.2px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,.82);white-space:nowrap;transition:border-color .2s,background .2s}
+.ha-chain-node:hover{border-color:rgba(26,26,26,.55);background:rgba(26,26,26,.04)}
+.ha-chain-node small{display:block;font-size:11px;color:rgba(26,26,26,.72);letter-spacing:.06em;text-transform:none;margin-top:.2rem}
+.ha-chain-arr{font-size:15.4px;color:rgba(26,26,26,.55);padding:0 .5rem}
 .ha-sources{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:var(--bd)}
 .ha-src{padding:2.2rem 2.2rem;border-right:var(--bds);transition:background .2s}
 .ha-src:last-child{border-right:none}
-.ha-src:hover{background:rgba(26,26,26,0.16)}
-.ha-src-icon{font-size:20px;color:rgba(26,26,26,0.87);margin-bottom:1rem}
-.ha-src-name{font-family:var(--fd);font-size:1rem;color:#1a1a1a;margin-bottom:.5rem}
-.ha-src-desc{font-size:13.5px;line-height:1.65;color:rgba(26,26,26,0.95);font-family:var(--fb)}
-.ha-partner-row{display:flex;align-items:baseline;gap:1.2rem;padding:.85rem 0;border-bottom:.5px solid rgba(26,26,26,0.24)}
+.ha-src:hover{background:rgba(26,26,26,0.38)}
+.ha-src-icon{font-size:22px;color:rgba(26,26,26,0.87);margin-bottom:1rem}
+.ha-src-name{font-family:var(--fd);font-size:1.1rem;color:#1a1a1a;margin-bottom:.5rem}
+.ha-src-desc{font-size:14.9px;line-height:1.65;color:rgba(26,26,26,.82);font-family:var(--fb)}
+.ha-partner-row{display:flex;align-items:baseline;gap:1.2rem;padding:.85rem 0;border-bottom:.5px solid rgba(26,26,26,0.46)}
 .ha-partner-row:last-child{border-bottom:none}
-.ha-partner-name{font-family:var(--fd);font-size:1rem;color:#1a1a1a;width:170px;flex-shrink:0}
-.ha-partner-desc{font-size:13px;color:rgba(26,26,26,0.95);font-family:var(--fb);line-height:1.55}
+.ha-partner-name{font-family:var(--fd);font-size:1.1rem;color:#1a1a1a;width:170px;flex-shrink:0}
+.ha-partner-desc{font-size:14.3px;color:rgba(26,26,26,.82);font-family:var(--fb);line-height:1.55}
 @media(max-width:900px){
   .ha-comp-row{grid-template-columns:1fr}
   .ha-comp-img{min-height:240px}
@@ -761,7 +982,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   .ha-chain{padding:2rem 1.5rem}
   .ha-sources{grid-template-columns:1fr}
   .ha-src{border-right:none;border-bottom:var(--bds)}
-  .ha-comp-name{font-size:1.4rem}
+  .ha-comp-name{font-size:1.54rem}
   .ha-hero{height:auto;min-height:420px}
   /* Gear: la riga categoria+contenuto si impila */
   .ha-comp-row[style*="direction:rtl"]{direction:ltr!important}
@@ -779,7 +1000,7 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span data-lang="en">Several systems assembled with one single purpose: making the listening experience faithful to the message of original recordings, without sacrificing musicality.</span>
       </p>
       <a class="btn" href="mailto:shout@studio33club.com"><span data-lang="it">Prenota una demo gratuita</span><span data-lang="en">Book a free demo</span></a>
-    <p style="font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.55)!important;margin-top:.8rem;font-family:var(--fb)"><span data-lang="it">Disponibile su prenotazione · calendario aperto</span><span data-lang="en">Available by appointment · calendar open</span></p>
+    <p style="font-size:13.3px;letter-spacing:.08em;color:rgba(255,255,255,.55)!important;margin-top:.8rem;font-family:var(--fb)"><span data-lang="it">Disponibile su prenotazione · calendario aperto</span><span data-lang="en">Available by appointment · calendar open</span></p>
     </div>
   </section>
 
@@ -849,7 +1070,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-AC1.jpeg?resize=900%2C720&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)">Oswalds Mill Audio · Roma, Trastevere</span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">Oswalds Mill Audio · Roma, Trastevere</span></div>
     </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat"><span data-lang="it">Diffusori da pavimento · Tre vie</span><span data-lang="en">Floorstanding loudspeakers · Three-way</span></div>
@@ -869,7 +1090,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Anatase.jpeg?resize=900%2C601&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)"><span data-lang="it">Ardesia della Pennsylvania · 40 kg</span><span data-lang="en">Pennsylvania slate · 40 kg</span></span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Ardesia della Pennsylvania · 40 kg</span><span data-lang="en">Pennsylvania slate · 40 kg</span></span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
       <div class="ha-comp-cat"><span data-lang="it">Giradischi · Idle Drive</span><span data-lang="en">Turntable · Idle Drive</span></div>
@@ -889,7 +1110,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-BK805-1.jpeg?resize=900%2C652&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)"><span data-lang="it">Valvola 807 in modalità triodo</span><span data-lang="en">807 valve in triode mode</span></span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Valvola 807 in modalità triodo</span><span data-lang="en">807 valve in triode mode</span></span></div>
     </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat"><span data-lang="it">Amplificatore · Push/Pull a valvole</span><span data-lang="en">Amplifier · Push/Pull tube</span></div>
@@ -908,7 +1129,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/bar-020-2-scaled-1.jpg?resize=900%2C600&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)">dCS Ring DAC™ · Cambridge, UK</span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">dCS Ring DAC™ · Cambridge, UK</span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
       <div class="ha-comp-cat">DAC / Streamer</div>
@@ -927,7 +1148,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/lhc-208-front-top-left-800x5902-1.png?resize=900%2C663&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)"><span data-lang="it">Stato solido svizzero · Ginevra</span><span data-lang="en">Swiss solid-state · Geneva</span></span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Stato solido svizzero · Ginevra</span><span data-lang="en">Swiss solid-state · Geneva</span></span></div>
     </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat"><span data-lang="it">Amplificatore integrato · Stato solido</span><span data-lang="en">Integrated amplifier · Solid state</span></div>
@@ -945,7 +1166,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/FSC-DeVille-1.jpeg?resize=900%2C1098&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)"><span data-lang="it">Frassino Pennsylvania torrefatto</span><span data-lang="en">Toasted Pennsylvania ash</span></span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Frassino Pennsylvania torrefatto</span><span data-lang="en">Toasted Pennsylvania ash</span></span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
       <div class="ha-comp-cat"><span data-lang="it">Diffusori · Due vie da pavimento</span><span data-lang="en">Loudspeakers · Two-way floorstanding</span></div>
@@ -963,7 +1184,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Mini.jpeg?resize=900%2C1125&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)">95 dB / 1W / 1m · 144 cm</span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">95 dB / 1W / 1m · 144 cm</span></div>
     </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat"><span data-lang="it">Diffusori · Due vie a tromba</span><span data-lang="en">Loudspeakers · Two-way horn</span></div>
@@ -982,7 +1203,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row" style="direction:rtl">
     <div class="ha-comp-img" style="direction:ltr">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/Studer_A812.jpg?resize=900%2C675&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)">Studer A812 · 1985–1996</span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">Studer A812 · 1985–1996</span></div>
     </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
       <div class="ha-comp-cat"><span data-lang="it">Registratore a nastro · Reel-to-Reel</span><span data-lang="en">Tape recorder · Reel-to-Reel</span></div>
@@ -1000,7 +1221,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/1_00_Phonostage-signal-chassis.jpg?resize=900%2C678&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb)"><span data-lang="it">Noce nero massello + Ardesia levigata</span><span data-lang="en">Solid black walnut + polished slate</span></span></div>
+      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Noce nero massello + Ardesia levigata</span><span data-lang="en">Solid black walnut + polished slate</span></span></div>
     </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat">Phono Stage · RIAA</div>
@@ -1053,34 +1274,34 @@ body.lang-en [data-lang="block-it"]{display:none}
 /* ── LOCATION ── */
 .loc-intro{display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd)}
 .loc-text{padding:3.5rem 3rem;border-right:var(--bd)}
-.loc-text p{font-size:15.5px;line-height:1.85;color:rgba(26,26,26,.68);margin-bottom:1.1rem}
+.loc-text p{font-size:17.1px;line-height:1.85;color:rgba(26,26,26,0.78);margin-bottom:1.1rem}
 .loc-text p:last-child{margin-bottom:0}
 .loc-text strong{color:var(--w);font-weight:600}
 .loc-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
 .loc-gallery-item{position:relative;overflow:hidden}
-.loc-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(8%);transition:transform .6s ease,filter .6s ease}
-.loc-gallery-item:hover img{transform:scale(1.04);filter:grayscale(0%)}
-.loc-gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:.7rem 1rem;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);background:linear-gradient(transparent,rgba(0,0,0,.45))}
+.loc-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(8%);transition:filter .3s ease}
+.loc-gallery-item:hover img{filter:none}
+
 .loc-gallery-item.wide{grid-column:1/-1}
 /* Spazi */
 .spaces-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--bd);border-bottom:var(--bd)}
 .space-item{padding:2rem 1.8rem;border-right:var(--bds)}
 .space-item:last-child{border-right:none}
-.space-mq{font-size:2.2rem;font-weight:300;color:rgba(26,26,26,.15);line-height:1;margin-bottom:.5rem;letter-spacing:-.03em}
-.space-name{font-size:.85rem;font-weight:500;color:var(--w);margin-bottom:.4rem;line-height:1.3}
-.space-desc{font-size:12px;line-height:1.65;color:rgba(26,26,26,.48)}
+.space-mq{font-size:2.42rem;font-weight:300;color:rgba(26,26,26,0.37);line-height:1;margin-bottom:.5rem;letter-spacing:-.03em}
+.space-name{font-size:0.935rem;font-weight:500;color:var(--w);margin-bottom:.4rem;line-height:1.3}
+.space-desc{font-size:13.2px;line-height:1.65;color:rgba(26,26,26,0.7)}
 /* Gear */
 .gear-section{border-bottom:var(--bd)}
 .gear-header{padding:2rem 3rem 1.5rem;border-bottom:var(--bds);display:flex;justify-content:space-between;align-items:baseline}
 .gear-cols{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:none}
 .gear-col{padding:2.2rem 2.5rem;border-right:var(--bds)}
 .gear-col:last-child{border-right:none}
-.gear-col-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.4);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
-.gear-col-title i{font-size:16px;color:rgba(26,26,26,.3)}
-.gear-list{list-style:none;font-size:13px;line-height:2;color:rgba(26,26,26,.55)}
+.gear-col-title{font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.62);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+.gear-col-title i{font-size:17.6px;color:rgba(26,26,26,0.52)}
+.gear-list{list-style:none;font-size:14.3px;line-height:2;color:rgba(26,26,26,.55)}
 .gear-list li{display:flex;align-items:baseline;gap:.5rem}
-.gear-list li::before{content:"—";color:rgba(26,26,26,.2);flex-shrink:0}
-.gear-model{font-weight:500;color:rgba(26,26,26,.78)}
+.gear-list li::before{content:"—";color:rgba(26,26,26,0.42);flex-shrink:0}
+.gear-model{font-weight:500;color:rgba(26,26,26,0.88)}
 /* Video Arkage */
 .loc-video{border-bottom:var(--bd);padding:3rem;background:var(--nero-s);display:grid;grid-template-columns:1.6fr 1fr;gap:3rem;align-items:center}
 .loc-video-thumb{position:relative;cursor:pointer;border-radius:0;overflow:hidden;aspect-ratio:16/9;background:#000}
@@ -1088,9 +1309,9 @@ body.lang-en [data-lang="block-it"]{display:none}
 .loc-video-thumb:hover img{opacity:.95}
 .loc-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .loc-video-play-btn{width:56px;height:56px;border:.5px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);backdrop-filter:blur(4px);transition:background .2s,transform .2s}
-.loc-video-thumb:hover .loc-video-play-btn{background:rgba(0,0,0,.5);transform:scale(1.08)}
+.loc-video-thumb:hover .loc-video-play-btn{background:rgba(0,0,0,.55)}
 .loc-video-play-btn::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:9px 0 9px 16px;border-color:transparent transparent transparent rgba(255,255,255,.9);margin-left:4px}
-.loc-video-caption{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,26,26,.38);margin-top:.8rem}
+
 @media(max-width:900px){
   .loc-intro{grid-template-columns:1fr}
   .loc-text{border-right:none;border-bottom:var(--bd);padding:2.5rem 1.5rem}
@@ -1129,8 +1350,8 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span class="pill"><span data-lang="it">Spot pubblicitari</span><span data-lang="en">Ad spots</span></span>
       </div>
       <div style="display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center">
-        <a class="btn" href="https://wa.me/393347029456?text=Ciao%2C+vorrei+informazioni+sulla+location+di+Studio+33" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:13px"></i> <span data-lang="it">Richiedi disponibilità</span><span data-lang="en">Check availability</span></a>
-        <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:13px"></i> Location Kit PDF</a>
+        <a class="btn" href="https://wa.me/393347029456?text=Ciao%2C+vorrei+informazioni+sulla+location+di+Studio+33" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:15.7px"></i> <span data-lang="it">Richiedi disponibilità</span><span data-lang="en">Check availability</span></a>
+        <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:15.7px"></i> Location Kit PDF</a>
       </div>
     </div>
   </section>
@@ -1143,22 +1364,19 @@ body.lang-en [data-lang="block-it"]{display:none}
       <p><span data-lang="it">Gli ambienti in stile contemporaneo offrono massima flessibilità e possono essere personalizzati con una selezione di arredi e props per scenari unici. Le <strong>ampie finestre su strada</strong> garantiscono luce naturale e atmosfera luminosa.</span><span data-lang="en">Contemporary-style spaces offer maximum flexibility and can be customised with a selection of furniture and props for unique scenarios. <strong>Large street-facing windows</strong> guarantee natural light and a bright atmosphere.</span></p>
       <p><span data-lang="it">Il nostro studio fotografico è di <strong>fama mondiale dagli anni '80</strong> — Giacomelli, Toscani e Avedon hanno lavorato qui. Nel 2019 completamente rinnovato secondo il concept della designer croata Ana Gugić.</span><span data-lang="en">Our photography studio has been <strong>world-renowned since the '80s</strong> — Giacomelli, Toscani and Avedon have all worked here. Fully renovated in 2019 to a concept by Croatian designer Ana Gugić.</span></p>
       <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
-        <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:12px"></i> Location Kit</a>
-        <a class="btn" href="https://wa.me/393347029456" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:12px"></i> WhatsApp</a>
+        <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:14.5px"></i> Location Kit</a>
+        <a class="btn" href="https://wa.me/393347029456" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:14.5px"></i> WhatsApp</a>
       </div>
     </div>
     <div class="loc-gallery">
       <div class="loc-gallery-item wide">
         <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.41.png?resize=750%2C559&ssl=1" alt="Location shooting Roma – Rome Sweet Home HBO Canada – Studio 33 Trastevere" loading="lazy">
-        <div class="loc-gallery-caption">Rome Sweet Home – HBO Canada</div>
       </div>
       <div class="loc-gallery-item">
         <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.53.png?resize=750%2C559&ssl=1" alt="Location shooting Roma – Rome Sweet Home HBO Canada – Studio 33 Trastevere" loading="lazy">
-        <div class="loc-gallery-caption">Control Room</div>
       </div>
       <div class="loc-gallery-item">
         <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-alle-13.44.07.jpg?resize=750%2C448&ssl=1" alt="Location riprese TV Roma – Edoardo Ferrario Gialappa Show TV8 – Studio 33" loading="lazy">
-        <div class="loc-gallery-caption">Edoardo Ferrario – Gialappa Show TV8</div>
       </div>
     </div>
   </div>
@@ -1194,15 +1412,14 @@ body.lang-en [data-lang="block-it"]{display:none}
         <img src="https://img.youtube.com/vi/w2tf1YFWsoU/hqdefault.jpg" alt="Studio produzione video Roma – Arkage con Renzo Arbore – Studio 33 Trastevere" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://img.youtube.com/vi/w2tf1YFWsoU/mqdefault.jpg'">
         <div class="loc-video-play"><div class="loc-video-play-btn"></div></div>
       </a>
-      <div class="loc-video-caption"><span data-lang="it">Arkage con Renzo Arbore per la Lega del Filo d'Oro — guarda su YouTube</span><span data-lang="en">Arkage with Renzo Arbore for Lega del Filo d'Oro — watch on YouTube</span></div>
     </div>
     <div>
       <div class="lbl" style="margin-bottom:1.2rem"><span data-lang="it">Studio 33 in azione</span><span data-lang="en">Studio 33 in action</span></div>
-      <h2 style="font-size:1.5rem;font-weight:400;line-height:1.25;color:var(--w);margin-bottom:1rem;letter-spacing:-.01em">
-        <span data-lang="it">Produzioni internazionali<br>scelgono Studio 33. <em style="font-style:italic;color:rgba(26,26,26,.5)">Ogni anno.</em></span>
-        <span data-lang="en">Fiorello, Renzo Arbore,<br>HBO Canada, <em style="font-style:italic;color:rgba(26,26,26,.5)">Regione Lazio.</em></span>
+      <h2 style="font-size:1.815rem;font-weight:400;line-height:1.25;color:var(--w);margin-bottom:1rem;letter-spacing:-.01em">
+        <span data-lang="it">Produzioni internazionali<br>scelgono Studio 33. <em style="font-style:italic;color:rgba(26,26,26,0.82)">Ogni anno.</em></span>
+        <span data-lang="en">Fiorello, Renzo Arbore,<br>HBO Canada, <em style="font-style:italic;color:rgba(26,26,26,0.82)">Regione Lazio.</em></span>
       </h2>
-      <p style="font-size:14px;line-height:1.8;color:rgba(26,26,26,.58)"><span data-lang="it">Produzioni di livello internazionale scelgono Studio 33 per la sua atmosfera unica nel cuore di Trastevere. Documentari, spot, serie TV: ogni format trova lo spazio giusto.</span><span data-lang="en">International-level productions choose Studio 33 for its unique atmosphere in the heart of Trastevere. Documentaries, spots, TV series: every format finds the right space.</span></p>
+      <p style="font-size:16.9px;line-height:1.8;color:rgba(26,26,26,0.85)"><span data-lang="it">Produzioni di livello internazionale scelgono Studio 33 per la sua atmosfera unica nel cuore di Trastevere. Documentari, spot, serie TV: ogni format trova lo spazio giusto.</span><span data-lang="en">International-level productions choose Studio 33 for its unique atmosphere in the heart of Trastevere. Documentaries, spots, TV series: every format finds the right space.</span></p>
       <a class="btn" href="#" onclick="showPage('prod');return false" style="margin-top:1.5rem;display:inline-flex"><span data-lang="it">Vedi tutti i lavori →</span><span data-lang="en">See all works →</span></a>
     </div>
   </div>
@@ -1211,7 +1428,7 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="gear-section" id="gear">
     <div class="gear-header">
       <div class="lbl"><span data-lang="it">Attrezzatura completa</span><span data-lang="en">Full equipment</span></div>
-      <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:12px"></i> PDF</a>
+      <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:14.5px"></i> PDF</a>
     </div>
     <div class="gear-cols">
       <div class="gear-col">
@@ -1243,15 +1460,15 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div class="gear-col">
         <div class="gear-col-title"><i class="ti ti-microphone"></i> Audio Gear</div>
         <ul class="gear-list">
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Main PA</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">Main PA</strong></li>
           <li><span class="gear-model">Esoteric Pro Audio DUE System</span> 2800W</li>
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Monitors</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">Monitors</strong></li>
           <li><span class="gear-model">Genelec 8341 RAW</span></li>
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Mixer</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">Mixer</strong></li>
           <li><span class="gear-model">Midas M32Live</span> + DL32/DL16 Stagebox</li>
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Interfaces</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">Interfaces</strong></li>
           <li>RME Fireface UC · MOTU Audio Express</li>
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">DAW</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">DAW</strong></li>
           <li><span class="gear-model">Ableton Live 11 Suite</span></li>
           <li>Apple iMac 21.5" i7 16GB 512 Flash</li>
         </ul>
@@ -1259,21 +1476,21 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div class="gear-col">
         <div class="gear-col-title"><i class="ti ti-microphone-2"></i> Microphones</div>
         <ul class="gear-list">
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Condenser</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">Condenser</strong></li>
           <li><span class="gear-model">Neumann TLM 107 BK</span></li>
           <li>AKG Perception 420</li>
           <li>CAD GXL 3000</li>
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Dynamic</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">Dynamic</strong></li>
           <li>Sennheiser E835 S (×2)</li>
           <li><span class="gear-model">Shure SM58 · SM7dB</span></li>
-          <li><strong style="color:rgba(26,26,26,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Headphones</strong></li>
+          <li><strong style="color:rgba(26,26,26,0.82);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase">Headphones</strong></li>
           <li>Beyerdynamic DT-770 Pro</li>
           <li>AKG K121 Studio · K240 Studio</li>
           <li>Sony MDR 7506 · Audio Technica</li>
           <li><span class="gear-model">Millenium HP4LD</span> HPA 6</li>
         </ul>
         <div class="gear-col-title" style="margin-top:1.5rem"><i class="ti ti-camera"></i> <span data-lang="it">Extra su richiesta</span><span data-lang="en">Extra upon request</span></div>
-        <p style="font-size:12.5px;line-height:1.7;color:rgba(26,26,26,.5)"><span data-lang="it">Attrezzatura fotografica aggiuntiva disponibile tramite</span><span data-lang="en">Additional photographic equipment available through</span> <a href="http://www.allucinazione.net" target="_blank" rel="noopener" style="color:rgba(26,26,26,.7);border-bottom:.5px solid rgba(26,26,26,.3)">allucinazione.net</a></p>
+        <p style="font-size:15.2px;line-height:1.7;color:rgba(26,26,26,0.82)"><span data-lang="it">Attrezzatura fotografica aggiuntiva disponibile tramite</span><span data-lang="en">Additional photographic equipment available through</span> <a href="http://www.allucinazione.net" target="_blank" rel="noopener" style="color:rgba(26,26,26,0.8);border-bottom:.5px solid rgba(26,26,26,0.74)">allucinazione.net</a></p>
       </div>
     </div>
   </div>
@@ -1282,23 +1499,22 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div class="split" style="border-top:var(--bd)">
     <div class="split-img">
       <div class="split-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.26.10.png?resize=750%2C931&ssl=1')"></div>
-      <div class="split-img-ov"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)"><span data-lang="it">Fiorello – Documentario Carrà – Fremantle</span><span data-lang="en">Fiorello – Carrà Documentary – Fremantle</span></div></div>
-    </div>
+      </div>
     <div class="split-text">
       <div class="lbl" style="margin-bottom:1.4rem"><span data-lang="it">Una storia lunga 40 anni</span><span data-lang="en">A 40-year history</span></div>
       <h2 class="split-h2"><span data-lang="it">Giacomelli, Toscani, Avedon.<br><em>Ora, il tuo progetto.</em></span><span data-lang="en">Giacomelli, Toscani, Avedon.<br><em>Now, your project.</em></span></h2>
       <div class="split-body" style="margin-top:1.2rem;margin-bottom:2rem">
         <p><span data-lang="it">Studio fotografico di fama mondiale dagli anni '80. Con spazi interni ampi, un vasto spazio esterno su strada e arredi versatili, Studio 33 è il set ideale per shooting fotografici, riprese video, spot pubblicitari, serie TV e produzioni cinematografiche.</span><span data-lang="en">A world-renowned photography studio since the '80s. With wide indoor spaces, a large outdoor street area and versatile furniture, Studio 33 is the ideal set for photo shoots, video footage, ad spots, TV series and film productions.</span></p>
       </div>
-      <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:12px"></i> <span data-lang="it">Scarica Location Kit PDF</span><span data-lang="en">Download Location Kit PDF</span></a>
+      <a class="btn" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-download" style="font-size:14.5px"></i> <span data-lang="it">Scarica Location Kit PDF</span><span data-lang="en">Download Location Kit PDF</span></a>
     </div>
   </div>
 
   <div class="cta-bar">
     <p class="cta-text"><span data-lang="it">Prenota lo spazio per la tua <em>produzione.</em></span><span data-lang="en">Book the space for your <em>production.</em></span></p>
     <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap">
-      <a class="btn" href="mailto:shout@studio33club.com"><i class="ti ti-mail" style="font-size:13px"></i> shout@studio33club.com</a>
-      <a class="btn" href="https://wa.me/393347029456" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:13px"></i> WhatsApp</a>
+      <a class="btn" href="mailto:shout@studio33club.com"><i class="ti ti-mail" style="font-size:15.7px"></i> shout@studio33club.com</a>
+      <a class="btn" href="https://wa.me/393347029456" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:15.7px"></i> WhatsApp</a>
     </div>
   </div>
 
@@ -1312,14 +1528,14 @@ body.lang-en [data-lang="block-it"]{display:none}
 .prod-services{padding:3.5rem 3rem;border-right:var(--bd)}
 .prod-svc-item{padding:1.5rem 0;border-bottom:var(--bds);display:grid;grid-template-columns:28px 1fr;gap:1rem;align-items:start}
 .prod-svc-item:last-child{border-bottom:none}
-.prod-svc-icon{font-size:18px;color:rgba(26,26,26,.35);margin-top:.15rem}
-.prod-svc-name{font-size:15px;font-weight:500;color:var(--w);margin-bottom:.3rem;letter-spacing:-.01em}
-.prod-svc-desc{font-size:13px;line-height:1.7;color:rgba(26,26,26,.55)}
+.prod-svc-icon{font-size:19.8px;color:rgba(26,26,26,0.57);margin-top:.15rem}
+.prod-svc-name{font-size:16.5px;font-weight:500;color:var(--w);margin-bottom:.3rem;letter-spacing:-.01em}
+.prod-svc-desc{font-size:14.3px;line-height:1.7;color:rgba(26,26,26,.55)}
 .prod-cats{padding:3.5rem 3rem;background:var(--nero-s)}
 .prod-cat{margin-bottom:1.8rem}
 .prod-cat:last-child{margin-bottom:0}
-.prod-cat-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.4);margin-bottom:.6rem}
-.prod-cat-items{font-size:13.5px;line-height:2;color:rgba(26,26,26,.65)}
+.prod-cat-title{font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.62);margin-bottom:.6rem}
+.prod-cat-items{font-size:14.9px;line-height:2;color:rgba(26,26,26,.55)}
 /* Griglia lavori */
 .proj-header{display:flex;justify-content:space-between;align-items:baseline;padding:2rem 3rem 1.5rem;border-bottom:var(--bds)}
 .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--bds)}
@@ -1329,9 +1545,9 @@ body.lang-en [data-lang="block-it"]{display:none}
 .proj-img{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;background-color:rgba(26,26,26,.06);filter:grayscale(15%);transition:filter .3s}
 .proj-card:hover .proj-img{filter:grayscale(0%)}
 .proj-body{padding:1rem 1.2rem 1.3rem}
-.proj-tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,.38);display:block;margin-bottom:.35rem}
-.proj-title{font-size:.9rem;font-weight:500;color:var(--w);line-height:1.35;margin-bottom:.4rem;letter-spacing:-.01em}
-.proj-date{font-size:11px;color:rgba(26,26,26,.35)}
+.proj-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,0.6);display:block;margin-bottom:.35rem}
+.proj-title{font-size:0.99rem;font-weight:500;color:var(--w);line-height:1.35;margin-bottom:.4rem;letter-spacing:-.01em}
+.proj-date{font-size:12.1px;color:rgba(26,26,26,0.57)}
 @media(max-width:900px){
   .prod-intro{grid-template-columns:1fr}
   .prod-services{border-right:none;border-bottom:var(--bd)}
@@ -1391,55 +1607,6 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:var(--bds)">
         <a class="btn" href="mailto:shout@studio33club.com"><span data-lang="it">Richiedi un preventivo</span><span data-lang="en">Request a quote</span></a>
       </div>
-    </div>
-  </div>
-
-  <!-- SEZIONE REEL VIDEO -->
-  <div style="border-top:var(--bd)">
-    <div class="sec-header" style="padding:2rem 3rem 1.5rem">
-      <div class="lbl"><span data-lang="it">Video · Reel e spot</span><span data-lang="en">Video · Reels and spots</span></div>
-    </div>
-    <div class="reel-grid">
-    <div class="reel-card" onclick="openVideoModal(0)" role="button" tabindex="0">
-      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/spot-thumb.jpg" alt="Studio 33 — Spot 30"" loading="lazy">
-      <div class="reel-play"></div>
-      <div class="reel-info">
-        <span class="reel-tag">SPOT</span>
-        <div class="reel-title"><span data-lang="it">Studio 33 — Spot 30"</span><span data-lang="en">Studio 33 — 30" Spot</span></div>
-      </div>
-    </div>
-    <div class="reel-card" onclick="openVideoModal(1)" role="button" tabindex="0">
-      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/shooting-thumb.jpg" alt="Reel Shooting" loading="lazy">
-      <div class="reel-play"></div>
-      <div class="reel-info">
-        <span class="reel-tag">LOCATION</span>
-        <div class="reel-title"><span data-lang="it">Reel Shooting</span><span data-lang="en">Shooting Reel</span></div>
-      </div>
-    </div>
-    <div class="reel-card" onclick="openVideoModal(2)" role="button" tabindex="0">
-      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/eventi-thumb.jpg" alt="Reel Eventi" loading="lazy">
-      <div class="reel-play"></div>
-      <div class="reel-info">
-        <span class="reel-tag">EVENTI</span>
-        <div class="reel-title"><span data-lang="it">Reel Eventi</span><span data-lang="en">Events Reel</span></div>
-      </div>
-    </div>
-    <div class="reel-card" onclick="openVideoModal(3)" role="button" tabindex="0">
-      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/musica-thumb.jpg" alt="Reel Musica" loading="lazy">
-      <div class="reel-play"></div>
-      <div class="reel-info">
-        <span class="reel-tag">MUSICA</span>
-        <div class="reel-title"><span data-lang="it">Reel Musica</span><span data-lang="en">Music Reel</span></div>
-      </div>
-    </div>
-    </div>
-  </div>
-
-  <!-- Modale video -->
-  <div class="video-modal-overlay" id="videoModal" onclick="if(event.target===this)closeVideoModal()">
-    <div class="video-modal">
-      <button class="video-modal-close" onclick="closeVideoModal()">✕ <span data-lang="it">Chiudi</span><span data-lang="en">Close</span></button>
-      <video id="modalVideo" controls playsinline></video>
     </div>
   </div>
 
@@ -1827,7 +1994,7 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span data-lang="en">Studio 33 hosts the Rome campus of Tékhne — School of Music Therapy. A three-year programme to become a certified Music Therapist under UNI standard 11592:2023.</span>
       </p>
       <a class="btn" href="https://www.metooo.it/e/open-day-tekhne-scuola-di-musicoterapia" target="_blank" rel="noopener">
-        <i class="ti ti-calendar" style="font-size:13px" aria-hidden="true"></i>
+        <i class="ti ti-calendar" style="font-size:15.7px" aria-hidden="true"></i>
         <span data-lang="it">Iscriviti all'Open Day</span><span data-lang="en">Register for Open Day</span>
       </a>
     </div>
@@ -1867,19 +2034,15 @@ body.lang-en [data-lang="block-it"]{display:none}
     </div>
     <div class="split-img">
       <div class="split-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/633f336ca15b5c18673d0d5630d93999d88db7bb.jpg?resize=800%2C445&ssl=1" style=""></div>
-      <div class="split-img-ov">
-        <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.95);font-family:var(--fb);margin-bottom:.4rem"><span data-lang="it">Sede romana</span><span data-lang="en">Rome campus</span></div>
-        <div style="font-family:var(--fd);font-size:.95rem;color:rgba(26,26,26,0.95)">Studio 33 · Via della Paglia 3a, Trastevere</div>
       </div>
-    </div>
   </div>
 
   <section style="border-top:var(--bd)">
     <div class="sec-header"><div class="lbl"><span data-lang="it">Percorso triennale</span><span data-lang="en">Three-year programme</span></div></div>
     <div class="col3" style="border-top:none">
       <div style="padding:2.5rem 2.2rem;border-right:var(--bds)">
-        <div style="font-family:var(--fd);font-size:3rem;font-weight:400;color:rgba(26,26,26,0.48);line-height:1;margin-bottom:.8rem">I</div>
-        <div style="font-family:var(--fd);font-size:1rem;color:rgba(26,26,26,0.95);margin-bottom:.8rem"><span data-lang="it">Fondamenti della musicoterapia</span><span data-lang="en">Foundations of music therapy</span></div>
+        <div style="font-family:var(--fd);font-size:3.63rem;font-weight:400;color:rgba(26,26,26,0.8);line-height:1;margin-bottom:.8rem">I</div>
+        <div style="font-family:var(--fd);font-size:1.21rem;color:rgba(26,26,26,.82);margin-bottom:.8rem"><span data-lang="it">Fondamenti della musicoterapia</span><span data-lang="en">Foundations of music therapy</span></div>
         <ul class="gear-list">
           <li><span data-lang="it">Storia e teorie della musicoterapia</span><span data-lang="en">History and theories of music therapy</span></li>
           <li><span data-lang="it">Psicologia della musica</span><span data-lang="en">Psychology of music</span></li>
@@ -1890,8 +2053,8 @@ body.lang-en [data-lang="block-it"]{display:none}
         </ul>
       </div>
       <div style="padding:2.5rem 2.2rem;border-right:var(--bds)">
-        <div style="font-family:var(--fd);font-size:3rem;font-weight:400;color:rgba(26,26,26,0.48);line-height:1;margin-bottom:.8rem">II</div>
-        <div style="font-family:var(--fd);font-size:1rem;color:rgba(26,26,26,0.95);margin-bottom:.8rem"><span data-lang="it">Metodi e tecniche</span><span data-lang="en">Methods and techniques</span></div>
+        <div style="font-family:var(--fd);font-size:3.63rem;font-weight:400;color:rgba(26,26,26,0.8);line-height:1;margin-bottom:.8rem">II</div>
+        <div style="font-family:var(--fd);font-size:1.21rem;color:rgba(26,26,26,.82);margin-bottom:.8rem"><span data-lang="it">Metodi e tecniche</span><span data-lang="en">Methods and techniques</span></div>
         <ul class="gear-list">
           <li><span data-lang="it">Metodi di musicoterapia attiva</span><span data-lang="en">Active music therapy methods</span></li>
           <li><span data-lang="it">Metodi di musicoterapia recettiva</span><span data-lang="en">Receptive music therapy methods</span></li>
@@ -1902,8 +2065,8 @@ body.lang-en [data-lang="block-it"]{display:none}
         </ul>
       </div>
       <div style="padding:2.5rem 2.2rem">
-        <div style="font-family:var(--fd);font-size:3rem;font-weight:400;color:rgba(26,26,26,0.48);line-height:1;margin-bottom:.8rem">III</div>
-        <div style="font-family:var(--fd);font-size:1rem;color:rgba(26,26,26,0.95);margin-bottom:.8rem"><span data-lang="it">Clinica e professione</span><span data-lang="en">Clinical practice &amp; profession</span></div>
+        <div style="font-family:var(--fd);font-size:3.63rem;font-weight:400;color:rgba(26,26,26,0.8);line-height:1;margin-bottom:.8rem">III</div>
+        <div style="font-family:var(--fd);font-size:1.21rem;color:rgba(26,26,26,.82);margin-bottom:.8rem"><span data-lang="it">Clinica e professione</span><span data-lang="en">Clinical practice &amp; profession</span></div>
         <ul class="gear-list">
           <li><span data-lang="it">Musicoterapia in neuroriabilitazione</span><span data-lang="en">Music therapy in neurorehabilitation</span></li>
           <li><span data-lang="it">Musicoterapia in età evolutiva</span><span data-lang="en">Music therapy in developmental age</span></li>
@@ -1923,7 +2086,7 @@ body.lang-en [data-lang="block-it"]{display:none}
         <span data-lang="it">Una professione<br>riconosciuta.<br><em>A livello nazionale.</em></span>
         <span data-lang="en">A recognised<br>profession.<br><em>Nationally valid.</em></span>
       </h2>
-      <p style="font-size:14.5px;line-height:1.82;color:rgba(26,26,26,0.95);flex-grow:1;margin-bottom:2.2rem;font-family:var(--fb)">
+      <p style="font-size:17.6px;line-height:1.82;color:rgba(26,26,26,.82);flex-grow:1;margin-bottom:2.2rem;font-family:var(--fb)">
         <span data-lang="it">Al termine del percorso triennale, i diplomati Tékhne potranno accedere all'esame di certificazione come Musicoterapeuta, svolto da organismi accreditati da Accredia ai sensi della UNI CEI EN ISO/IEC 17024.</span>
         <span data-lang="en">Upon completing the three-year programme, Tékhne graduates may sit the certification examination as a Music Therapist, conducted by Accredia-accredited bodies under UNI CEI EN ISO/IEC 17024.</span>
       </p>
@@ -1946,7 +2109,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       <span data-lang="en">Begin your journey into <em>music therapy.</em></span>
     </p>
     <a class="btn" href="https://www.metooo.it/e/open-day-tekhne-scuola-di-musicoterapia" target="_blank" rel="noopener">
-      <i class="ti ti-calendar" style="font-size:13px" aria-hidden="true"></i>
+      <i class="ti ti-calendar" style="font-size:15.7px" aria-hidden="true"></i>
       Open Day Tékhne
     </a>
   </div>
@@ -1958,19 +2121,19 @@ body.lang-en [data-lang="block-it"]{display:none}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;padding:4.5rem 3rem 3.5rem;border-bottom:var(--bd)">
     <div>
       <div class="lbl" style="margin-bottom:1.2rem"><span data-lang="it">Press · Rassegna stampa</span><span data-lang="en">Press · Media coverage</span></div>
-      <h1 style="font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);font-weight:400;line-height:1.05;color:var(--w)">
-        Studio 33<br><span data-lang="it">risuona<br><em style="font-style:italic;color:rgba(26,26,26,0.9)">nella rete.</em></span><span data-lang="en">resonates<br><em style="font-style:italic;color:rgba(26,26,26,0.9)">worldwide.</em></span>
+      <h1 style="font-family:var(--fd);font-size:clamp(2.9rem,5.0vw,4.84rem);font-weight:400;line-height:1.05;color:var(--w)">
+        Studio 33<br><span data-lang="it">risuona<br><em style="font-style:italic;color:rgba(26,26,26,.72)">nella rete.</em></span><span data-lang="en">resonates<br><em style="font-style:italic;color:rgba(26,26,26,.72)">worldwide.</em></span>
       </h1>
     </div>
     <div>
-      <p style="font-size:15px;line-height:1.78;color:rgba(26,26,26,0.95);font-family:var(--fb);margin-bottom:1.2rem">
+      <p style="font-size:18.2px;line-height:1.78;color:rgba(26,26,26,.82);font-family:var(--fb);margin-bottom:1.2rem">
         <span data-lang="it">Dalla copertina di Monocle al tweet di Oswalds Mill Audio. Dal Foglio Quotidiano ad AF Digitale, Zero.eu, Pink Noises, Area Arch. Lo spazio di Trastevere che ha catturato l'attenzione della stampa internazionale.</span>
         <span data-lang="en">From Monocle's pages to Oswalds Mill Audio's tweet. From Il Foglio to AF Digitale, Zero.eu, Pink Noises, Area Arch. The Trastevere space that captured the attention of the international press.</span>
       </p>
-      <div style="display:flex;gap:2rem;flex-wrap:wrap;padding-top:.8rem;border-top:.5px solid rgba(26,26,26,0.3)">
-        <div><div style="font-family:var(--fd);font-size:1.4rem;font-weight:400;color:rgba(26,26,26,0.95)">12+</div><div class="lbl"><span data-lang="it">Testate</span><span data-lang="en">Outlets</span></div></div>
-        <div><div style="font-family:var(--fd);font-size:1.4rem;font-weight:400;color:rgba(26,26,26,0.95)">IT · EN</div><div class="lbl"><span data-lang="it">Copertura</span><span data-lang="en">Coverage</span></div></div>
-        <div><div style="font-family:var(--fd);font-size:1.4rem;font-weight:400;color:rgba(26,26,26,0.95)">2020–</div><div class="lbl"><span data-lang="it">Dal lancio</span><span data-lang="en">Since launch</span></div></div>
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;padding-top:.8rem;border-top:.5px solid rgba(26,26,26,0.74)">
+        <div><div style="font-family:var(--fd);font-size:1.694rem;font-weight:400;color:rgba(26,26,26,.82)">12+</div><div class="lbl"><span data-lang="it">Testate</span><span data-lang="en">Outlets</span></div></div>
+        <div><div style="font-family:var(--fd);font-size:1.694rem;font-weight:400;color:rgba(26,26,26,.82)">IT · EN</div><div class="lbl"><span data-lang="it">Copertura</span><span data-lang="en">Coverage</span></div></div>
+        <div><div style="font-family:var(--fd);font-size:1.694rem;font-weight:400;color:rgba(26,26,26,.82)">2020–</div><div class="lbl"><span data-lang="it">Dal lancio</span><span data-lang="en">Since launch</span></div></div>
       </div>
     </div>
   </div>
@@ -1980,7 +2143,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div>
         <div class="lbl" style="margin-bottom:1.5rem"><span data-lang="it">Il tweet che ha fatto il giro del mondo hi-fi</span><span data-lang="en">The tweet that went around the hi-fi world</span></div>
         <div class="tweet">
-          <div class="tweet-source"><div class="tweet-logo"><i class="ti ti-brand-twitter" style="font-size:16px;color:rgba(26,26,26,0.9)" aria-hidden="true"></i></div><div><div class="tweet-name">Oswalds Mill Audio</div><div class="tweet-handle">@oswaldsmill</div></div></div>
+          <div class="tweet-source"><div class="tweet-logo"><i class="ti ti-brand-twitter" style="font-size:19.4px;color:rgba(26,26,26,.72)" aria-hidden="true"></i></div><div><div class="tweet-name">Oswalds Mill Audio</div><div class="tweet-handle">@oswaldsmill</div></div></div>
           <p class="tweet-text">"A stunning audio club and recording space opened up in Trastevere, Rome. Beautifully designed by the talented Ana Gugic. Featuring select OMA and Fleetwood Sound loudspeakers and equipment. Go check it out when you are there!"</p>
           <div class="tweet-date">13 <span data-lang="it">ottobre</span><span data-lang="en">October</span> 2020</div>
         </div>
@@ -1992,15 +2155,15 @@ body.lang-en [data-lang="block-it"]{display:none}
     <div style="background:var(--nero-m);padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:space-between;gap:2rem">
       <div>
         <div class="lbl" style="margin-bottom:1.2rem">Monocle Magazine · PDF</div>
-        <h2 style="font-family:var(--fd);font-size:1.3rem;font-weight:400;line-height:1.3;color:var(--w);margin-bottom:.8rem">Record a record — Studio 33 <span data-lang="it">su</span><span data-lang="en">in</span> Monocle</h2>
-        <p style="font-size:14px;line-height:1.75;color:rgba(26,26,26,0.95);font-family:var(--fb);margin-bottom:1.5rem">
+        <h2 style="font-family:var(--fd);font-size:1.573rem;font-weight:400;line-height:1.3;color:var(--w);margin-bottom:.8rem">Record a record — Studio 33 <span data-lang="it">su</span><span data-lang="en">in</span> Monocle</h2>
+        <p style="font-size:16.9px;line-height:1.75;color:rgba(26,26,26,.82);font-family:var(--fb);margin-bottom:1.5rem">
           <span data-lang="it">La rivista internazionale di design, cultura e lifestyle ha dedicato un articolo a Studio 33 come spazio di riferimento per la cultura del vinile e dell'ascolto hi-end a Roma.</span>
           <span data-lang="en">The international design, culture and lifestyle magazine dedicated a feature to Studio 33 as a reference space for vinyl culture and hi-end listening in Rome.</span>
         </p>
         <a class="dl-file" href="https://studio33club.com/wp-content/uploads/2022/02/Monocle_Record-a-record_Studio-33.pdf" target="_blank" rel="noopener">
           <i class="ti ti-file-type-pdf dl-icon" aria-hidden="true"></i>
           <div><div class="dl-fname">Monocle — Record a record</div><div class="dl-fmeta">PDF · <span data-lang="it">Articolo originale</span><span data-lang="en">Original article</span> · 2022</div></div>
-          <i class="ti ti-download" style="font-size:16px;color:rgba(26,26,26,0.95)" aria-hidden="true"></i>
+          <i class="ti ti-download" style="font-size:19.4px;color:rgba(26,26,26,.82)" aria-hidden="true"></i>
         </a>
       </div>
       <a class="btn" href="https://studio33club.com/wp-content/uploads/2022/02/Monocle_Record-a-record_Studio-33.pdf" target="_blank" rel="noopener">
@@ -2057,26 +2220,26 @@ body.lang-en [data-lang="block-it"]{display:none}
   <section style="border-top:var(--bd)">
     <div class="sec-header"><div class="lbl"><span data-lang="it">Artisti e produzioni notevoli</span><span data-lang="en">Notable artists &amp; productions</span></div></div>
     <div class="video-grid">
-      <a class="vcard" href="https://studio33club.com/2025/06/05/alex-britti-a-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span> 2025</div><div class="vname">Alex Britti</div><div class="vdate"><span data-lang="it">Presentazione concerto Terme di Caracalla</span><span data-lang="en">Concert presentation at Terme di Caracalla</span></div></div></a>
-      <a class="vcard" href="https://studio33club.com/2025/05/15/giorgio-poi-e-luca-marinelli-in-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=500%2C489&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Maggio</span><span data-lang="en">May</span> 2025</div><div class="vname">Giorgio Poi &amp; Luca Marinelli</div><div class="vdate"><span data-lang="it">Videoclip "Solo per Gioco" · Bomba Dischi</span><span data-lang="en">Music video "Solo per Gioco" · Bomba Dischi</span></div></div></a>
-      <a class="vcard" href="https://studio33club.com/2025/10/28/jeremiah-chiu-marta-sofia-honer-live/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=500%2C281&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Ottobre</span><span data-lang="en">October</span> 2025</div><div class="vname">Jeremiah Chiu &amp; Marta Sofia Honer</div><div class="vdate">Live · International Anthem</div></div></a>
+      <a class="vcard" href="https://studio33club.com/2025/06/05/alex-britti-a-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span> 2025</div><div class="vname">Alex Britti</div></div></a>
+      <a class="vcard" href="https://studio33club.com/2025/05/15/giorgio-poi-e-luca-marinelli-in-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=500%2C489&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Maggio</span><span data-lang="en">May</span> 2025</div><div class="vname">Giorgio Poi &amp; Luca Marinelli</div></div></a>
+      <a class="vcard" href="https://studio33club.com/2025/10/28/jeremiah-chiu-marta-sofia-honer-live/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=500%2C281&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Ottobre</span><span data-lang="en">October</span> 2025</div><div class="vname">Jeremiah Chiu &amp; Marta Sofia Honer</div></div></a>
     </div>
   </section>
 
   <div class="col3" style="border-top:var(--bd)">
-    <div style="padding:2.5rem 2rem;border-right:var(--bds)"><p style="font-family:var(--fd);font-size:1rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,0.95);margin-bottom:1rem">"A stunning audio club and recording space… Beautifully designed. Featuring select OMA and Fleetwood Sound loudspeakers."</p><div class="lbl">Oswalds Mill Audio · @oswaldsmill · 2020</div></div>
-    <div style="padding:2.5rem 2rem;border-right:var(--bds)"><p style="font-family:var(--fd);font-size:1rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,0.95);margin-bottom:1rem">"<span data-lang="it">Una supernova musicale nel cuore di Trastevere — dove la cura per il suono diventa filosofia di spazio.</span><span data-lang="en">A musical supernova in the heart of Trastevere — where care for sound becomes a philosophy of space.</span>"</p><div class="lbl">Zero.eu · 2020</div></div>
-    <div style="padding:2.5rem 2rem"><p style="font-family:var(--fd);font-size:1rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,0.95);margin-bottom:1rem">"<span data-lang="it">Record a record — lo studio romano che reinventa l'esperienza dell'ascolto hi-end in Italia.</span><span data-lang="en">Record a record — the Roman studio reinventing the hi-end listening experience in Italy.</span>"</p><div class="lbl">Monocle Magazine · 2022</div></div>
+    <div style="padding:2.5rem 2rem;border-right:var(--bds)"><p style="font-family:var(--fd);font-size:1.21rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,.82);margin-bottom:1rem">"A stunning audio club and recording space… Beautifully designed. Featuring select OMA and Fleetwood Sound loudspeakers."</p><div class="lbl">Oswalds Mill Audio · @oswaldsmill · 2020</div></div>
+    <div style="padding:2.5rem 2rem;border-right:var(--bds)"><p style="font-family:var(--fd);font-size:1.21rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,.82);margin-bottom:1rem">"<span data-lang="it">Una supernova musicale nel cuore di Trastevere — dove la cura per il suono diventa filosofia di spazio.</span><span data-lang="en">A musical supernova in the heart of Trastevere — where care for sound becomes a philosophy of space.</span>"</p><div class="lbl">Zero.eu · 2020</div></div>
+    <div style="padding:2.5rem 2rem"><p style="font-family:var(--fd);font-size:1.21rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,.82);margin-bottom:1rem">"<span data-lang="it">Record a record — lo studio romano che reinventa l'esperienza dell'ascolto hi-end in Italia.</span><span data-lang="en">Record a record — the Roman studio reinventing the hi-end listening experience in Italy.</span>"</p><div class="lbl">Monocle Magazine · 2022</div></div>
   </div>
 
   <div class="col2" style="border-top:var(--bd)">
     <div style="padding:3rem 3rem;border-right:var(--bd)">
       <div class="lbl" style="margin-bottom:1.4rem">Press Kit</div>
-      <h2 style="font-family:var(--fd);font-size:1.4rem;font-weight:400;line-height:1.25;color:var(--w);margin-bottom:.8rem">
-        <span data-lang="it">Materiali per<br><em style="font-style:italic;color:rgba(26,26,26,0.9)">la stampa.</em></span>
-        <span data-lang="en">Materials for<br><em style="font-style:italic;color:rgba(26,26,26,0.9)">the press.</em></span>
+      <h2 style="font-family:var(--fd);font-size:1.694rem;font-weight:400;line-height:1.25;color:var(--w);margin-bottom:.8rem">
+        <span data-lang="it">Materiali per<br><em style="font-style:italic;color:rgba(26,26,26,.72)">la stampa.</em></span>
+        <span data-lang="en">Materials for<br><em style="font-style:italic;color:rgba(26,26,26,.72)">the press.</em></span>
       </h2>
-      <p style="font-size:14.5px;line-height:1.78;color:rgba(26,26,26,0.95);font-family:var(--fb);margin-bottom:1.8rem;margin-top:.8rem">
+      <p style="font-size:17.6px;line-height:1.78;color:rgba(26,26,26,.82);font-family:var(--fb);margin-bottom:1.8rem;margin-top:.8rem">
         <span data-lang="it">Per richieste di interviste, articoli, shooting e collaborazioni editoriali contattare la redazione. Il PDF di Monocle è disponibile per download immediato.</span>
         <span data-lang="en">For interview requests, articles, shooting and editorial collaborations, contact the press office. The Monocle PDF is available for immediate download.</span>
       </p>
@@ -2084,15 +2247,15 @@ body.lang-en [data-lang="block-it"]{display:none}
     </div>
     <div style="padding:3rem 3rem;display:flex;flex-direction:column;gap:1rem;justify-content:center">
       <div class="lbl" style="margin-bottom:.5rem">Download</div>
-      <a class="dl-file" href="https://studio33club.com/wp-content/uploads/2022/02/Monocle_Record-a-record_Studio-33.pdf" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf dl-icon" aria-hidden="true"></i><div><div class="dl-fname">Monocle — Record a record</div><div class="dl-fmeta">PDF · <span data-lang="it">Articolo originale</span><span data-lang="en">Original article</span> · 2022</div></div><i class="ti ti-download" style="font-size:16px;color:rgba(26,26,26,0.95)" aria-hidden="true"></i></a>
-      <a class="dl-file" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf dl-icon" aria-hidden="true"></i><div><div class="dl-fname">Studio 33 — Location Kit EN</div><div class="dl-fmeta">PDF · <span data-lang="it">Scheda tecnica</span><span data-lang="en">Technical sheet</span> · 2026</div></div><i class="ti ti-download" style="font-size:16px;color:rgba(26,26,26,0.95)" aria-hidden="true"></i></a>
+      <a class="dl-file" href="https://studio33club.com/wp-content/uploads/2022/02/Monocle_Record-a-record_Studio-33.pdf" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf dl-icon" aria-hidden="true"></i><div><div class="dl-fname">Monocle — Record a record</div><div class="dl-fmeta">PDF · <span data-lang="it">Articolo originale</span><span data-lang="en">Original article</span> · 2022</div></div><i class="ti ti-download" style="font-size:19.4px;color:rgba(26,26,26,.82)" aria-hidden="true"></i></a>
+      <a class="dl-file" href="https://studio33club.com/wp-content/uploads/2026/04/Studio33-location-kit-EN.pdf" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf dl-icon" aria-hidden="true"></i><div><div class="dl-fname">Studio 33 — Location Kit EN</div><div class="dl-fmeta">PDF · <span data-lang="it">Scheda tecnica</span><span data-lang="en">Technical sheet</span> · 2026</div></div><i class="ti ti-download" style="font-size:19.4px;color:rgba(26,26,26,.82)" aria-hidden="true"></i></a>
     </div>
   </div>
 
   <div class="cta-bar">
     <p class="cta-text">Press relations — <em>shout@studio33club.com</em></p>
     <a class="btn" href="mailto:shout@studio33club.com">
-      <i class="ti ti-mail" style="font-size:13px" aria-hidden="true"></i>
+      <i class="ti ti-mail" style="font-size:15.7px" aria-hidden="true"></i>
       <span data-lang="it">Contatta la redazione</span><span data-lang="en">Contact press office</span>
     </a>
   </div>
@@ -2109,31 +2272,31 @@ body.lang-en [data-lang="block-it"]{display:none}
 .book-form-col{padding:3.5rem 3rem;border-right:var(--bd)}
 .book-info-col{padding:3.5rem 3rem}
 .bk-field{margin-bottom:1.4rem}
-.bk-label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,.5);margin-bottom:.5rem}
-.bk-input,.bk-select,.bk-textarea{width:100%;background:#fff;border:.5px solid rgba(26,26,26,.2);color:var(--w);font-family:var(--fb);font-size:15px;padding:.75rem 1rem;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
+.bk-label{display:block;font-size:12.1px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,0.72);margin-bottom:.5rem}
+.bk-input,.bk-select,.bk-textarea{width:100%;background:#fff;border:.5px solid rgba(26,26,26,0.42);color:var(--w);font-family:var(--fb);font-size:16.5px;padding:.75rem 1rem;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
 .bk-input:focus,.bk-select:focus,.bk-textarea:focus{outline:none;border-color:rgba(26,26,26,.55)}
-.bk-input::placeholder,.bk-textarea::placeholder{color:rgba(26,26,26,.3)}
+.bk-input::placeholder,.bk-textarea::placeholder{color:rgba(26,26,26,0.52)}
 .bk-textarea{resize:vertical;min-height:110px;line-height:1.6}
 .bk-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='1' fill='none' opacity='.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-color:#fff;padding-right:2.5rem;cursor:pointer}
 .bk-select option{background:#fff;color:#1a1a1a}
 .bk-row-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.bk-submit{width:100%;background:var(--w);color:#fff;font-family:var(--fb);font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:background .2s;margin-top:.5rem}
-.bk-submit:hover{background:rgba(26,26,26,.85)}
+.bk-submit{width:100%;background:var(--w);color:#fff;font-family:var(--fb);font-size:13.2px;letter-spacing:.2em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:background .2s;margin-top:.5rem}
+.bk-submit:hover{background:rgba(26,26,26,0.85)}
 .bk-submit:disabled{opacity:.5;cursor:wait}
-.bk-consent{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:1.4rem;font-size:12.5px;line-height:1.55;color:rgba(26,26,26,.55)}
+.bk-consent{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:1.4rem;font-size:13.8px;line-height:1.55;color:rgba(26,26,26,.55)}
 .bk-consent input{margin-top:.25rem;flex-shrink:0;accent-color:#1a1a1a}
-.bk-success{display:none;padding:2rem;border:.5px solid rgba(26,26,26,.15);background:rgba(26,26,26,.03);text-align:center;margin-top:1.2rem}
+.bk-success{display:none;padding:2rem;border:.5px solid rgba(26,26,26,0.37);background:rgba(26,26,26,.03);text-align:center;margin-top:1.2rem}
 .bk-success.show{display:block}
 .book-info-item{padding:1.1rem 0;border-bottom:.5px solid rgba(26,26,26,.07)}
 .book-info-item:first-child{border-top:.5px solid rgba(26,26,26,.07)}
-.book-info-k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.38);margin-bottom:.35rem}
-.book-info-v{font-size:1rem;color:rgba(26,26,26,.78);line-height:1.5}
-.book-info-v a{border-bottom:.5px solid rgba(26,26,26,.2);padding-bottom:1px;transition:border-color .2s}
+.book-info-k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.6);margin-bottom:.35rem}
+.book-info-v{font-size:1.1rem;color:rgba(26,26,26,0.88);line-height:1.5}
+.book-info-v a{border-bottom:.5px solid rgba(26,26,26,0.42);padding-bottom:1px;transition:border-color .2s}
 .book-info-v a:hover{border-color:var(--w)}
 .book-services{margin-top:2rem;padding:1.5rem;background:var(--nero-s);border:.5px solid rgba(26,26,26,.08)}
-.book-services-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.4);margin-bottom:.8rem}
-.book-services-list{list-style:none;font-size:13px;line-height:1.9;color:rgba(26,26,26,.6)}
-.book-services-list li::before{content:"→";margin-right:.5rem;color:rgba(26,26,26,.25)}
+.book-services-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.62);margin-bottom:.8rem}
+.book-services-list{list-style:none;font-size:14.3px;line-height:1.9;color:rgba(26,26,26,.55)}
+.book-services-list li::before{content:"→";margin-right:.5rem;color:rgba(26,26,26,0.47)}
 @media(max-width:900px){
   .book-hero{padding:2.5rem 1.5rem 2rem}
   .book-grid{grid-template-columns:1fr}
@@ -2145,11 +2308,11 @@ body.lang-en [data-lang="block-it"]{display:none}
 
   <div class="book-hero">
     <div class="lbl" style="margin-bottom:1rem"><span data-lang="it">Prenotazione · Richiesta appuntamento</span><span data-lang="en">Booking · Appointment request</span></div>
-    <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1;color:var(--w);letter-spacing:-.02em;margin-bottom:1rem">
-      <span data-lang="it">Prenota uno spazio,<br>una sessione, <em style="font-style:italic;color:rgba(26,26,26,.5)">un'esperienza.</em></span>
-      <span data-lang="en">Book a space,<br>a session, <em style="font-style:italic;color:rgba(26,26,26,.5)">an experience.</em></span>
+    <h1 style="font-size:clamp(2.2rem,4.0vw,3.3rem);font-weight:300;line-height:1.1;color:var(--w);letter-spacing:-.02em;margin-bottom:1rem">
+      <span data-lang="it">Prenota uno spazio,<br>una sessione, <em style="font-style:italic;color:rgba(26,26,26,0.72)">un'esperienza.</em></span>
+      <span data-lang="en">Book a space,<br>a session, <em style="font-style:italic;color:rgba(26,26,26,0.72)">an experience.</em></span>
     </h1>
-    <p style="font-size:15px;line-height:1.75;color:rgba(26,26,26,.58);max-width:540px">
+    <p style="font-size:16.5px;line-height:1.75;color:rgba(26,26,26,.55);max-width:540px">
       <span data-lang="it">Compila il modulo: ti risponderemo entro 48 ore con disponibilità e preventivo. Per urgenze, contattaci direttamente via WhatsApp.</span>
       <span data-lang="en">Fill in the form: we'll reply within 48 hours with availability and a quote. For urgent requests, contact us directly via WhatsApp.</span>
     </p>
@@ -2222,8 +2385,8 @@ body.lang-en [data-lang="block-it"]{display:none}
         </button>
       </form>
       <div class="bk-success" id="bk-success">
-        <div style="font-size:1.2rem;font-weight:500;color:var(--w);margin-bottom:.5rem"><span data-lang="it">Richiesta inviata.</span><span data-lang="en">Request sent.</span></div>
-        <p style="font-size:14px;color:rgba(26,26,26,.55)"><span data-lang="it">Grazie. Ti risponderemo entro 48 ore all'indirizzo indicato.</span><span data-lang="en">Thank you. We'll reply within 48 hours to the address you provided.</span></p>
+        <div style="font-size:1.32rem;font-weight:500;color:var(--w);margin-bottom:.5rem"><span data-lang="it">Richiesta inviata.</span><span data-lang="en">Request sent.</span></div>
+        <p style="font-size:15.4px;color:rgba(26,26,26,.55)"><span data-lang="it">Grazie. Ti risponderemo entro 48 ore all'indirizzo indicato.</span><span data-lang="en">Thank you. We'll reply within 48 hours to the address you provided.</span></p>
       </div>
     </div>
 
@@ -2261,6 +2424,104 @@ body.lang-en [data-lang="block-it"]{display:none}
 
 </div>
 
+
+<!-- ══════════════════════════ PAGE: VIDEO ══════════════════════════ -->
+<div class="page" id="page-video">
+
+<style>
+.vg-head{padding:5.5rem 3rem 3.5rem;border-bottom:var(--bds)}
+.vg-head h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:200;letter-spacing:-.035em;line-height:1.04;color:var(--w);margin-bottom:1.1rem}
+.vg-head p{font-size:17px;line-height:1.7;color:rgba(26,26,26,.6);max-width:46ch}
+.vg-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.vg-item{display:block;width:100%;text-align:left;background:none;border:none;border-right:var(--bds);border-bottom:var(--bds);padding:0;cursor:pointer;font:inherit;color:inherit}
+.vg-item:last-child{border-right:none}
+.vg-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#f0efed}
+.vg-media img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s ease}
+.vg-item:hover .vg-media img{opacity:.88}
+.vg-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border:1px solid rgba(255,255,255,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .25s ease}
+.vg-item:hover .vg-play{background:rgba(255,255,255,.14)}
+.vg-play::after{content:'';width:0;height:0;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent #fff;margin-left:3px}
+.vg-dur{position:absolute;right:1rem;bottom:1rem;font-size:11px;letter-spacing:.1em;color:#fff;font-variant-numeric:tabular-nums}
+.vg-meta{padding:1.4rem 1.5rem 1.9rem}
+.vg-cat{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.42);margin-bottom:.45rem}
+.vg-title{display:block;font-size:1.05rem;font-weight:400;letter-spacing:-.02em;color:var(--w)}
+
+.vmodal{position:fixed;inset:0;background:rgba(255,255,255,.98);z-index:700;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.vmodal.open{opacity:1;pointer-events:auto}
+.vmodal-inner{position:relative;width:min(420px,92vw)}
+.vmodal video{width:100%;display:block;max-height:84vh;background:#000}
+.vmodal-x{position:absolute;top:-2.6rem;right:0;background:none;border:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.5);cursor:pointer;font-family:var(--fb);padding:0}
+.vmodal-x:hover{color:var(--w)}
+@media(max-width:1100px){.vg-grid{grid-template-columns:repeat(2,1fr)}.vg-item:nth-child(2n){border-right:none}}
+@media(max-width:640px){.vg-grid{grid-template-columns:1fr}.vg-item{border-right:none}.vg-head{padding:3rem 1.5rem 2.2rem}}
+</style>
+
+  <div class="vg-head">
+    <h1><span data-lang="it">Video</span><span data-lang="en">Video</span></h1>
+    <p><span data-lang="it">Spot, reel e frammenti di ciò che accade dentro Studio 33.</span><span data-lang="en">Spots, reels and fragments of what happens inside Studio 33.</span></p>
+  </div>
+
+  <div class="vg-grid">
+      <button class="vg-item" onclick="openVid(0)" aria-label="Vision finds fidelity">
+        <div class="vg-media">
+          <img src="https://bernardini250576.github.io/studio33/video-spot.jpg" alt="Vision finds fidelity — Studio 33" loading="lazy">
+          <span class="vg-play"></span>
+          <span class="vg-dur">0:30</span>
+        </div>
+        <div class="vg-meta">
+          <span class="vg-cat"><span data-lang="it">Spot</span><span data-lang="en">Spot</span></span>
+          <span class="vg-title"><span data-lang="it">Vision finds fidelity</span><span data-lang="en">Vision finds fidelity</span></span>
+        </div>
+      </button>
+      <button class="vg-item" onclick="openVid(1)" aria-label="Shooting">
+        <div class="vg-media">
+          <img src="https://bernardini250576.github.io/studio33/video-shooting.jpg" alt="Shooting — Studio 33" loading="lazy">
+          <span class="vg-play"></span>
+          <span class="vg-dur">0:26</span>
+        </div>
+        <div class="vg-meta">
+          <span class="vg-cat"><span data-lang="it">Location</span><span data-lang="en">Location</span></span>
+          <span class="vg-title"><span data-lang="it">Shooting</span><span data-lang="en">Shooting</span></span>
+        </div>
+      </button>
+      <button class="vg-item" onclick="openVid(2)" aria-label="Musica">
+        <div class="vg-media">
+          <img src="https://bernardini250576.github.io/studio33/video-musica.jpg" alt="Musica — Studio 33" loading="lazy">
+          <span class="vg-play"></span>
+          <span class="vg-dur">0:25</span>
+        </div>
+        <div class="vg-meta">
+          <span class="vg-cat"><span data-lang="it">Live</span><span data-lang="en">Live</span></span>
+          <span class="vg-title"><span data-lang="it">Musica</span><span data-lang="en">Music</span></span>
+        </div>
+      </button>
+      <button class="vg-item" onclick="openVid(3)" aria-label="Eventi">
+        <div class="vg-media">
+          <img src="https://bernardini250576.github.io/studio33/video-eventi.jpg" alt="Eventi — Studio 33" loading="lazy">
+          <span class="vg-play"></span>
+          <span class="vg-dur">0:26</span>
+        </div>
+        <div class="vg-meta">
+          <span class="vg-cat"><span data-lang="it">Eventi</span><span data-lang="en">Events</span></span>
+          <span class="vg-title"><span data-lang="it">Eventi</span><span data-lang="en">Events</span></span>
+        </div>
+      </button>
+  </div>
+
+  <div class="cta-bar">
+    <p class="cta-text"><span data-lang="it">Realizziamo video per <em>il tuo progetto.</em></span><span data-lang="en">We make video for <em>your project.</em></span></p>
+    <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Parliamone →</span><span data-lang="en">Let's talk →</span></a>
+  </div>
+
+</div>
+
+<div class="vmodal" id="vmodal" onclick="if(event.target===this)closeVid()">
+  <div class="vmodal-inner">
+    <button class="vmodal-x" onclick="closeVid()">✕ <span data-lang="it">Chiudi</span><span data-lang="en">Close</span></button>
+    <video id="vplayer" controls playsinline preload="none"></video>
+  </div>
+</div>
+
 </main>
 
 <footer class="footer" style="flex-direction:column;align-items:stretch;gap:1.2rem;padding-bottom:5rem">
@@ -2272,7 +2533,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       <li><a href="https://studio33club.com/" target="_blank" rel="noopener"><span data-lang="it">Sito ufficiale</span><span data-lang="en">Official site</span></a></li>
     </ul>
   </div>
-  <div style="font-family:var(--fb);font-size:10.5px;line-height:1.7;color:rgba(26,26,26,0.67);border-top:.5px solid rgba(26,26,26,0.27);padding-top:1rem">
+  <div style="font-family:var(--fb);font-size:11.6px;line-height:1.7;color:rgba(26,26,26,0.77);border-top:.5px solid rgba(26,26,26,0.49);padding-top:1rem">
     <span data-lang="it">Bozza dimostrativa di restyling — non affiliata né approvata ufficialmente. Immagini e contenuti © dei rispettivi proprietari, mostrati a solo scopo illustrativo. Questa anteprima non raccoglie dati personali, non usa cookie e non effettua profilazione. Risorse esterne (Google Fonts, jsDelivr, WordPress.com CDN) sono caricate per il rendering e possono registrare l'indirizzo IP secondo le rispettive informative privacy.</span>
     <span data-lang="en">Demonstration restyling draft — not officially affiliated or approved. Images and content © their respective owners, shown for illustrative purposes only. This preview collects no personal data, uses no cookies and performs no profiling. External resources (Google Fonts, jsDelivr, WordPress.com CDN) are loaded for rendering and may log your IP address per their respective privacy policies.</span>
   </div>
@@ -2340,40 +2601,27 @@ function showPage(id) {
 showPage('home');
 setLang('it');
 
-// ── VIDEO REEL MODAL ──
-var videoData = [{"mp4": "", "title": "Studio 33 — Spot 30\"", "over100": true}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_SHOOTING_MASTER.mp4", "title": "Reel Shooting", "over100": false}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_EVENTI_MASTER_HD.mp4", "title": "Reel Eventi", "over100": false}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_MUSICA_MASTER_HD.mp4", "title": "Reel Musica", "over100": false}];
-function openVideoModal(idx) {
-  var v = videoData[idx];
-  if(v.over100 || !v.mp4) {
-    alert('Video disponibile offline — contattaci per riceverlo.');
+// ── VIDEO PAGE ──
+var vidList = [{"mp4": "", "over": true}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_SHOOTING_MASTER.mp4", "over": false}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_MUSICA_MASTER_HD.mp4", "over": false}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_EVENTI_MASTER_HD.mp4", "over": false}];
+function openVid(i){
+  var v = vidList[i];
+  if(v.over || !v.mp4){
+    alert(document.body.classList.contains('lang-en')
+      ? 'This video is available on request — contact us.'
+      : 'Questo video è disponibile su richiesta — contattaci.');
     return;
   }
-  var modal = document.getElementById('videoModal');
-  var player = document.getElementById('modalVideo');
-  player.src = v.mp4;
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  player.play().catch(function(){});
+  var m = document.getElementById('vmodal'), p = document.getElementById('vplayer');
+  p.src = v.mp4; m.classList.add('open'); document.body.style.overflow='hidden';
+  p.play().catch(function(){});
 }
-function closeVideoModal() {
-  var modal = document.getElementById('videoModal');
-  var player = document.getElementById('modalVideo');
-  player.pause();
-  player.src = '';
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
+function closeVid(){
+  var m = document.getElementById('vmodal'), p = document.getElementById('vplayer');
+  p.pause(); p.removeAttribute('src'); p.load();
+  m.classList.remove('open'); document.body.style.overflow='';
 }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVideoModal(); });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVid(); });
 
-
-// Back to top
-(function(){
-  var btn = document.getElementById('btt');
-  if(!btn) return;
-  window.addEventListener('scroll', function(){
-    btn.classList.toggle('show', window.scrollY > 400);
-  }, {passive:true});
-})();
 
 
 // ── BOOKING FORM ──
@@ -2443,7 +2691,7 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
       <span class="proj-modal-date" id="projModalDate"></span>
       <p class="proj-modal-desc" id="projModalDesc"></p>
       <a class="proj-modal-link" id="projModalLink" href="#" target="_blank" rel="noopener">
-        <i class="ti ti-external-link" style="font-size:12px"></i>
+        <i class="ti ti-external-link" style="font-size:13.2px"></i>
         <span data-lang="it">Vai alla pagina originale</span><span data-lang="en">View original page</span>
       </a>
     </div>
@@ -2469,7 +2717,7 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
 </body>
 </html>
     <div style="border-top:var(--bds);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
-      <p style="font-size:15px;color:rgba(26,26,26,.58);font-family:var(--fb);max-width:480px">
+      <p style="font-size:16.5px;color:rgba(26,26,26,.55);font-family:var(--fb);max-width:480px">
         <span data-lang="it">La stessa cura che Monocle e NPR hanno raccontato — disponibile per il tuo prossimo progetto.</span>
         <span data-lang="en">The same quality that Monocle and NPR have written about — available for your next project.</span>
       </p>
