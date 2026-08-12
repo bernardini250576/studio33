@@ -438,8 +438,38 @@ body.lang-en [data-lang="block-it"]{display:none}
 #btt.show{opacity:1;pointer-events:auto}
 #btt:hover{background:var(--nero-s)}
 #btt svg{width:14px;height:14px;stroke:rgba(26,26,26,.5);fill:none;stroke-width:2}
+
+/* ── VIDEO REEL SECTION ── */
+.reel-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--bd)}
+.reel-card{position:relative;overflow:hidden;cursor:pointer;border-right:var(--bds);aspect-ratio:9/16;background:#0a0a0a}
+.reel-card:last-child{border-right:none}
+.reel-thumb{width:100%;height:100%;object-fit:cover;filter:brightness(.72);transition:filter .4s,transform .5s}
+.reel-card:hover .reel-thumb{filter:brightness(.9);transform:scale(1.03)}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border:.5px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);transition:background .2s,transform .2s;z-index:3}
+.reel-card:hover .reel-play{background:rgba(0,0,0,.6);transform:translate(-50%,-50%) scale(1.1)}
+.reel-play::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent rgba(255,255,255,.9);margin-left:3px}
+.reel-info{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.65));z-index:2}
+.reel-tag{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);display:block;margin-bottom:.25rem}
+.reel-title{font-size:.9rem;font-weight:500;color:#fff;line-height:1.2;letter-spacing:-.01em}
+
+/* Modale video */
+.video-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:600;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.video-modal-overlay.open{opacity:1;pointer-events:auto}
+.video-modal{position:relative;width:min(900px,95vw)}
+.video-modal video{width:100%;display:block;max-height:85vh;object-fit:contain}
+.video-modal-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,.6);font-size:13px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:color .2s}
+.video-modal-close:hover{color:#fff}
+@media(max-width:900px){
+  .reel-grid{grid-template-columns:1fr 1fr}
+  .reel-card:nth-child(2n){border-right:none}
+  .reel-card:nth-child(n+3){border-top:var(--bds)}
+}
+@media(max-width:480px){
+  .reel-grid{grid-template-columns:1fr}
+  .reel-card{border-right:none;border-bottom:var(--bds);aspect-ratio:16/9}
+}
 </style>
-<link rel="preload" as="image" href="https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_001-Grande.png?resize=1600%2C1060&ssl=1" fetchpriority="high">
+<link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -549,7 +579,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 <div class="page active" id="page-home">
 
   <section class="hero" style="height:92vh;min-height:600px;max-height:900px">
-    <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.08) 0%,rgba(10,10,10,.52) 100%),url('https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_001-Grande.png?resize=1600%2C1060&ssl=1') center/cover"></div>
+    <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.08) 0%,rgba(10,10,10,.52) 100%),url('https://bernardini250576.github.io/studio33/home-hero.jpg') center/cover"></div>
     <div class="hero-body" style="max-width:760px">
       <div class="hero-tag"><span data-lang="it">Trastevere, Roma — dal 2021</span><span data-lang="en">Trastevere, Rome — since 2021</span></div>
       <h1 class="hero-h1">Vision<br>finds <em>fidelity.</em></h1>
@@ -565,7 +595,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 
   <section class="panels">
     <a class="panel" href="#" onclick="showPage('audio');return false">
-      <div class="panel-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/IMG_2836_web.jpg?resize=900%2C600&ssl=1')"></div>
+      <div class="panel-bg" style="background-image:url('https://bernardini250576.github.io/studio33/prod-panel.jpg')"></div>
       <div class="panel-content">
         <div class="panel-tag">Hi-End Audio</div>
         <h2 class="panel-title">Oswalds Mill<br>Audio System</h2>
@@ -740,7 +770,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 
   <!-- HERO -->
   <section class="ha-hero">
-    <div class="ha-hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-BK805.jpeg?resize=1400%2C1018&ssl=1" style=""></div>
+    <div class="ha-hero-bg" data-bg="https://bernardini250576.github.io/studio33/audio-hero.jpg" style=""></div>
     <div class="ha-hero-body">
       <div class="hero-tag"><span data-lang="it">Hi-End Audio · Trastevere, Roma</span><span data-lang="en">Hi-End Audio · Trastevere, Rome</span></div>
       <h1 class="hero-h1"><span data-lang="it">Una boutique<br>del suono,<br><em>curata da noi.</em></span><span data-lang="en">A sound boutique,<br>curated<br><em>by us.</em></span></h1>
@@ -1319,7 +1349,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 
   <!-- HERO -->
   <section class="hero" style="height:65vh;min-height:420px">
-    <div class="hero-bg" data-bg="https://studio33club.com/wp-content/uploads/2025/12/93BAAF71-099C-45C1-9326-3F9BF2290312.jpeg" style=""></div>
+    <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/prod-hero.jpg" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Produzione Audio &amp; Video · Roma Trastevere</span><span data-lang="en">Audio &amp; Video Production · Rome Trastevere</span></div>
       <h1 class="hero-h1">
@@ -1361,6 +1391,55 @@ body.lang-en [data-lang="block-it"]{display:none}
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:var(--bds)">
         <a class="btn" href="mailto:shout@studio33club.com"><span data-lang="it">Richiedi un preventivo</span><span data-lang="en">Request a quote</span></a>
       </div>
+    </div>
+  </div>
+
+  <!-- SEZIONE REEL VIDEO -->
+  <div style="border-top:var(--bd)">
+    <div class="sec-header" style="padding:2rem 3rem 1.5rem">
+      <div class="lbl"><span data-lang="it">Video · Reel e spot</span><span data-lang="en">Video · Reels and spots</span></div>
+    </div>
+    <div class="reel-grid">
+    <div class="reel-card" onclick="openVideoModal(0)" role="button" tabindex="0">
+      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/spot-thumb.jpg" alt="Studio 33 — Spot 30"" loading="lazy">
+      <div class="reel-play"></div>
+      <div class="reel-info">
+        <span class="reel-tag">SPOT</span>
+        <div class="reel-title"><span data-lang="it">Studio 33 — Spot 30"</span><span data-lang="en">Studio 33 — 30" Spot</span></div>
+      </div>
+    </div>
+    <div class="reel-card" onclick="openVideoModal(1)" role="button" tabindex="0">
+      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/shooting-thumb.jpg" alt="Reel Shooting" loading="lazy">
+      <div class="reel-play"></div>
+      <div class="reel-info">
+        <span class="reel-tag">LOCATION</span>
+        <div class="reel-title"><span data-lang="it">Reel Shooting</span><span data-lang="en">Shooting Reel</span></div>
+      </div>
+    </div>
+    <div class="reel-card" onclick="openVideoModal(2)" role="button" tabindex="0">
+      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/eventi-thumb.jpg" alt="Reel Eventi" loading="lazy">
+      <div class="reel-play"></div>
+      <div class="reel-info">
+        <span class="reel-tag">EVENTI</span>
+        <div class="reel-title"><span data-lang="it">Reel Eventi</span><span data-lang="en">Events Reel</span></div>
+      </div>
+    </div>
+    <div class="reel-card" onclick="openVideoModal(3)" role="button" tabindex="0">
+      <img class="reel-thumb" src="https://bernardini250576.github.io/studio33/musica-thumb.jpg" alt="Reel Musica" loading="lazy">
+      <div class="reel-play"></div>
+      <div class="reel-info">
+        <span class="reel-tag">MUSICA</span>
+        <div class="reel-title"><span data-lang="it">Reel Musica</span><span data-lang="en">Music Reel</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Modale video -->
+  <div class="video-modal-overlay" id="videoModal" onclick="if(event.target===this)closeVideoModal()">
+    <div class="video-modal">
+      <button class="video-modal-close" onclick="closeVideoModal()">✕ <span data-lang="it">Chiudi</span><span data-lang="en">Close</span></button>
+      <video id="modalVideo" controls playsinline></video>
     </div>
   </div>
 
@@ -1412,7 +1491,7 @@ body.lang-en [data-lang="block-it"]{display:none}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('alex-britti')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('alex-britti')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1')"></div>
+      <div class="proj-img" style="background-image:url('https://bernardini250576.github.io/studio33/resonance-hero.jpg')"></div>
       <div class="proj-body">
         <span class="proj-tag">Live Session</span>
         <h3 class="proj-title">Alex Britti a Studio 33</h3>
@@ -2260,6 +2339,32 @@ function showPage(id) {
 
 showPage('home');
 setLang('it');
+
+// ── VIDEO REEL MODAL ──
+var videoData = [{"mp4": "", "title": "Studio 33 — Spot 30\"", "over100": true}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_SHOOTING_MASTER.mp4", "title": "Reel Shooting", "over100": false}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_EVENTI_MASTER_HD.mp4", "title": "Reel Eventi", "over100": false}, {"mp4": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_MUSICA_MASTER_HD.mp4", "title": "Reel Musica", "over100": false}];
+function openVideoModal(idx) {
+  var v = videoData[idx];
+  if(v.over100 || !v.mp4) {
+    alert('Video disponibile offline — contattaci per riceverlo.');
+    return;
+  }
+  var modal = document.getElementById('videoModal');
+  var player = document.getElementById('modalVideo');
+  player.src = v.mp4;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  player.play().catch(function(){});
+}
+function closeVideoModal() {
+  var modal = document.getElementById('videoModal');
+  var player = document.getElementById('modalVideo');
+  player.pause();
+  player.src = '';
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVideoModal(); });
+
 
 // Back to top
 (function(){
