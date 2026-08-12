@@ -341,22 +341,21 @@ body.lang-en [data-lang="block-it"]{display:none}
 :focus-visible{outline:2px solid rgba(26,26,26,0.75);outline-offset:3px}
 
 /* ── TESTO SOPRA FOTO: sempre bianco ── */
-.hero-body .hero-tag,.hero-body .hero-h1,.hero-body .hero-sub,.hero-body .btn,
-.hero-body .hero-h1 em,.hero-body [style]{color:rgba(255,255,255,.9)!important}
-.hero-body .hero-h1{color:#fff!important}
-.hero-body .hero-h1 em{color:rgba(255,255,255,.65)!important}
-.hero-body .hero-sub{color:rgba(255,255,255,.82)!important}
-.hero-body .hero-tag{color:rgba(255,255,255,.55)!important}
-.hero-body .btn{color:#fff!important;border-bottom-color:rgba(255,255,255,.4)!important}
-.hero-body .pill{color:rgba(255,255,255,.7)!important;border-color:rgba(255,255,255,.3)!important}
-.panel-content *{color:#fff!important}
+
+
+
+
+
+
+
+
 .panel-tag{color:rgba(255,255,255,.55)!important}
-.panel-title{color:#fff!important}
-.panel-link{color:rgba(255,255,255,.7)!important;border-bottom-color:rgba(255,255,255,.3)!important}
-.split-img-ov *{color:rgba(255,255,255,.75)!important}
-.statement-content .statement-text{color:#fff!important}
-.statement-content .statement-text em{color:rgba(255,255,255,.65)!important}
-.statement-content .btn{color:#fff!important;border-bottom-color:rgba(255,255,255,.4)!important}
+
+
+
+
+
+
 .vcontent .vtag{color:rgba(255,255,255,.55)!important}
 .vcontent .vname{color:rgba(255,255,255,.92)!important}
 .vcontent .vdate{color:rgba(255,255,255,.35)!important}
@@ -492,11 +491,7 @@ p,.split-body,.hero-sub,.ha-comp-desc{letter-spacing:-.006em;max-width:68ch}
   image-rendering:auto;backface-visibility:hidden;transform:none!important
 }
 
-/* Overlay foto: solo dove manca il gradiente inline */
-.panel-bg::after,.split-img-bg::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.10) 0%,rgba(0,0,0,.45) 100%)
-}
+
 
 /* Card: bordi netti, nessuna ombra diffusa */
 .proj-card,.press-card,.metric,.space-item,.gear-col{
@@ -553,45 +548,30 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 }
 
 /* ── HERO HI-END AUDIO: testo su foto sempre bianco ── */
-.ha-hero-body .hero-tag{color:rgba(255,255,255,.62)!important}
-.ha-hero-body .hero-h1{color:#fff!important}
-.ha-hero-body .hero-h1 em{color:rgba(255,255,255,.68)!important}
-.ha-hero-body .hero-sub{color:rgba(255,255,255,.88)!important}
-.ha-hero-body p{color:rgba(255,255,255,.88)!important}
-.ha-hero-body .btn{color:#fff!important;border-bottom-color:rgba(255,255,255,.5)!important}
-.ha-hero-body .btn:hover{border-bottom-color:#fff!important}
-.ha-hero-body .pill{color:rgba(255,255,255,.75)!important;border-color:rgba(255,255,255,.35)!important}
-.ha-hero-body .lbl{color:rgba(255,255,255,.62)!important}
+
+
+
+
+
+
+
+
+
 /* Gradiente leggibilità sotto il testo */
-.ha-hero-bg::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.62) 100%)}
+
 
 /* ══════════════════════════════════════════════════════════
    REGOLA UNIVERSALE — testo sopra foto sempre bianco
    Copre ogni contenitore con z-index sopra un'immagine
    ══════════════════════════════════════════════════════════ */
-.hero-body,.ha-hero-body,.panel-content,.vcontent,
-.statement-content,.split-img-ov,.reel-info,.ha-comp-img-ov{
-  color:#fff
-}
-.hero-body *,.ha-hero-body *,.panel-content *,.vcontent *,
-.statement-content *,.split-img-ov *,
-/* Gerarchia leggibilità su foto */
-.hero-body h1,.ha-hero-body h1,.panel-title,.statement-text,
-.reel-title,.vname{color:#fff!important;text-shadow:0 1px 24px rgba(0,0,0,.35)}
-.hero-body h1 em,.ha-hero-body h1 em,.statement-text em{color:rgba(255,255,255,.72)!important}
-.hero-body p,.ha-hero-body p,.hero-sub{color:rgba(255,255,255,.9)!important}
-.hero-tag,.reel-tag,.vtag,.panel-tag,
-.hero-body .lbl,.ha-hero-body .lbl{color:rgba(255,255,255,.66)!important}
-.hero-body .btn,.ha-hero-body .btn,.statement-content .btn,.panel-link{
-  color:#fff!important;border-bottom-color:rgba(255,255,255,.5)!important
-}
-.hero-body .btn:hover,.ha-hero-body .btn:hover,.statement-content .btn:hover{
-  border-bottom-color:#fff!important
-}
-.hero-body .pill,.ha-hero-body .pill{
-  color:rgba(255,255,255,.78)!important;border-color:rgba(255,255,255,.34)!important
-}
+.vcontent{color:#fff}
+.vname{color:#fff}
+
+
+.vtag{color:rgba(255,255,255,.66)!important}
+
+
+
 .ha-comp-img-ov .ha-brand-tag{
   color:rgba(255,255,255,.85)!important;border-color:rgba(255,255,255,.35)!important
 }
@@ -693,6 +673,198 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   .nav{padding:1.2rem 1.5rem}
   #wa-fixed{bottom:1.2rem;right:1.2rem}
 }
+
+/* ══════════════════════════════════════════════════════════
+   MINIMAL RADICALE — foto pulite, testo separato
+   ══════════════════════════════════════════════════════════ */
+
+/* HERO: immagine senza overlay, testo sotto su bianco */
+.hero,.ha-hero{height:auto!important;min-height:0!important;max-height:none!important;
+  display:block;border-bottom:none}
+.hero-bg,.ha-hero-bg{position:relative;inset:auto;width:100%;
+  aspect-ratio:16/9;height:auto;min-height:0;max-height:78vh;
+  background-size:cover;background-position:center;
+  filter:none!important}
+.hero-bg::after,.ha-hero-bg::after,.panel-bg::after,.split-img-bg::after{display:none!important}
+.hero-body,.ha-hero-body{position:static;height:auto;padding:3.5rem 4rem 4.5rem;
+  display:block;color:var(--w)!important;max-width:none!important}
+
+/* Testo hero: nero su bianco, nessuna ombra */
+.hero-body *,.ha-hero-body *{color:inherit!important;text-shadow:none!important}
+.hero-tag,.ha-hero-body .lbl{color:rgba(26,26,26,.42)!important;display:block;margin-bottom:1.4rem}
+.hero-h1{color:var(--w)!important;font-weight:200;max-width:16ch}
+.hero-h1 em{color:rgba(26,26,26,.4)!important}
+.hero-sub{color:rgba(26,26,26,.6)!important;max-width:52ch;margin-top:1.6rem}
+.hero-body .btn,.ha-hero-body .btn{color:var(--w)!important;
+  border-bottom-color:rgba(26,26,26,.28)!important;margin-top:2rem;display:inline-flex}
+.hero-body .btn:hover,.ha-hero-body .btn:hover{border-bottom-color:rgba(26,26,26,.9)!important}
+.hero-pills{margin-top:1.8rem}
+.hero-body .pill,.ha-hero-body .pill{color:rgba(26,26,26,.5)!important;
+  border-color:rgba(26,26,26,.16)!important}
+
+/* PANEL: foto pulita, testo sotto */
+.panels{gap:0}
+.panel{min-height:0;height:auto;border:none}
+.panel-bg{position:relative;inset:auto;width:100%;aspect-ratio:3/2;height:auto;min-height:0;
+  background-size:cover;background-position:center;filter:none!important}
+.panel-content{position:static;height:auto;padding:1.8rem 0 2.6rem;color:var(--w)!important}
+.panel-content *{color:inherit!important;text-shadow:none!important}
+.panel-title{color:var(--w)!important;font-weight:200;font-size:1.5rem;margin-bottom:.9rem}
+.panel-link{color:rgba(26,26,26,.5)!important;border-bottom-color:rgba(26,26,26,.2)!important}
+.panel:hover .panel-link{color:var(--w)!important}
+.panel+.panel{border-left:none}
+.panels>.panel:first-child .panel-content{padding-right:2rem}
+.panels>.panel:last-child .panel-content{padding-left:2rem}
+
+/* SPLIT: immagine piena senza filtri né overlay */
+.split-img{min-height:0;aspect-ratio:4/3}
+.split-img-bg{filter:none!important;position:absolute;inset:0}
+.split-img-ov{display:none}
+
+/* STATEMENT: via la foto di sfondo, solo testo su bianco */
+.statement{height:auto;min-height:0;border-top:var(--bds)}
+.statement-bg{display:none}
+.statement-content{position:static;padding:6rem 4rem;color:var(--w)!important;
+  flex-direction:column;align-items:flex-start;gap:2.5rem}
+.statement-content *{color:inherit!important;text-shadow:none!important}
+.statement-text{color:var(--w)!important;font-weight:200;max-width:22ch}
+.statement-text em{color:rgba(26,26,26,.4)!important}
+.statement-content .btn{color:var(--w)!important;border-bottom-color:rgba(26,26,26,.28)!important}
+
+/* HI-END: schede componente senza filtro sull'immagine */
+.ha-comp-img-bg{filter:none!important}
+.ha-comp-img-ov{display:none}
+.ha-comp-img{min-height:380px}
+
+/* VIDEO CARD (pagina Video): nessun overlay, play discreto */
+.vg-media img{filter:none}
+.vg-play{width:48px;height:48px;border-color:rgba(255,255,255,.9);background:rgba(0,0,0,.12)}
+.vg-item:hover .vg-play{background:rgba(0,0,0,.28)}
+.vg-dur{color:rgba(255,255,255,.85);font-size:10.5px}
+
+/* GALLERY Location: griglia pulita, nessun effetto */
+.loc-gallery-item img{filter:none}
+.loc-gallery{gap:1px;background:rgba(26,26,26,.06)}
+
+/* GRIGLIA progetti: immagini naturali */
+.proj-img{filter:none}
+.proj-card:hover{opacity:.7}
+.proj-card:hover .proj-img{opacity:1}
+
+@media(max-width:900px){
+  .hero-bg,.ha-hero-bg{aspect-ratio:4/3;max-height:none}
+  .hero-body,.ha-hero-body{padding:2.5rem 1.5rem 3rem}
+  .panel-bg{aspect-ratio:3/2}
+  .panel-content{padding:1.4rem 1.5rem 2.2rem!important}
+  .statement-content{padding:3.5rem 1.5rem}
+}
+
+/* ══════════════════════════════════════════════════════════
+   HI-END AUDIO — stesso trattamento della Home
+   Foto in proporzione naturale, nessun crop forzato
+   ══════════════════════════════════════════════════════════ */
+
+/* Schede componente: immagine sopra a proporzione, testo sotto */
+.ha-comp-row{grid-template-columns:1fr 1fr;align-items:start;
+  border-bottom:var(--bds);padding:0 0 4rem}
+.ha-comp-img{position:relative;overflow:hidden;
+  aspect-ratio:4/3;min-height:0!important;height:auto}
+.ha-comp-img-bg{position:absolute;inset:0;
+  background-size:cover;background-position:center;filter:none!important}
+.ha-comp-txt{padding:2.5rem 3.5rem 0;justify-content:flex-start}
+.ha-comp-name{font-weight:200;font-size:1.6rem;margin-bottom:1rem}
+.ha-comp-cat{color:rgba(26,26,26,.42)!important;margin-bottom:.7rem}
+.ha-comp-desc{color:rgba(26,26,26,.62)!important;line-height:1.85}
+.ha-spec-k{color:rgba(26,26,26,.45)!important}
+.ha-spec-v{color:rgba(26,26,26,.78)!important}
+.ha-brand-tag{border-color:rgba(26,26,26,.16)!important;color:rgba(26,26,26,.5)!important}
+
+/* Alternanza: righe pari con immagine a destra */
+.ha-comp-row:nth-child(even) .ha-comp-img{order:2}
+.ha-comp-row:nth-child(even) .ha-comp-txt{order:1;padding:2.5rem 3.5rem 0 4rem}
+
+/* Sorgenti e catena: più aria, meno linee */
+.ha-sources{border-top:var(--bds);border-bottom:var(--bds)}
+.ha-src{padding:3rem 2.6rem;border-right:var(--bds)}
+.ha-src:last-child{border-right:none}
+.ha-src:hover{background:none;opacity:.68}
+.ha-src-icon{color:rgba(26,26,26,.28)!important;margin-bottom:1.2rem}
+.ha-src-name{font-weight:400;margin-bottom:.6rem}
+.ha-src-desc{color:rgba(26,26,26,.58)!important}
+.ha-chain{border-bottom:var(--bds)}
+.ha-chain-node{border-color:rgba(26,26,26,.14)!important;
+  color:rgba(26,26,26,.7)!important;padding:.8rem 1.3rem}
+.ha-chain-node:hover{border-color:rgba(26,26,26,.4)!important;background:none!important}
+.ha-chain-node small{color:rgba(26,26,26,.45)!important}
+.ha-chain-arr{color:rgba(26,26,26,.2)!important}
+
+/* Partner: righe leggere */
+.ha-partner-row{border-bottom:var(--bds);padding:1.2rem 0}
+.ha-partner-name{font-weight:400;color:var(--w)}
+.ha-partner-desc{color:rgba(26,26,26,.58)!important}
+
+@media(max-width:900px){
+  .ha-comp-row{grid-template-columns:1fr;padding-bottom:2.5rem}
+  .ha-comp-img{aspect-ratio:3/2}
+  .ha-comp-txt{padding:2rem 1.5rem 0!important}
+  .ha-comp-row:nth-child(even) .ha-comp-img{order:0}
+  .ha-comp-row:nth-child(even) .ha-comp-txt{order:0}
+  .ha-src{padding:2.2rem 1.5rem;border-right:none;border-bottom:var(--bds)}
+  .ha-chain{padding:2.5rem 1.5rem}
+}
+
+/* ══════════════════════════════════════════════════════════
+   CROP FIX — immagini intere, mai tagliate
+   ══════════════════════════════════════════════════════════ */
+
+/* Loghi e grafiche panoramiche: mostrate per intero */
+.img-contain,.img-contain .hero-bg,
+#page-form .hero-bg{
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-color:#fff;
+  aspect-ratio:auto!important;
+  height:auto!important;
+  min-height:34vh!important;
+  max-height:44vh!important
+}
+
+/* Hero: proporzione più bassa = meno taglio verticale */
+.hero-bg,.ha-hero-bg{aspect-ratio:2/1;max-height:70vh}
+
+/* Panel Home: le foto sono 3:2, uso la stessa proporzione */
+.panel-bg{aspect-ratio:3/2}
+
+/* Schede componente Hi-End: molte foto sono verticali o quadrate.
+   4:3 tagliava troppo → uso 1:1 che si adatta a entrambi i formati */
+.ha-comp-img{aspect-ratio:1/1}
+
+/* Split image (testo affiancato): 4:3 naturale */
+.split-img{aspect-ratio:4/3}
+.split-img-bg{background-size:cover;background-position:center}
+
+/* Gallery Location: le foto sono 4:3, nessun taglio */
+.loc-gallery-item{aspect-ratio:4/3}
+.loc-gallery-item img{object-fit:cover;width:100%;height:100%}
+
+/* Griglia progetti: molte immagini sono banner 550x100 o quadrate.
+   contain su fondo neutro evita di tagliarle */
+
+
+/* Card video: 4:5 verticale, i reel sono 9:16 → poco taglio */
+.vg-media{aspect-ratio:4/5}
+.vg-media img{object-fit:cover}
+
+@media(max-width:900px){
+  .hero-bg,.ha-hero-bg{aspect-ratio:3/2;max-height:none}
+  #page-form .hero-bg{min-height:26vh!important;max-height:32vh!important}
+  .ha-comp-img{aspect-ratio:4/3}
+  .panel-bg{aspect-ratio:3/2}
+}
+
+/* Griglia progetti: loghi panoramici e foto convivono */
+
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
 <script type="application/ld+json">
@@ -806,7 +978,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 <div class="page active" id="page-home">
 
   <section class="hero" style="height:92vh;min-height:600px;max-height:900px">
-    <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.08) 0%,rgba(10,10,10,.52) 100%),url('https://bernardini250576.github.io/studio33/home-hero.jpg') center/cover"></div>
+    <div class="hero-bg" style="background-image:url('https://bernardini250576.github.io/studio33/home-hero.jpg');background-size:cover;background-position:center"></div>
     <div class="hero-body" style="max-width:760px">
       <div class="hero-tag"><span data-lang="it">Trastevere, Roma — dal 2021</span><span data-lang="en">Trastevere, Rome — since 2021</span></div>
       <h1 class="hero-h1">Vision<br>finds <em>fidelity.</em></h1>
@@ -822,14 +994,14 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 
   <section class="panels">
     <a class="panel" href="#" onclick="showPage('audio');return false">
-      <div class="panel-bg" style="background-image:url('https://bernardini250576.github.io/studio33/prod-panel.jpg')"></div>
+      <div class="panel-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_012.jpg?resize=900%2C600&ssl=1')"></div>
       <div class="panel-content">
         <h2 class="panel-title">Oswalds Mill<br>Audio System</h2>
         <span class="panel-link"><span data-lang="it">Listening Room →</span><span data-lang="en">Listening Room →</span></span>
       </div>
     </a>
     <a class="panel" href="#" onclick="showPage('location');return false">
-      <div class="panel-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2022/11/Studio33_012.jpg?resize=900%2C600&ssl=1')"></div>
+      <div class="panel-bg" style="background-image:url('https://bernardini250576.github.io/studio33/prod-panel.jpg')"></div>
       <div class="panel-content">
         <h2 class="panel-title">250 <span data-lang="it">mq</span><span data-lang="en">sqm</span><br><span data-lang="it">a Trastevere</span><span data-lang="en">in Trastevere</span></h2>
         <span class="panel-link"><span data-lang="it">Location Kit →</span><span data-lang="en">Location Kit →</span></span>
@@ -940,16 +1112,16 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 <div class="page" id="page-audio">
 
 <style>
-.ha-hero{position:relative;height:520px;overflow:hidden;border-bottom:var(--bd)}
-.ha-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.82);transition:none}
+.ha-hero{position:relative;display:block;border-bottom:none}
+.ha-hero-bg{position:relative;width:100%;aspect-ratio:16/9;max-height:78vh;background-size:cover;background-position:center;filter:none}
 
-.ha-hero-body{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 3.5rem}
+.ha-hero-body{position:static;display:block;padding:3.5rem 4rem 4.5rem}
 .ha-comp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd)}
-.ha-comp-img{position:relative;overflow:hidden;min-height:320px}
-.ha-comp-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.82);transition:filter .3s ease}
-.ha-comp-row:hover .ha-comp-img-bg{filter:brightness(.9)}
-.ha-comp-img-ov{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:1.8rem 2.5rem}
-.ha-comp-txt{padding:3rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.ha-comp-img{position:relative;overflow:hidden;aspect-ratio:4/3}
+.ha-comp-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:none}
+
+.ha-comp-img-ov{display:none}
+.ha-comp-txt{padding:2.5rem 3.5rem 0;display:flex;flex-direction:column;justify-content:flex-start}
 .ha-comp-cat{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb);margin-bottom:.6rem}
 .ha-comp-name{font-family:var(--fd);font-size:1.87rem;font-weight:400;color:#1a1a1a;margin-bottom:1.2rem;line-height:1.15}
 .ha-comp-desc{font-size:16px;line-height:1.82;color:rgba(26,26,26,.82);font-family:var(--fb)}
@@ -985,7 +1157,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   .ha-comp-name{font-size:1.54rem}
   .ha-hero{height:auto;min-height:420px}
   /* Gear: la riga categoria+contenuto si impila */
-  .ha-comp-row[style*="direction:rtl"]{direction:ltr!important}
+  
 }
 </style>
 
@@ -999,8 +1171,8 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
         <span data-lang="it">Diversi impianti assemblati con un unico fine: rendere l'esperienza d'ascolto fedele al messaggio contenuto nelle registrazioni originali, senza rinunciare alla piacevolezza musicale.</span>
         <span data-lang="en">Several systems assembled with one single purpose: making the listening experience faithful to the message of original recordings, without sacrificing musicality.</span>
       </p>
-      <a class="btn" href="mailto:shout@studio33club.com"><span data-lang="it">Prenota una demo gratuita</span><span data-lang="en">Book a free demo</span></a>
-    <p style="font-size:13.3px;letter-spacing:.08em;color:rgba(255,255,255,.55)!important;margin-top:.8rem;font-family:var(--fb)"><span data-lang="it">Disponibile su prenotazione · calendario aperto</span><span data-lang="en">Available by appointment · calendar open</span></p>
+      <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Prenota una demo gratuita</span><span data-lang="en">Book a free demo</span></a>
+    <p style="font-size:13.3px;letter-spacing:.08em;color:rgba(26,26,26,.45);margin-top:.9rem;font-family:var(--fb)"><span data-lang="it">Disponibile su prenotazione · calendario aperto</span><span data-lang="en">Available by appointment · calendar open</span></p>
     </div>
   </section>
 
@@ -1026,8 +1198,8 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
           <span data-lang="en">Oswalds Mill Audio was born from the belief that the finest audio quality humanity ever created dates to 1930s cinema speaker systems with triode amplifiers — Western Electric and RCA.</span>
         </p>
         <p>
-          <span data-lang="it">I nostri impianti utilizzano diffusori OMA in legno massello con trasduttori custom made di altissima qualità, pilotati da amplificatori a valvole OMA o da amplificatori a stato solido DartZeel — a nostro parere un riferimento assoluto.</span>
-          <span data-lang="en">Our systems use solid-wood OMA loudspeakers with custom high-quality transducers, driven by OMA tube amplifiers or DartZeel solid-state amplifiers — in our view an absolute reference.</span>
+          <span data-lang="it">I nostri impianti utilizzano diffusori OMA in legno massello con trasduttori custom made di altissima qualità, pilotati da amplificatori a valvole OMA — a nostro parere un riferimento assoluto.</span>
+          <span data-lang="en">Our systems use solid-wood OMA loudspeakers with custom high-quality transducers, driven by OMA tube amplifiers — in our view an absolute reference.</span>
         </p>
       </div>
       <a class="btn" href="https://oswaldsmillaudio.com" target="_blank" rel="noopener">
@@ -1037,8 +1209,6 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
     <div style="padding:4rem 3rem;border-left:var(--bd)">
       <div class="lbl" style="margin-bottom:1.4rem"><span data-lang="it">Partner tecnici</span><span data-lang="en">Technical partners</span></div>
       <div class="ha-partner-row"><span class="ha-partner-name">Oswalds Mill Audio</span><span class="ha-partner-desc"><span data-lang="it">Diffusori, amplificatori, giradischi, phono stage — progettati da Jonathan Weiss, DUMBO New York</span><span data-lang="en">Loudspeakers, amplifiers, turntable, phono stage — designed by Jonathan Weiss, DUMBO New York</span></span></div>
-      <div class="ha-partner-row"><span class="ha-partner-name">DartZeel</span><span class="ha-partner-desc"><span data-lang="it">Amplificatori a stato solido svizzeri — riferimento assoluto nella categoria</span><span data-lang="en">Swiss solid-state amplifiers — absolute reference in their category</span></span></div>
-      <div class="ha-partner-row"><span class="ha-partner-name">dCS</span><span class="ha-partner-desc"><span data-lang="it">Conversione digitale Ring DAC™ — Bartók player e DAC di riferimento</span><span data-lang="en">Ring DAC™ digital conversion — Bartók reference player and DAC</span></span></div>
       <div class="ha-partner-row"><span class="ha-partner-name">Studer</span><span class="ha-partner-desc"><span data-lang="it">A812 Reel-to-Reel — riferimento storico per il mastering analogico</span><span data-lang="en">A812 Reel-to-Reel — historic reference for analogue mastering</span></span></div>
       <div class="ha-partner-row"><span class="ha-partner-name">Ayre / Pass / Octave</span><span class="ha-partner-desc"><span data-lang="it">Amplificatori integrati selezionati per completare la gamma d'ascolto</span><span data-lang="en">Integrated amplifiers selected to complete the listening range</span></span></div>
     </div>
@@ -1055,10 +1225,10 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
         <div class="ha-chain-node">Phono Stage<small>OMA PD1</small></div><span class="ha-chain-arr">→</span>
       </div>
       <div style="display:flex;align-items:center;gap:0">
-        <div class="ha-chain-node"><span data-lang="it">Sorgente digitale</span><span data-lang="en">Digital source</span><small>dCS Bartók / Ayre QX-8</small></div><span class="ha-chain-arr">→</span>
+        <div class="ha-chain-node"><span data-lang="it">Sorgente digitale</span><span data-lang="en">Digital source</span><small>Ayre QX-8</small></div><span class="ha-chain-arr">→</span>
       </div>
       <div style="display:flex;align-items:center;gap:0">
-        <div class="ha-chain-node"><span data-lang="it">Amplificatore</span><span data-lang="en">Amplifier</span><small>OMA BK / DartZeel / Pass / Octave</small></div><span class="ha-chain-arr">→</span>
+        <div class="ha-chain-node"><span data-lang="it">Amplificatore</span><span data-lang="en">Amplifier</span><small>OMA BK / Pass / Octave</small></div><span class="ha-chain-arr">→</span>
       </div>
       <div style="display:flex;align-items:center;gap:0">
         <div class="ha-chain-node"><span data-lang="it">Diffusori</span><span data-lang="en">Loudspeakers</span><small>OMA AC1 / Mini / DeVille FSC</small></div>
@@ -1070,8 +1240,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-AC1.jpeg?resize=900%2C720&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">Oswalds Mill Audio · Roma, Trastevere</span></div>
-    </div>
+      </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat"><span data-lang="it">Diffusori da pavimento · Tre vie</span><span data-lang="en">Floorstanding loudspeakers · Three-way</span></div>
       <div class="ha-comp-name">OMA AC1</div>
@@ -1087,11 +1256,10 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   </div>
 
   <!-- COMPONENT: Anatase (reversed) -->
-  <div class="ha-comp-row" style="direction:rtl">
-    <div class="ha-comp-img" style="direction:ltr">
+  <div class="ha-comp-row">
+    <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Anatase.jpeg?resize=900%2C601&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Ardesia della Pennsylvania · 40 kg</span><span data-lang="en">Pennsylvania slate · 40 kg</span></span></div>
-    </div>
+      </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
       <div class="ha-comp-cat"><span data-lang="it">Giradischi · Idle Drive</span><span data-lang="en">Turntable · Idle Drive</span></div>
       <div class="ha-comp-name">Anatase Turntable</div>
@@ -1110,8 +1278,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-BK805-1.jpeg?resize=900%2C652&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Valvola 807 in modalità triodo</span><span data-lang="en">807 valve in triode mode</span></span></div>
-    </div>
+      </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat"><span data-lang="it">Amplificatore · Push/Pull a valvole</span><span data-lang="en">Amplifier · Push/Pull tube</span></div>
       <div class="ha-comp-name">OMA Black Knight</div>
@@ -1125,49 +1292,11 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
     </div>
   </div>
 
-  <!-- COMPONENT: dCS Bartok (reversed) -->
-  <div class="ha-comp-row" style="direction:rtl">
-    <div class="ha-comp-img" style="direction:ltr">
-      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/bar-020-2-scaled-1.jpg?resize=900%2C600&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">dCS Ring DAC™ · Cambridge, UK</span></div>
-    </div>
-    <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
-      <div class="ha-comp-cat">DAC / Streamer</div>
-      <div class="ha-comp-name">dCS Bartók</div>
-      <p class="ha-comp-desc"><span data-lang="it">Player digitale a chassis singolo con il leggendario Ring DAC™. Ascolterete la nostra collezione locale di album hi-res, oltre ai servizi streaming Qobuz e Tidal in alta definizione. Piattaforma Roon Ready.</span><span data-lang="en">Single-chassis digital player with the legendary Ring DAC™. You will hear our local hi-res album collection, plus Qobuz and Tidal high-definition streaming. Roon Ready platform.</span></p>
-      <div class="ha-spec">
-        <div class="ha-spec-row"><span class="ha-spec-k"><span data-lang="it">Tecnologia</span><span data-lang="en">Technology</span></span><span class="ha-spec-v">dCS Ring DAC™</span></div>
-        <div class="ha-spec-row"><span class="ha-spec-k"><span data-lang="it">Formati</span><span data-lang="en">Formats</span></span><span class="ha-spec-v">PCM 384 kHz · DSD128 · MQA</span></div>
-        <div class="ha-spec-row"><span class="ha-spec-k">Streaming</span><span class="ha-spec-v">Roon · Qobuz · Tidal</span></div>
-      </div>
-      <span class="ha-brand-tag">dCS · Cambridge, UK</span>
-    </div>
-  </div>
-
-  <!-- COMPONENT: DartZeel -->
+  <!-- COMPONENT: DeVille FSC (reversed) -->
   <div class="ha-comp-row">
     <div class="ha-comp-img">
-      <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/lhc-208-front-top-left-800x5902-1.png?resize=900%2C663&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Stato solido svizzero · Ginevra</span><span data-lang="en">Swiss solid-state · Geneva</span></span></div>
-    </div>
-    <div class="ha-comp-txt">
-      <div class="ha-comp-cat"><span data-lang="it">Amplificatore integrato · Stato solido</span><span data-lang="en">Integrated amplifier · Solid state</span></div>
-      <div class="ha-comp-name">DartZeel LHC-208</div>
-      <p class="ha-comp-desc"><span data-lang="it">Amplificatore integrato, lettore di rete e DAC ad altissima risoluzione in uno chassis elegante. Il riferimento assoluto nello stato solido ad alto livello — a nostra parere insuperato nella categoria.</span><span data-lang="en">Integrated amplifier, network player and ultra-high-resolution DAC in one elegant chassis. The absolute reference in high-end solid state — in our view unmatched in its category.</span></p>
-      <div class="ha-spec">
-        <div class="ha-spec-row"><span class="ha-spec-k"><span data-lang="it">Tipo</span><span data-lang="en">Type</span></span><span class="ha-spec-v"><span data-lang="it">Integrato d-analogico con streaming e DAC</span><span data-lang="en">D-analogue integrated with streaming and DAC</span></span></div>
-        <div class="ha-spec-row"><span class="ha-spec-k"><span data-lang="it">Origine</span><span data-lang="en">Origin</span></span><span class="ha-spec-v"><span data-lang="it">Svizzera · Ginevra</span><span data-lang="en">Switzerland · Geneva</span></span></div>
-      </div>
-      <span class="ha-brand-tag"><span data-lang="it">DartZeel · Svizzera</span><span data-lang="en">DartZeel · Switzerland</span></span>
-    </div>
-  </div>
-
-  <!-- COMPONENT: DeVille FSC (reversed) -->
-  <div class="ha-comp-row" style="direction:rtl">
-    <div class="ha-comp-img" style="direction:ltr">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/FSC-DeVille-1.jpeg?resize=900%2C1098&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Frassino Pennsylvania torrefatto</span><span data-lang="en">Toasted Pennsylvania ash</span></span></div>
-    </div>
+      </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
       <div class="ha-comp-cat"><span data-lang="it">Diffusori · Due vie da pavimento</span><span data-lang="en">Loudspeakers · Two-way floorstanding</span></div>
       <div class="ha-comp-name">DeVille FSC</div>
@@ -1184,8 +1313,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/OMA-Mini.jpeg?resize=900%2C1125&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">95 dB / 1W / 1m · 144 cm</span></div>
-    </div>
+      </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat"><span data-lang="it">Diffusori · Due vie a tromba</span><span data-lang="en">Loudspeakers · Two-way horn</span></div>
       <div class="ha-comp-name">OMA Mini</div>
@@ -1200,11 +1328,10 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   </div>
 
   <!-- COMPONENT: Studer + OMA PD1 (reversed) -->
-  <div class="ha-comp-row" style="direction:rtl">
-    <div class="ha-comp-img" style="direction:ltr">
+  <div class="ha-comp-row">
+    <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/Studer_A812.jpg?resize=900%2C675&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)">Studer A812 · 1985–1996</span></div>
-    </div>
+      </div>
     <div class="ha-comp-txt" style="direction:ltr;border-right:var(--bd)">
       <div class="ha-comp-cat"><span data-lang="it">Registratore a nastro · Reel-to-Reel</span><span data-lang="en">Tape recorder · Reel-to-Reel</span></div>
       <div class="ha-comp-name">Studer A812</div>
@@ -1221,8 +1348,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   <div class="ha-comp-row">
     <div class="ha-comp-img">
       <div class="ha-comp-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/1_00_Phonostage-signal-chassis.jpg?resize=900%2C678&ssl=1" style=""></div>
-      <div class="ha-comp-img-ov"><span style="font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb)"><span data-lang="it">Noce nero massello + Ardesia levigata</span><span data-lang="en">Solid black walnut + polished slate</span></span></div>
-    </div>
+      </div>
     <div class="ha-comp-txt">
       <div class="ha-comp-cat">Phono Stage · RIAA</div>
       <div class="ha-comp-name">OMA PD1</div>
@@ -1246,7 +1372,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
     <div class="ha-src">
       <i class="ti ti-brand-spotify ha-src-icon" aria-hidden="true"></i>
       <div class="ha-src-name">Qobuz · Tidal Hi-Res</div>
-      <p class="ha-src-desc"><span data-lang="it">Streaming in alta definizione e MQA via dCS Bartók e Ayre QX-8. Database locale di migliaia di album digitali hi-res.</span><span data-lang="en">High-definition and MQA streaming via dCS Bartók and Ayre QX-8. Local database of thousands of hi-res digital albums.</span></p>
+      <p class="ha-src-desc"><span data-lang="it">Streaming in alta definizione e MQA via Ayre QX-8. Database locale di migliaia di album digitali hi-res.</span><span data-lang="en">High-definition and MQA streaming via Ayre QX-8. Local database of thousands of hi-res digital albums.</span></p>
     </div>
     <div class="ha-src">
       <i class="ti ti-player-play ha-src-icon" aria-hidden="true"></i>
@@ -1542,7 +1668,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .proj-card{display:block;color:inherit;border-right:var(--bds);border-bottom:var(--bds);transition:background .18s;cursor:pointer}
 .proj-card:hover{background:rgba(26,26,26,.03)}
 .proj-card:nth-child(4n){border-right:none}
-.proj-img{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;background-color:rgba(26,26,26,.06);filter:grayscale(15%);transition:filter .3s}
+.proj-img{width:100%;aspect-ratio:16/10;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f7f6f4;background-origin:content-box;padding:1.5rem;filter:none}
 .proj-card:hover .proj-img{filter:grayscale(0%)}
 .proj-body{padding:1rem 1.2rem 1.3rem}
 .proj-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,0.6);display:block;margin-bottom:.35rem}
