@@ -979,6 +979,64 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   .hap-grid{grid-template-columns:1fr}
   .hap-item{border-right:none!important}
 }
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE — hardening finale
+   ══════════════════════════════════════════════════════════ */
+html,body{max-width:100%;overflow-x:hidden}
+img,video,iframe{max-width:100%;height:auto}
+
+@media(max-width:900px){
+  /* Nav compatta con logo grande */
+  .nav{padding:.9rem 1.2rem;gap:1rem}
+  .logo-mark{height:30px}
+  .nav-right{gap:.9rem}
+  .nav-lang{font-size:11px;letter-spacing:.14em}
+
+  /* Topbar minima */
+  .topbar{padding:.45rem 1.2rem 0;font-size:10px}
+
+  /* Tipografia proporzionata allo schermo */
+  body{font-size:17.5px;line-height:1.62}
+  .intro h1{font-size:clamp(1.6rem,7vw,2.2rem);max-width:none}
+  .hblock-txt h2,.split-h2{font-size:clamp(1.3rem,5.5vw,1.7rem);max-width:none}
+  .hero-h1{font-size:clamp(1.8rem,8vw,2.4rem)!important;max-width:none}
+  .intro p,.hblock-txt p,.split-body,.hero-sub{font-size:16px;max-width:none}
+
+  /* Padding uniformi ovunque */
+  .intro,.hblock-txt,.happening,.mquote,.clients,.cta-bar,
+  .contact-block,.sec-header,.svc-row,.ticker,.footer,
+  .pp,.vg-head,.bk-hero,.book-form-col,.book-info-col,
+  .ha-chain,.gear-col,.gear-header,.proj-header,.quote-sec{
+    padding-left:1.2rem!important;padding-right:1.2rem!important}
+
+  /* Blocchi che devono impilare senza tagli */
+  .cta-bar{flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .hap-head{flex-direction:column;align-items:flex-start}
+  .clients-list{gap:1.2rem}
+  .clients-list span{font-size:13px}
+
+  /* Tabelle e liste che sbordano */
+  .pp-table{display:block;overflow-x:auto;white-space:nowrap}
+  .gear-list li,.book-services-list li{white-space:normal}
+
+  /* Carosello a tutta larghezza */
+  .carousel{margin-left:-1.2rem;margin-right:-1.2rem;padding-left:1.2rem}
+  .car-item{flex:0 0 78vw}
+
+  /* Form leggibile */
+  .bk-input,.bk-select,.bk-textarea{font-size:16px}
+}
+
+@media(max-width:480px){
+  .nav{padding:.8rem 1rem}
+  .logo-mark{height:28px}
+  .topbar{padding-left:1rem;padding-right:1rem}
+  body{font-size:17px}
+  .clients-list{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .car-item{flex:0 0 84vw}
+  .hslide{aspect-ratio:1/1}
+}
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
 <script type="application/ld+json">
@@ -2479,6 +2537,14 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
       <span data-lang="it">Contatta la redazione</span><span data-lang="en">Contact press office</span>
     </a>
   </div>
+
+<div style="border-top:var(--bds);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+      <p style="font-size:18.2px;color:rgba(26,26,26,.55);font-family:var(--fb);max-width:480px">
+        <span data-lang="it">La stessa cura che Monocle e NPR hanno raccontato — disponibile per il tuo prossimo progetto.</span>
+        <span data-lang="en">The same quality that Monocle and NPR have written about — available for your next project.</span>
+      </p>
+      <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Prenota una visita →</span><span data-lang="en">Book a visit →</span></a>
+    </div>
 </div>
 
 
@@ -3129,10 +3195,3 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
 </div>
 </body>
 </html>
-    <div style="border-top:var(--bds);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
-      <p style="font-size:18.2px;color:rgba(26,26,26,.55);font-family:var(--fb);max-width:480px">
-        <span data-lang="it">La stessa cura che Monocle e NPR hanno raccontato — disponibile per il tuo prossimo progetto.</span>
-        <span data-lang="en">The same quality that Monocle and NPR have written about — available for your next project.</span>
-      </p>
-      <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Prenota una visita →</span><span data-lang="en">Book a visit →</span></a>
-    </div>
