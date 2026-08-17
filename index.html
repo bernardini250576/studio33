@@ -1,4 +1,4 @@
-<!-- VERSIONE 13 · menu Hi-End + Works · 11 video · catalogo servizi completo -->
+<!-- VERSIONE 14 · debug completo: dead code rimosso, lazy-load, a11y, social meta -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,21 +8,34 @@
 <meta name="description" content="Studio 33 a Trastevere, Roma. Impianto Hi-End Audio Oswalds Mill Audio, location per shooting cinematografico, studio di produzione audio e video, scuola di musicoterapia Tékhne. Dal 2021.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: dark)">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Studio 33 Trastevere · Hi-End Audio, Location e Produzione a Roma">
 <meta property="og:description" content="Vision finds fidelity. Hub creativo a Trastevere, Roma.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://bernardini250576.github.io/studio33/home-hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1267">
+<meta property="og:image:alt" content="Studio 33 — la sala di ascolto hi-end a Trastevere, Roma">
+<meta property="og:url" content="https://bernardini250576.github.io/studio33/">
+<meta property="og:site_name" content="Studio 33">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Studio 33 Trastevere · Hi-End Audio, Location e Produzione a Roma">
+<meta name="twitter:description" content="250 mq nel cuore di Trastevere. Hi-end audio, location per produzioni, studio di registrazione e scuola di musicoterapia.">
+<meta name="twitter:image" content="https://bernardini250576.github.io/studio33/home-hero.jpg">
 <meta property="og:locale" content="it_IT">
 <link rel="icon" type="image/png" href="https://bernardini250576.github.io/studio33/logo-33.png">
 <link rel="preconnect" href="https://i0.wp.com" crossorigin>
 <link rel="dns-prefetch" href="https://i0.wp.com">
 <link rel="canonical" href="https://bernardini250576.github.io/studio33/">
 <link rel="preconnect" href="https://rsms.me">
+<link rel="preconnect" href="https://rsms.me" crossorigin>
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <noscript></noscript>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css"></noscript>
 <style>
 /* ============================================================
    STUDIO 33 – RESTYLING BILINGUE IT/EN
@@ -78,9 +91,6 @@ body.lang-en [data-lang="block-it"]{display:none}
 .nav-lang span{cursor:pointer;padding:.1rem .3rem;transition:color .2s;border-bottom:.5px solid transparent}
 .nav-lang span.active{color:var(--w);border-bottom-color:var(--w)}
 
-/* TABBAR */
-.tabbar-inner{display:flex;align-items:stretch;padding:0 3rem;min-width:max-content}
-
 /* HERO */
 .hero{position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:none}
@@ -106,36 +116,15 @@ body.lang-en [data-lang="block-it"]{display:none}
 .metric-title{font-family:var(--fd);font-size:1.065rem;color:rgba(26,26,26,.85);margin-bottom:.3rem}
 .metric-sub{font-size:15.7px;line-height:1.6;color:rgba(26,26,26,.82);font-family:var(--fb)}
 
-/* PANELS */
-.panels{display:grid;grid-template-columns:1fr 1fr;border-top:var(--bd)}
-.panel{position:relative;height:380px;overflow:hidden;cursor:pointer}
-.panel+.panel{border-left:var(--bd)}
-.panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(10%) brightness(.78);transition:filter .3s ease}
-.panel:hover .panel-bg{filter:brightness(.82)}
-.panel-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding:2rem 2.5rem}
-.panel-tag{font-family:var(--fb);font-size:12.1px;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,26,26,0.62);margin-bottom:.5rem}
-.panel-title{font-family:var(--fd);font-size:2.057rem;font-weight:400;color:var(--w);line-height:1.2;margin-bottom:1.1rem}
-.panel-link{font-family:var(--fb);font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.84);border-bottom:.5px solid var(--w20);padding-bottom:2px;display:inline-block}
-
 /* SPLIT */
 .split{display:grid;grid-template-columns:1fr 1fr;border-top:var(--bd)}
 .split-text{padding:4rem 3rem;border-right:var(--bd)}
 .split-img{position:relative;overflow:hidden;min-height:360px}
 .split-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(8%) brightness(.75);transition:none}
-
-.split-img-ov{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 2.5rem}
 .split-h2{font-family:var(--fd);font-size:clamp(1.94rem,3.0vw,2.78rem);font-weight:400;line-height:1.18;color:var(--w);margin-bottom:1.2rem}
 .split-h2 em{font-style:italic;color:var(--w50)}
 .split-body{font-size:19.4px;line-height:1.9;color:rgba(26,26,26,0.86);font-family:var(--fb)}
 .split-body p+p{margin-top:.9rem}
-
-/* SERVICE ROWS */
-.svc-row{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:2rem;padding:1.5rem 3rem;border-bottom:var(--bds);cursor:pointer;transition:background .2s;color:inherit;text-decoration:none}
-.svc-row:hover{background:rgba(26,26,26,.05)}
-.svc-num{font-family:var(--fd);font-size:13.3px;color:rgba(26,26,26,0.42);letter-spacing:.1em}
-.svc-name{font-family:var(--fd);font-size:1.452rem;font-weight:400;color:var(--w)}
-.svc-arr{font-size:18.2px;color:rgba(26,26,26,0.42);transition:transform .2s,color .2s}
-.svc-row:hover .svc-arr{transform:translateX(5px);color:var(--w60)}
 
 /* VIDEO GRID */
 .video-grid{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:var(--bd)}
@@ -143,21 +132,10 @@ body.lang-en [data-lang="block-it"]{display:none}
 .vcard:last-child{border-right:none}
 .vbg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(10%) brightness(.72);transition:filter .3s ease}
 .vcard:hover .vbg{filter:brightness(.82)}
-.vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border:.5px solid rgba(26,26,26,0.68);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;z-index:3}
 .vcard:hover .vplay{opacity:1}
-.vplay::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:7px 0 7px 13px;border-color:transparent transparent transparent rgba(255,255,255,.92);margin-left:3px}
 .vcontent{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding:1.5rem 1.8rem;min-height:250px}
 .vtag{font-family:var(--fb);font-size:12.1px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.84);margin-bottom:.3rem}
 .vname{font-family:var(--fd);font-size:1.21rem;color:rgba(26,26,26,.82);line-height:1.3}
-.vdate{font-family:var(--fb);font-size:13.3px;color:rgba(26,26,26,0.77);margin-top:.3rem}
-
-/* PODCAST EPISODES */
-.ep{display:grid;grid-template-columns:44px 1fr;gap:.9rem;align-items:start;padding:1.2rem 0;border-bottom:var(--bds)}
-.ep:first-of-type{border-top:var(--bds)}
-.ep-n{font-family:var(--fd);font-size:1.21rem;color:rgba(26,26,26,0.8);text-align:center;padding-top:2px}
-.ep-client{font-family:var(--fb);font-size:12.1px;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,26,26,.55);margin-bottom:.22rem}
-.ep-title{font-family:var(--fd);font-size:1.125rem;color:rgba(26,26,26,0.8);line-height:1.4}
-.ep-type{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--fb);font-size:12.1px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,0.77);margin-top:.35rem}
 
 /* PRESS */
 .press-grid{display:grid;grid-template-columns:1fr 1fr 1fr}
@@ -191,18 +169,6 @@ body.lang-en [data-lang="block-it"]{display:none}
 
 /* SHARED SECTIONS */
 .sec-header{display:flex;justify-content:space-between;align-items:baseline;padding:2rem 3rem 1.6rem;border-bottom:var(--bds)}
-.statement{position:relative;height:320px;overflow:hidden;border-top:var(--bd)}
-.statement-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(15%) brightness(.55)}
-.statement-content{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 3rem;gap:3rem}
-.statement-text{font-family:var(--fd);font-size:clamp(1.94rem,3.2vw,2.9rem);font-weight:400;color:var(--w);line-height:1.3;max-width:480px}
-.statement-text em{font-style:italic;color:var(--w50)}
-.quote-sec{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:5rem 3rem;border-top:var(--bd);border-bottom:var(--bd)}
-.quote-sec blockquote{font-family:var(--fd);font-size:clamp(1.81rem,2.8vw,2.42rem);font-weight:400;font-style:italic;line-height:1.45;color:rgba(26,26,26,.82)}
-.quote-attr{font-family:var(--fb);font-size:13.3px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.52);margin-top:1.4rem}
-.ticker{border-top:var(--bds);padding:1.4rem 3rem;display:flex;gap:2.2rem;flex-wrap:wrap;align-items:center;border-bottom:var(--bd)}
-.ticker-item{font-family:var(--fb);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,26,26,0.7);white-space:nowrap;transition:color .2s}
-.ticker-item:hover{color:var(--w50)}
-.ticker-dot{color:rgba(26,26,26,0.32);font-size:10.9px}
 .cta-bar{display:flex;justify-content:space-between;align-items:center;padding:2.8rem 3rem;border-top:var(--bd);border-bottom:var(--bd)}
 .cta-text{font-family:var(--fd);font-size:clamp(1.45rem,2.0vw,1.88rem);font-weight:400;color:rgba(26,26,26,0.86)}
 .cta-text em{font-style:italic;color:var(--w)}
@@ -213,18 +179,8 @@ body.lang-en [data-lang="block-it"]{display:none}
 .tweet-handle{font-size:13.3px;color:rgba(26,26,26,.82);font-family:var(--fb);letter-spacing:.06em}
 .tweet-text{font-family:var(--fd);font-size:1.271rem;font-style:italic;line-height:1.55;color:rgba(26,26,26,.82);margin-bottom:1.2rem}
 .tweet-date{font-size:12.1px;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,26,26,0.77);font-family:var(--fb)}
-.contact-strip{display:grid;grid-template-columns:1fr 1fr;border-top:var(--bd)}
-.contact-block{padding:3rem 3rem}
-.contact-block+.contact-block{border-left:var(--bd)}
-.contact-label{font-family:var(--fb);font-size:12.1px;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,26,26,.82);margin-bottom:1rem}
-.contact-value{font-family:var(--fd);font-size:1.331rem;color:rgba(26,26,26,0.94);line-height:1.7}
-.contact-value a{border-bottom:.5px solid rgba(26,26,26,0.4);padding-bottom:1px;transition:border-color .2s}
-.contact-value a:hover{border-color:var(--w50)}
 .footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:.5px solid rgba(26,26,26,.08)}
 .footer-copy{font-family:var(--fb);font-size:13.3px;letter-spacing:.1em;color:rgba(26,26,26,0.7);text-transform:uppercase}
-.footer-links{display:flex;gap:1.8rem;list-style:none}
-.footer-links a{font-family:var(--fb);font-size:13.3px;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,26,26,0.77);transition:color .2s}
-.footer-links a:hover{color:var(--w50)}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -341,17 +297,6 @@ body.lang-en [data-lang="block-it"]{display:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 :focus-visible{outline:2px solid rgba(26,26,26,0.75);outline-offset:3px}
 
-/* ── TESTO SOPRA FOTO: sempre bianco ── */
-
-
-
-
-
-
-
-
-.panel-tag{color:rgba(255,255,255,.55)!important}
-
 
 
 
@@ -360,7 +305,6 @@ body.lang-en [data-lang="block-it"]{display:none}
 .vcontent .vtag{color:rgba(255,255,255,.55)!important}
 .vcontent .vname{color:rgba(255,255,255,.92)!important}
 .vcontent .vdate{color:rgba(255,255,255,.35)!important}
-.vplay{border-color:rgba(255,255,255,.4)!important}
 
 /* ── BANNER GDPR: mantieni scuro ── */
 #draft-banner{background:rgba(20,20,20,.97)!important}
@@ -389,21 +333,9 @@ body.lang-en [data-lang="block-it"]{display:none}
 .split-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;
               filter:brightness(.78);transition:filter .3s ease}
 .split-img:hover .split-img-bg{filter:brightness(.84)}
-.split-img-ov{position:relative;z-index:2;height:100%;display:flex;
-              flex-direction:column;justify-content:flex-end;padding:2rem 2.5rem}
-.panels{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.panel{position:relative;overflow:hidden;min-height:400px;display:block;text-decoration:none}
-.panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;
-          filter:brightness(.72);transition:filter .3s ease}
-.panel:hover .panel-bg{filter:brightness(.82)}
-.panel-content{position:relative;z-index:2;display:flex;flex-direction:column;
-               justify-content:flex-end;height:100%;padding:2rem 2.5rem}
 @media(max-width:900px){
   .split{grid-template-columns:1fr}
   .split-img{min-height:280px}
-  .panels{grid-template-columns:1fr}
-  .panel{min-height:300px}
-  .panel+.panel{border-top:var(--bd)}
 }
 
 /* ── PROJECT MODAL ── */
@@ -438,36 +370,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 #btt.show{opacity:1;pointer-events:auto}
 #btt:hover{background:var(--nero-s)}
 #btt svg{width:14px;height:14px;stroke:rgba(26,26,26,0.72);fill:none;stroke-width:2}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Modale video */
-.video-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:600;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
 .video-modal-overlay.open{opacity:1;pointer-events:auto}
-.video-modal{position:relative;width:min(900px,95vw)}
-.video-modal video{width:100%;display:block;max-height:85vh;object-fit:contain}
-.video-modal-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,.6);font-size:15.7px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:color .2s}
-.video-modal-close:hover{color:#fff}
-@media(max-width:900px){
-  
-  
-  
-}
-@media(max-width:480px){
-  
-  
-}
 
 /* ══════════════════════════════════════════════════════════
    RAFFINAMENTO TIPOGRAFICO E VISIVO — livello editoriale
@@ -475,20 +378,18 @@ body.lang-en [data-lang="block-it"]{display:none}
 
 /* Tipografia: tracking ottico e leading calibrati */
 body{font-feature-settings:'kern' 1,'liga' 1,'calt' 1;text-rendering:optimizeLegibility;letter-spacing:-.003em}
-h1,h2,h3,.hero-h1,.split-h2,.panel-title,.ha-comp-name,.proj-title{letter-spacing:-.022em;font-weight:400}
+h1, h2, h3, .hero-h1, .split-h2, .ha-comp-name, .proj-title{letter-spacing:-.022em;font-weight:400}
 .hero-h1{letter-spacing:-.032em;line-height:1.02}
 p,.split-body,.hero-sub,.ha-comp-desc{letter-spacing:-.006em;max-width:68ch}
 
 /* Label e micro-testo: tracking ampio per leggibilità */
-.lbl,.badge,.pill,.reel-tag,.proj-tag,.press-outlet,.metric-title,
-.gear-col-title,.book-info-k,.bk-label,.space-name{letter-spacing:.16em;font-weight:500}
+.lbl, .badge, .pill, .proj-tag, .press-outlet, .metric-title, .gear-col-title, .book-info-k, .bk-label, .space-name{letter-spacing:.16em;font-weight:500}
 
 /* Numeri e metriche: allineamento tabellare */
 .metric-n,.space-mq{font-variant-numeric:tabular-nums;letter-spacing:-.04em;font-weight:200}
 
 /* Immagini: rendering nitido, nessun movimento */
-.hero-bg,.panel-bg,.split-img-bg,.vbg,.proj-img,.reel-thumb,
-.ha-comp-img-bg,.loc-gallery-item img,.ha-hero-bg{
+.hero-bg, .split-img-bg, .vbg, .proj-img, .ha-comp-img-bg, .loc-gallery-item img, .ha-hero-bg{
   image-rendering:auto;backface-visibility:hidden;transform:none!important
 }
 
@@ -511,10 +412,10 @@ p,.split-body,.hero-sub,.ha-comp-desc{letter-spacing:-.006em;max-width:68ch}
 
 /* Sezioni: respiro verticale uniforme */
 .sec-header{padding-top:3rem;padding-bottom:1.8rem}
-.split-text,.bk-form-col,.book-info-col{padding-top:4.5rem;padding-bottom:4.5rem}
+.split-text, .book-info-col{padding-top:4.5rem;padding-bottom:4.5rem}
 
 /* Griglie: gutter ottico costante */
-.proj-grid,.reel-grid,.press-grid{gap:0}
+.proj-grid, .press-grid{gap:0}
 .proj-body{padding:1.3rem 1.4rem 1.6rem}
 
 /* Blockquote editoriale */
@@ -576,8 +477,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .ha-comp-img-ov .ha-brand-tag{
   color:rgba(255,255,255,.85)!important;border-color:rgba(255,255,255,.35)!important
 }
-/* Il play button resta bianco su qualunque foto */
-.reel-play,.vplay,.loc-video-play-btn{border-color:rgba(255,255,255,.55)!important}
+.loc-video-play-btn{border-color:rgba(255,255,255,.55)!important}
 
 /* ══════════════════════════════════════════════════════════
    PULIZIA MINIMALISTA — meno linee, più aria, gerarchia netta
@@ -595,11 +495,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .split-text{padding:6rem 4rem}
 .sec-header{padding:4.5rem 4rem 2rem;border-bottom:none}
 .metric{padding:3rem 2.4rem}
-.svc-row{padding:2rem 4rem}
 .cta-bar{padding:4.5rem 4rem}
-.contact-block{padding:4rem}
-.quote-sec{padding:7rem 4rem;gap:5rem}
-.ticker{padding:2rem 4rem}
 .footer{padding:3rem 4rem}
 .ha-comp-txt{padding:4rem 3.5rem}
 .ha-chain{padding:4rem}
@@ -607,7 +503,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .proj-body{padding:1.5rem 1.6rem 2rem}
 
 /* 3. TIPOGRAFIA: pesi leggeri, gerarchia per scala non per decorazione */
-.hero-h1,.split-h2,.panel-title{font-weight:200}
+.hero-h1, .split-h2{font-weight:200}
 .metric-n,.space-mq{font-weight:100;color:rgba(26,26,26,.14)}
 .lbl{color:rgba(26,26,26,.4);letter-spacing:.24em;font-weight:400}
 .split-h2{font-size:clamp(1.87rem,2.6vw,2.64rem);line-height:1.15}
@@ -616,14 +512,13 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .split-body{color:rgba(26,26,26,.62);line-height:1.85}
 
 /* 4. VIA GLI EFFETTI: nessun hover di sfondo, solo opacità */
-.metric:hover,.proj-card:hover,.press-card:hover,.svc-row:hover,
-.ha-src:hover,.space-item:hover{background:none}
-.proj-card:hover .proj-img,.press-card:hover,.svc-row:hover{opacity:.62}
-.proj-card,.press-card,.svc-row,.metric{transition:opacity .22s ease}
+.metric:hover, .proj-card:hover, .press-card:hover, .ha-src:hover, .space-item:hover{background:none}
+.proj-card:hover .proj-img, .press-card:hover{opacity:.62}
+.proj-card, .press-card, .metric{transition:opacity .22s ease}
 
 /* 5. IMMAGINI: nessun filtro grigio, resa naturale */
-.proj-img,.loc-gallery-item img,.vg-media img{filter:none}
-.panel-bg,.split-img-bg,.hero-bg,.ha-hero-bg{filter:none}
+.proj-img, .loc-gallery-item img{filter:none}
+.split-img-bg, .hero-bg, .ha-hero-bg{filter:none}
 
 /* 6. BOTTONI: tratto essenziale */
 .btn{border-bottom:1px solid rgba(26,26,26,.28);padding-bottom:5px;letter-spacing:.22em;font-size:12.1px}
@@ -638,21 +533,11 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .nav-logo{font-size:13.2px;letter-spacing:.3em;font-weight:500}
 
 /* 8. GRIGLIE: separatori interni minimi */
-.proj-grid,.press-grid,.vg-grid{border-top:var(--bds)}
+.proj-grid, .press-grid{border-top:var(--bds)}
 .proj-card,.press-card{border-right:var(--bds);border-bottom:var(--bds)}
 
-/* 9. QUOTE: respiro editoriale */
-.quote-sec blockquote{font-weight:200;font-size:clamp(1.65rem,2.4vw,2.31rem);line-height:1.4}
-.quote-attr{color:rgba(26,26,26,.42);letter-spacing:.24em}
-
 /* 10. FOOTER: silenzioso */
-.footer-copy,.footer-links a{color:rgba(26,26,26,.34);font-size:12.1px;letter-spacing:.12em}
-.footer-links a:hover{color:rgba(26,26,26,.7)}
-
-/* 11. Ticker: discreto */
-.ticker-item{color:rgba(26,26,26,.34);font-size:12.7px;letter-spacing:.16em}
-.ticker-item:hover{color:rgba(26,26,26,.7)}
-.ticker-dot{color:rgba(26,26,26,.16)}
+.footer-copy{color:rgba(26,26,26,.34);font-size:12.1px;letter-spacing:.12em}
 
 /* 12. Via il back-to-top e riduci il WhatsApp */
 #btt{display:none}
@@ -664,13 +549,10 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 
 @media(max-width:900px){
   .hero-body{padding:0 1.5rem 3rem}
-  .split-text,.sec-header,.cta-bar,.contact-block,.quote-sec,
-  .ticker,.footer,.ha-comp-txt,.ha-chain,.gear-col{padding-left:1.5rem;padding-right:1.5rem}
+  .split-text, .sec-header, .cta-bar, .footer, .ha-comp-txt, .ha-chain, .gear-col{padding-left:1.5rem;padding-right:1.5rem}
   .split-text{padding-top:3.5rem;padding-bottom:3.5rem}
   .sec-header{padding-top:3rem;padding-bottom:1.5rem}
-  .quote-sec{padding-top:4rem;padding-bottom:4rem;gap:2.5rem}
   .cta-bar{padding-top:3rem;padding-bottom:3rem}
-  .svc-row{padding:1.5rem}
   .nav{padding:1.2rem 1.5rem}
   #wa-fixed{bottom:1.2rem;right:1.2rem}
 }
@@ -686,7 +568,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   aspect-ratio:16/9;height:auto;min-height:0;max-height:78vh;
   background-size:cover;background-position:center;
   filter:none!important}
-.hero-bg::after,.ha-hero-bg::after,.panel-bg::after,.split-img-bg::after{display:none!important}
+.hero-bg::after, .ha-hero-bg::after, .split-img-bg::after{display:none!important}
 .hero-body,.ha-hero-body{position:static;height:auto;padding:3.5rem 4rem 4.5rem;
   display:block;color:var(--w)!important;max-width:none!important}
 
@@ -703,45 +585,20 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .hero-body .pill,.ha-hero-body .pill{color:rgba(26,26,26,.5)!important;
   border-color:rgba(26,26,26,.16)!important}
 
-/* PANEL: foto pulita, testo sotto */
-.panels{gap:0}
-.panel{min-height:0;height:auto;border:none}
-.panel-bg{position:relative;inset:auto;width:100%;aspect-ratio:3/2;height:auto;min-height:0;
-  background-size:cover;background-position:center;filter:none!important}
-.panel-content{position:static;height:auto;padding:1.8rem 0 2.6rem;color:var(--w)!important}
-.panel-content *{color:inherit!important;text-shadow:none!important}
-.panel-title{color:var(--w)!important;font-weight:200;font-size:1.65rem;margin-bottom:.9rem}
-.panel-link{color:rgba(26,26,26,.5)!important;border-bottom-color:rgba(26,26,26,.2)!important}
-.panel:hover .panel-link{color:var(--w)!important}
-.panel+.panel{border-left:none}
-.panels>.panel:first-child .panel-content{padding-right:2rem}
-.panels>.panel:last-child .panel-content{padding-left:2rem}
+/* PANEL: foto pulita{gap:0}
 
 /* SPLIT: immagine piena senza filtri né overlay */
 .split-img{min-height:0;aspect-ratio:4/3}
 .split-img-bg{filter:none!important;position:absolute;inset:0}
-.split-img-ov{display:none}
 
-/* STATEMENT: via la foto di sfondo, solo testo su bianco */
-.statement{height:auto;min-height:0;border-top:var(--bds)}
-.statement-bg{display:none}
-.statement-content{position:static;padding:6rem 4rem;color:var(--w)!important;
-  flex-direction:column;align-items:flex-start;gap:2.5rem}
-.statement-content *{color:inherit!important;text-shadow:none!important}
-.statement-text{color:var(--w)!important;font-weight:200;max-width:22ch}
-.statement-text em{color:rgba(26,26,26,.4)!important}
+/* STATEMENT: via la foto di sfondo{height:auto;min-height:0;border-top:var(--bds)}
 .statement-content .btn{color:var(--w)!important;border-bottom-color:rgba(26,26,26,.28)!important}
 
 /* HI-END: schede componente senza filtro sull'immagine */
 .ha-comp-img-bg{filter:none!important}
-.ha-comp-img-ov{display:none}
 .ha-comp-img{min-height:380px}
 
-/* VIDEO CARD (pagina Video): nessun overlay, play discreto */
-.vg-media img{filter:none}
-.vg-play{width:48px;height:48px;border-color:rgba(255,255,255,.9);background:rgba(0,0,0,.12)}
-.vg-item:hover .vg-play{background:rgba(0,0,0,.28)}
-.vg-dur{color:rgba(255,255,255,.85);font-size:11.6px}
+/* VIDEO CARD (pagina Video): nessun overlay{filter:none}
 
 /* GALLERY Location: griglia pulita, nessun effetto */
 .loc-gallery-item img{filter:none}
@@ -755,9 +612,6 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 @media(max-width:900px){
   .hero-bg,.ha-hero-bg{aspect-ratio:4/3;max-height:none}
   .hero-body,.ha-hero-body{padding:2.5rem 1.5rem 3rem}
-  .panel-bg{aspect-ratio:3/2}
-  .panel-content{padding:1.4rem 1.5rem 2.2rem!important}
-  .statement-content{padding:3.5rem 1.5rem}
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -823,8 +677,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 /* Hero: proporzione più bassa = meno taglio verticale */
 .hero-bg,.ha-hero-bg{aspect-ratio:2/1;max-height:70vh}
 
-/* Panel Home: le foto sono 3:2, uso la stessa proporzione */
-.panel-bg{aspect-ratio:3/2}
+/* Panel Home: le foto sono 3:2{aspect-ratio:3/2}
 
 /* Schede componente Hi-End: molte foto sono verticali o quadrate.
    4:3 tagliava troppo → uso 1:1 che si adatta a entrambi i formati */
@@ -842,14 +695,11 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
    contain su fondo neutro evita di tagliarle */
 
 
-/* Card video: 4:5 verticale, i reel sono 9:16 → poco taglio */
-.vg-media{aspect-ratio:4/5}
-.vg-media img{object-fit:cover}
+/* Card video: 4:5 verticale{aspect-ratio:4/5}
 
 @media(max-width:900px){
   .hero-bg,.ha-hero-bg{aspect-ratio:3/2;max-height:none}
   .ha-comp-img{aspect-ratio:4/3}
-  .panel-bg{aspect-ratio:3/2}
 }
 
 /* Griglia progetti: loghi panoramici e foto convivono */
@@ -865,8 +715,6 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   .logo-full{display:none}
   .logo-mark{display:block;height:32px}
 }
-/* Favicon-like: logo 33 nel banner e footer */
-.footer-mark{height:20px;width:auto;opacity:.35}
 
 /* ══════════════════════════════════════════════════════════
    NUOVA HOME — carosello, blocchi, happening, quote, clienti
@@ -926,21 +774,12 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.15)}
 .car-play::after{content:'';border-style:solid;border-width:6px 0 6px 10px;
   border-color:transparent transparent transparent #fff;margin-left:3px}
-.car-src,.hap-src{position:absolute;top:.8rem;left:.8rem;font-size:17.6px;color:#fff;
+.car-src{position:absolute;top:.8rem;left:.8rem;font-size:17.6px;color:#fff;
   text-shadow:0 1px 8px rgba(0,0,0,.4);z-index:2}
-.car-meta,.hap-meta{padding:.9rem 1rem 1.4rem}
+.car-meta{padding:.9rem 1rem 1.4rem}
 .car-kind{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(26,26,26,.42);display:block;margin-bottom:.3rem}
 .car-title{font-size:15.4px;line-height:1.4;color:rgba(26,26,26,.8);display:block}
-
-/* Pagina Happening: griglia */
-.hap-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--bds)}
-.hap-item{display:block;border-right:var(--bds);border-bottom:var(--bds);
-  text-decoration:none;color:inherit;transition:opacity .2s}
-.hap-item:hover{opacity:.75}
-.hap-item:nth-child(3n){border-right:none}
-.hap-media{aspect-ratio:1/1;background-size:cover;background-position:center;
-  position:relative;background-color:#f2f1ef}
 
 /* Quote Monocle */
 .mquote{padding:6rem 4rem;border-bottom:var(--bds);
@@ -972,13 +811,6 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
   .hblock-txt{padding:2.5rem 1.5rem}
   .happening{padding-top:3.5rem}
   .mquote{grid-template-columns:1fr;gap:2rem;padding-top:3.5rem;padding-bottom:3.5rem}
-  .hap-grid{grid-template-columns:repeat(2,1fr)}
-  .hap-item:nth-child(3n){border-right:var(--bds)}
-  .hap-item:nth-child(2n){border-right:none}
-}
-@media(max-width:560px){
-  .hap-grid{grid-template-columns:1fr}
-  .hap-item{border-right:none!important}
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1005,10 +837,7 @@ img,video,iframe{max-width:100%;height:auto}
   .intro p,.hblock-txt p,.split-body,.hero-sub{font-size:16px;max-width:none}
 
   /* Padding uniformi ovunque */
-  .intro,.hblock-txt,.happening,.mquote,.clients,.cta-bar,
-  .contact-block,.sec-header,.svc-row,.ticker,.footer,
-  .pp,.vg-head,.bk-hero,.book-form-col,.book-info-col,
-  .ha-chain,.gear-col,.gear-header,.proj-header,.quote-sec{
+  .intro, .hblock-txt, .happening, .mquote, .clients, .cta-bar, .sec-header, .footer, .pp, .book-form-col, .book-info-col, .ha-chain, .gear-col, .gear-header, .proj-header{
     padding-left:1.2rem!important;padding-right:1.2rem!important}
 
   /* Blocchi che devono impilare senza tagli */
@@ -1087,6 +916,12 @@ img,video,iframe{max-width:100%;height:auto}
   .acc summary{font-size:15px;padding-right:1.6rem}
   .acc li{font-size:14px}
 }
+
+/* Skip link — accessibilità tastiera */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:999;background:#1a1a1a;color:#fff;
+  padding:.8rem 1.4rem;font-size:13px;letter-spacing:.1em;text-decoration:none}
+.skip-link:focus{left:0}
+#main:focus{outline:none}
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
 <script type="application/ld+json">
@@ -1138,13 +973,14 @@ img,video,iframe{max-width:100%;height:auto}
     <span data-lang="it"><strong style="color:#1a1a1a;letter-spacing:.05em">ANTEPRIMA / BOZZA</strong> — Restyling non ufficiale a scopo dimostrativo. Questa pagina carica font (Google Fonts), icone (jsDelivr) e immagini (WordPress.com): tali servizi possono ricevere il tuo indirizzo IP. Nessun cookie, tracker o raccolta dati è attivo su questa bozza.</span>
     <span data-lang="en"><strong style="color:#1a1a1a;letter-spacing:.05em">PREVIEW / DRAFT</strong> — Unofficial restyling for demo purposes. This page loads fonts (Google Fonts), icons (jsDelivr) and images (WordPress.com): these services may receive your IP address. No cookies, trackers or data collection are active on this draft.</span>
   </div>
-  <button onclick="document.getElementById('draft-banner').style.display='none';return false" style="flex-shrink:0;font-family:var(--fb);font-size:14.6px;letter-spacing:.2em;text-transform:uppercase;color:#1a1a1a;background:none;border:.5px solid rgba(26,26,26,0.87);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(26,26,26,0.62)'" onmouseout="this.style.borderColor='rgba(26,26,26,0.47)'">
+  <button onclick="document.getElementById('draft-banner').style.display='none';return false" style="flex-shrink:0;font-family:var(--fb);font-size:14.6px;letter-spacing:.2em;text-transform:uppercase;color:#1a1a1a;background:none;border:.5px solid rgba(26,26,26,0.87);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(26,26,26,0.62)'" onmouseout="this.style.borderColor='rgba(26,26,26,0.47)'" aria-label="Chiudi avviso">
     <span data-lang="it">Ho capito</span><span data-lang="en">Got it</span>
   </button>
 </div>
 
 
 <!-- NAV -->
+<a href="#main" class="skip-link">Vai al contenuto</a>
 <div class="topbar"><a href="#" onclick="showPage('privacy');return false">Privacy Policy</a></div>
 <header>
 <nav class="nav">
@@ -1198,7 +1034,7 @@ img,video,iframe{max-width:100%;height:auto}
 </header>
 
 
-<main>
+<main id="main" tabindex="-1">
 
 <!-- ══════════════════════════ PAGE: HOME ══════════════════════════ -->
 <div class="page active" id="page-home">
@@ -1206,13 +1042,13 @@ img,video,iframe{max-width:100%;height:auto}
   <!-- HERO CAROSELLO -->
   <div class="hero-slider">
     <div class="hslide on" style="background-image:url('https://bernardini250576.github.io/studio33/home-hero.jpg')"></div>
-    <div class="hslide" style="background-image:url('https://bernardini250576.github.io/studio33/slide-lounge.jpg')"></div>
-    <div class="hslide" style="background-image:url('https://bernardini250576.github.io/studio33/slide-projection.jpg')"></div>
-    <div class="hslide" style="background-image:url('https://bernardini250576.github.io/studio33/slide-cinema.jpg')"></div>
-    <div class="hslide" style="background-image:url('https://bernardini250576.github.io/studio33/slide-neumann.jpg')"></div>
-    <div class="hslide" style="background-image:url('https://bernardini250576.github.io/studio33/slide-booth.jpg')"></div>
-    <div class="hslide" style="background-image:url('https://bernardini250576.github.io/studio33/audio-hero.jpg')"></div>
-    <div class="hslide" style="background-image:url('https://bernardini250576.github.io/studio33/prod-hero.jpg')"></div>
+    <div class="hslide" data-bg="https://bernardini250576.github.io/studio33/slide-lounge.jpg" style=""></div>
+    <div class="hslide" data-bg="https://bernardini250576.github.io/studio33/slide-projection.jpg" style=""></div>
+    <div class="hslide" data-bg="https://bernardini250576.github.io/studio33/slide-cinema.jpg" style=""></div>
+    <div class="hslide" data-bg="https://bernardini250576.github.io/studio33/slide-neumann.jpg" style=""></div>
+    <div class="hslide" data-bg="https://bernardini250576.github.io/studio33/slide-booth.jpg" style=""></div>
+    <div class="hslide" data-bg="https://bernardini250576.github.io/studio33/audio-hero.jpg" style=""></div>
+    <div class="hslide" data-bg="https://bernardini250576.github.io/studio33/prod-hero.jpg" style=""></div>
     <div class="hdots">
       <button class="hdot on" onclick="hgo(0)" aria-label="1"></button>
       <button class="hdot" onclick="hgo(1)" aria-label="2"></button>
@@ -1353,8 +1189,6 @@ img,video,iframe{max-width:100%;height:auto}
 .ha-comp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:var(--bd)}
 .ha-comp-img{position:relative;overflow:hidden;aspect-ratio:4/3}
 .ha-comp-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:none}
-
-.ha-comp-img-ov{display:none}
 .ha-comp-txt{padding:2.5rem 3.5rem 0;display:flex;flex-direction:column;justify-content:flex-start}
 .ha-comp-cat{font-size:12.1px;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,26,26,.82);font-family:var(--fb);margin-bottom:.6rem}
 .ha-comp-name{font-family:var(--fd);font-size:2.057rem;font-weight:400;color:#1a1a1a;margin-bottom:1.2rem;line-height:1.15}
@@ -1858,7 +1692,7 @@ img,video,iframe{max-width:100%;height:auto}
   <!-- STORICO + CTA -->
   <div class="split" style="border-top:var(--bd)">
     <div class="split-img">
-      <div class="split-img-bg" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.26.10.png?resize=750%2C931&ssl=1')"></div>
+      <div class="split-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.26.10.png?resize=750%2C931&ssl=1" style=""></div>
       </div>
     <div class="split-text">
       <div class="lbl" style="margin-bottom:1.4rem"><span data-lang="it">Una storia lunga 40 anni</span><span data-lang="en">A 40-year history</span></div>
@@ -1892,10 +1726,6 @@ img,video,iframe{max-width:100%;height:auto}
 .prod-svc-name{font-size:18.2px;font-weight:500;color:var(--w);margin-bottom:.3rem;letter-spacing:-.01em}
 .prod-svc-desc{font-size:15.7px;line-height:1.7;color:rgba(26,26,26,.55)}
 .prod-cats{padding:3.5rem 3rem;background:var(--nero-s)}
-.prod-cat{margin-bottom:1.8rem}
-.prod-cat:last-child{margin-bottom:0}
-.prod-cat-title{font-size:13.3px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,26,26,0.62);margin-bottom:.6rem}
-.prod-cat-items{font-size:16.4px;line-height:2;color:rgba(26,26,26,.55)}
 /* Griglia lavori */
 .proj-header{display:flex;justify-content:space-between;align-items:baseline;padding:2rem 3rem 1.5rem;border-bottom:var(--bds)}
 .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--bds)}
@@ -2065,7 +1895,7 @@ img,video,iframe{max-width:100%;height:auto}
     </div>
     <div class="proj-grid">
     <div class="proj-card" onclick="openProjModal('a-deep-listening-afternoon')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('a-deep-listening-afternoon')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2026/03/Time-Is-Away_web-1200x630-1.jpg?resize=900%2C473&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2026/03/Time-Is-Away_web-1200x630-1.jpg?resize=900%2C473&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">A Deep Listening Afternoon</h3>
@@ -2073,7 +1903,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('as-roma')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('as-roma')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/image-3.png?resize=900%2C720&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/image-3.png?resize=900%2C720&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Video Production</span>
         <h3 class="proj-title">AS Roma in Studio 33</h3>
@@ -2081,7 +1911,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('almost-famous')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('almost-famous')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-17.10.55-2-1.jpeg?resize=900%2C600&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-17.10.55-2-1.jpeg?resize=900%2C600&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">Almost Famous feat.555</h3>
@@ -2089,7 +1919,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('jeremiah-chiu')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('jeremiah-chiu')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=900%2C506&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=900%2C506&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Recording</span>
         <h3 class="proj-title">Jeremiah Chiu & Marta Sofia Honer</h3>
@@ -2097,7 +1927,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('npr')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('npr')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/Screenshot-2025-06-27-alle-11.08.21.png?resize=900%2C487&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/Screenshot-2025-06-27-alle-11.08.21.png?resize=900%2C487&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Media Production</span>
         <h3 class="proj-title">NPR in Studio 33</h3>
@@ -2105,7 +1935,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('alex-britti')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('alex-britti')">
-      <div class="proj-img" style="background-image:url('https://bernardini250576.github.io/studio33/resonance-hero.jpg')"></div>
+      <div class="proj-img" data-bg="https://bernardini250576.github.io/studio33/resonance-hero.jpg" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Session</span>
         <h3 class="proj-title">Alex Britti a Studio 33</h3>
@@ -2113,7 +1943,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('giorgio-poi')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('giorgio-poi')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=900%2C882&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=900%2C882&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Video Production</span>
         <h3 class="proj-title">Giorgio Poi & Luca Marinelli</h3>
@@ -2121,7 +1951,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('dust-grooves')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('dust-grooves')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/03/DGV2-Book-Mockup.png?resize=900%2C637&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/03/DGV2-Book-Mockup.png?resize=900%2C637&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Editorial</span>
         <h3 class="proj-title">Dust & Grooves vol.2</h3>
@@ -2129,7 +1959,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('frigidaire')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('frigidaire')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2025/01/image.png?resize=900%2C675&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/01/image.png?resize=900%2C675&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Creative Project</span>
         <h3 class="proj-title">Sostieni Frigidaire 2025</h3>
@@ -2137,7 +1967,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('rome-mint-list')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('rome-mint-list')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2024/04/Studio33-%C2%A9Manon-Houston_ML-feed.jpg?resize=900%2C594&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/04/Studio33-%C2%A9Manon-Houston_ML-feed.jpg?resize=900%2C594&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Press</span>
         <h3 class="proj-title">Studio 33 in Rome Mint List</h3>
@@ -2145,7 +1975,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('hyperituals-2')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('hyperituals-2')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2023/03/a0376602440_10.jpg?resize=900%2C900&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2023/03/a0376602440_10.jpg?resize=900%2C900&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Production</span>
         <h3 class="proj-title">HYPERITUALS VOL. 2 – BLACK SAINT</h3>
@@ -2153,7 +1983,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('saverio-raimondo')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('saverio-raimondo')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2023/01/55DB1386-84A2-4978-9F8F-ACE8DD5A4350.jpeg?resize=900%2C900&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2023/01/55DB1386-84A2-4978-9F8F-ACE8DD5A4350.jpeg?resize=900%2C900&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">Saverio Raimondo Live at Studio 33</h3>
@@ -2161,7 +1991,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('hypercast')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('hypercast')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2022/01/bg-3.png?resize=900%2C900&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2022/01/bg-3.png?resize=900%2C900&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Podcast</span>
         <h3 class="proj-title">Hypercast. The podcast service company.</h3>
@@ -2169,7 +1999,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('hyperjazz')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('hyperjazz')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2021/11/HJ-horizontal-1-1.png?resize=900%2C508&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2021/11/HJ-horizontal-1-1.png?resize=900%2C508&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">Hyperjazz Weekender 2021</h3>
@@ -2177,7 +2007,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('amref')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('amref')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2021/06/AMREF_LAfrica-non-e-un-Paese_1-1170x1170-1.png?resize=900%2C900&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2021/06/AMREF_LAfrica-non-e-un-Paese_1-1170x1170-1.png?resize=900%2C900&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Branded Podcast</span>
         <h3 class="proj-title">Studio 33 × AMREF</h3>
@@ -2185,7 +2015,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('music-cities')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('music-cities')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2021/01/pexels-photo-4156905.jpeg?resize=900%2C600&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2021/01/pexels-photo-4156905.jpeg?resize=900%2C600&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Podcast</span>
         <h3 class="proj-title">Music & the Cities. Il podcast.</h3>
@@ -2193,7 +2023,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('khalab')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('khalab')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2021/03/7a7e5d84-4e07-496f-b533-2b47d55e4cd6.jpg?resize=900%2C900&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2021/03/7a7e5d84-4e07-496f-b533-2b47d55e4cd6.jpg?resize=900%2C900&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Artist Production</span>
         <h3 class="proj-title">KHALAB × Real World Records</h3>
@@ -2201,7 +2031,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('pigiama-rave')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('pigiama-rave')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2021/01/pigima-studio33-1.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2021/01/pigima-studio33-1.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">Pigiama Rave</h3>
@@ -2209,7 +2039,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('linecheck')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('linecheck')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/11/Schermata-2020-11-23-alle-11.26.37.png?resize=900%2C986&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/11/Schermata-2020-11-23-alle-11.26.37.png?resize=900%2C986&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">Studio 33 × Linecheck 2020</h3>
@@ -2217,7 +2047,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('scrambler')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('scrambler')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/scrambler-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/scrambler-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">Scrambler Ducati</h3>
@@ -2225,7 +2055,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('black-noise')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('black-noise')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/black-noise-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/black-noise-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Production</span>
         <h3 class="proj-title">Black Noise 2084</h3>
@@ -2233,7 +2063,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('intersos')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('intersos')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/intersos-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/intersos-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Spot Radio</span>
         <h3 class="proj-title">Spot Radio – Intersos</h3>
@@ -2241,7 +2071,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('place-to-be')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('place-to-be')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/placetob-1.jpg?resize=900%2C900&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/placetob-1.jpg?resize=900%2C900&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">Place to Be – Studio 33 × IMF</h3>
@@ -2249,7 +2079,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('roots-history')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('roots-history')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/roots-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/roots-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Original Score</span>
         <h3 class="proj-title">"Roots" per History Channel</h3>
@@ -2257,7 +2087,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('pirelli')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('pirelli')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/pirelli-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/pirelli-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">Pirelli Natural Rubber</h3>
@@ -2265,7 +2095,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('hockeytown')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('hockeytown')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/hockey-550x100-1.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/hockey-550x100-1.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Original Score</span>
         <h3 class="proj-title">OST – Hockeytown</h3>
@@ -2273,7 +2103,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('parco-musica')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('parco-musica')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/STAR-HIP-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/STAR-HIP-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Production</span>
         <h3 class="proj-title">Parco della Musica Records</h3>
@@ -2281,7 +2111,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('alitalia')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('alitalia')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/alitalia-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/alitalia-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">Alitalia</h3>
@@ -2289,7 +2119,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('hellmanns')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('hellmanns')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/helmanss-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/helmanss-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Production</span>
         <h3 class="proj-title">Hellmann's</h3>
@@ -2297,7 +2127,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('soundreef')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('soundreef')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/soundreefwaves-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/soundreefwaves-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Voiceover</span>
         <h3 class="proj-title">Soundreef Waves</h3>
@@ -2305,7 +2135,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('mit')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('mit')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/mit-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/mit-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Live Event</span>
         <h3 class="proj-title">M.I.T. – Meet in Town Festival</h3>
@@ -2313,7 +2143,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('ghostbusters')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('ghostbusters')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/ghost-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/ghost-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Spot Radio</span>
         <h3 class="proj-title">Spot Radio – Ghostbusters</h3>
@@ -2321,7 +2151,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('pallini')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('pallini')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/pallini-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/pallini-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">Pallini Limoncello</h3>
@@ -2329,7 +2159,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('18app')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('18app')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/18app-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/18app-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">18app</h3>
@@ -2337,7 +2167,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('shallows')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('shallows')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/shallows-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/shallows-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Spot Radio</span>
         <h3 class="proj-title">Spot Radio – The Shallows</h3>
@@ -2345,7 +2175,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('innovazione')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('innovazione')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/innovazione-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/innovazione-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">Innovazionesuonabene</h3>
@@ -2353,7 +2183,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('industria-40')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('industria-40')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/ministero-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/ministero-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Voiceover</span>
         <h3 class="proj-title">Voiceover per Industria 4.0</h3>
@@ -2361,7 +2191,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('voiceover-soundreef')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('voiceover-soundreef')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/soundreef-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/soundreef-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Voiceover</span>
         <h3 class="proj-title">Voiceover per Soundreef</h3>
@@ -2369,7 +2199,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('khalifa')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('khalifa')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/khalifa-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/khalifa-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Original Score</span>
         <h3 class="proj-title">Khalifa International Stadium</h3>
@@ -2377,7 +2207,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('favola-cosmica')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('favola-cosmica')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/favola-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/favola-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Original Score</span>
         <h3 class="proj-title">La Favola Cosmica</h3>
@@ -2385,7 +2215,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('mibact')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('mibact')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/mibact-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/mibact-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">MUSEITALIANI – MIBACT</h3>
@@ -2393,7 +2223,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('double-espace')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('double-espace')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/double-espace-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/double-espace-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Production</span>
         <h3 class="proj-title">Double Espace</h3>
@@ -2401,7 +2231,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('eti')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('eti')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/eti-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/eti-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Original Score</span>
         <h3 class="proj-title">ETI – Teatri del Tempo Presente</h3>
@@ -2409,7 +2239,7 @@ img,video,iframe{max-width:100%;height:auto}
       </div>
     </div>
     <div class="proj-card" onclick="openProjModal('nastro')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjModal('nastro')">
-      <div class="proj-img" style="background-image:url('https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/nastro-550.png?resize=900%2C164&ssl=1')"></div>
+      <div class="proj-img" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2020/10/nastro-550.png?resize=900%2C164&ssl=1" style=""></div>
       <div class="proj-body">
         <span class="proj-tag">Audio Branding</span>
         <h3 class="proj-title">Nastro Say Yes To IT</h3>
@@ -2835,7 +2665,7 @@ img,video,iframe{max-width:100%;height:auto}
             <span data-lang="en">I consent to data processing to respond to this request (GDPR). Data will not be used for marketing or shared with third parties.</span>
           </span>
         </label>
-        <button type="submit" class="bk-submit" id="bk-btn">
+        <button type="submit" class="bk-submit" id="bk-btn" aria-label="Invia richiesta di prenotazione">
           <span data-lang="it">Invia richiesta</span><span data-lang="en">Send request</span>
         </button>
       </form>
@@ -3051,7 +2881,7 @@ img,video,iframe{max-width:100%;height:auto}
 
   <div class="hv-grid">
       <button class="hv-item" onclick="openMedia(0)" aria-label="Vision finds fidelity">
-        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-spot.jpg')">
+        <div class="hv-media" data-bg="https://bernardini250576.github.io/studio33/video-spot.jpg" style="">
           <span class="hv-play"></span><span class="hv-dur">0:30</span>
         </div>
         <div class="hv-meta">
@@ -3060,7 +2890,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(1)" aria-label="Shooting">
-        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-shooting.jpg')">
+        <div class="hv-media" data-bg="https://bernardini250576.github.io/studio33/video-shooting.jpg" style="">
           <span class="hv-play"></span><span class="hv-dur">0:26</span>
         </div>
         <div class="hv-meta">
@@ -3069,7 +2899,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(2)" aria-label="Musica">
-        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-musica.jpg')">
+        <div class="hv-media" data-bg="https://bernardini250576.github.io/studio33/video-musica.jpg" style="">
           <span class="hv-play"></span><span class="hv-dur">0:25</span>
         </div>
         <div class="hv-meta">
@@ -3078,7 +2908,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(3)" aria-label="Eventi">
-        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-eventi.jpg')">
+        <div class="hv-media" data-bg="https://bernardini250576.github.io/studio33/video-eventi.jpg" style="">
           <span class="hv-play"></span><span class="hv-dur">0:26</span>
         </div>
         <div class="hv-meta">
@@ -3087,7 +2917,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(4)" aria-label="Studio 33">
-        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/CyyuGcd8tzI/hqdefault.jpg')">
+        <div class="hv-media" data-bg="https://img.youtube.com/vi/CyyuGcd8tzI/hqdefault.jpg" style="">
           <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
         </div>
         <div class="hv-meta">
@@ -3096,7 +2926,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(5)" aria-label="Studio 33">
-        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/oFecVPRzqOk/hqdefault.jpg')">
+        <div class="hv-media" data-bg="https://img.youtube.com/vi/oFecVPRzqOk/hqdefault.jpg" style="">
           <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
         </div>
         <div class="hv-meta">
@@ -3105,7 +2935,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(6)" aria-label="Studio 33">
-        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/BgwqRhtAS-E/hqdefault.jpg')">
+        <div class="hv-media" data-bg="https://img.youtube.com/vi/BgwqRhtAS-E/hqdefault.jpg" style="">
           <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
         </div>
         <div class="hv-meta">
@@ -3114,7 +2944,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(7)" aria-label="Studio 33">
-        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/vatRi9NDiOI/hqdefault.jpg')">
+        <div class="hv-media" data-bg="https://img.youtube.com/vi/vatRi9NDiOI/hqdefault.jpg" style="">
           <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
         </div>
         <div class="hv-meta">
@@ -3123,7 +2953,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(8)" aria-label="Studio 33">
-        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/yDXAGZNv6ro/hqdefault.jpg')">
+        <div class="hv-media" data-bg="https://img.youtube.com/vi/yDXAGZNv6ro/hqdefault.jpg" style="">
           <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
         </div>
         <div class="hv-meta">
@@ -3132,7 +2962,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(9)" aria-label="Studio 33">
-        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/lKp_zMsbI-I/hqdefault.jpg')">
+        <div class="hv-media" data-bg="https://img.youtube.com/vi/lKp_zMsbI-I/hqdefault.jpg" style="">
           <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
         </div>
         <div class="hv-meta">
@@ -3141,7 +2971,7 @@ img,video,iframe{max-width:100%;height:auto}
         </div>
       </button>
       <button class="hv-item" onclick="openMedia(10)" aria-label="Studio 33">
-        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/fHH1BdIk1X8/hqdefault.jpg')">
+        <div class="hv-media" data-bg="https://img.youtube.com/vi/fHH1BdIk1X8/hqdefault.jpg" style="">
           <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
         </div>
         <div class="hv-meta">
@@ -3233,7 +3063,9 @@ function showPage(id) {
   }
 
   document.querySelectorAll('.nav-links a').forEach(function(a) {
-    a.classList.toggle('active', a.id === 'nl-' + id);
+    var on = a.id === 'nl-' + id;
+    a.classList.toggle('active', on);
+    if(on){ a.setAttribute('aria-current','page'); } else { a.removeAttribute('aria-current'); }
   });
   window.scrollTo({ top: 0, behavior: 'smooth' });
   return false;
@@ -3275,6 +3107,14 @@ var hIdx = 0, hTimer = null;
 function hgo(i){
   var sl = document.querySelectorAll('.hslide'), dt = document.querySelectorAll('.hdot');
   if(!sl.length) return;
+  // carica la slide di destinazione e la successiva (prefetch leggero)
+  [i, (i+1) % sl.length].forEach(function(k){
+    var el = sl[k], u = el && el.getAttribute('data-bg');
+    if(u && !el.dataset.bgLoaded){
+      el.style.backgroundImage = "url('" + u + "')";
+      el.dataset.bgLoaded = '1';
+    }
+  });
   sl[hIdx].classList.remove('on'); dt[hIdx].classList.remove('on');
   hIdx = i;
   sl[hIdx].classList.add('on'); dt[hIdx].classList.add('on');
@@ -3393,9 +3233,9 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
 </button>
 <div class="vmodal" id="vmodal" onclick="if(event.target===this)closeVid()">
   <div class="vmodal-inner">
-    <button class="vmodal-x" onclick="closeVid()">✕ <span data-lang="it">Chiudi</span><span data-lang="en">Close</span></button>
+    <button class="vmodal-x" onclick="closeVid()" aria-label="Chiudi video">✕ <span data-lang="it">Chiudi</span><span data-lang="en">Close</span></button>
     <video id="vplayer" controls playsinline preload="none"></video>
-    <iframe id="ytframe" style="display:none;width:100%;aspect-ratio:16/9;border:none;background:#000" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+    <iframe id="ytframe" title="Video Studio 33" style="display:none;width:100%;aspect-ratio:16/9;border:none;background:#000" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 </body>
