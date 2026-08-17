@@ -1109,7 +1109,6 @@ img,video,iframe{max-width:100%;height:auto}
     <li><a href="#" onclick="showPage('location');return false"  id="nl-location">Location</a></li>
     <li><a href="#" onclick="showPage('prod');return false"      id="nl-prod"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a></li>
     <li><a href="#" onclick="showPage('audio');return false"     id="nl-audio">Audio</a></li>
-    <li><a href="#" onclick="showPage('video');return false"     id="nl-video">Video</a></li>
     <li><a href="#" onclick="showPage('hap');return false"       id="nl-hap">Happening</a></li>
     <li><a href="#" onclick="showPage('form');return false"      id="nl-form"><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a></li>
     <li><a href="#" onclick="showPage('res');return false"       id="nl-res">Resonance</a></li>
@@ -1135,7 +1134,6 @@ img,video,iframe{max-width:100%;height:auto}
     <a href="#" onclick="showPage('location');closeDrawer()">Location</a>
     <a href="#" onclick="showPage('prod');closeDrawer()"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a>
     <a href="#" onclick="showPage('audio');closeDrawer()">Audio</a>
-    <a href="#" onclick="showPage('video');closeDrawer()">Video</a>
     <a href="#" onclick="showPage('hap');closeDrawer()">Happening</a>
     <a href="#" onclick="showPage('form');closeDrawer()"><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a>
     <a href="#" onclick="showPage('res');closeDrawer()">Resonance</a>
@@ -2721,100 +2719,6 @@ img,video,iframe{max-width:100%;height:auto}
 </div>
 
 
-<!-- ══════════════════════════ PAGE: VIDEO ══════════════════════════ -->
-<div class="page" id="page-video">
-
-<style>
-.vg-head{padding:5.5rem 3rem 3.5rem;border-bottom:var(--bds)}
-.vg-head h1{font-size:clamp(2.64rem,5.0vw,3.96rem);font-weight:200;letter-spacing:-.035em;line-height:1.04;color:var(--w);margin-bottom:1.1rem}
-.vg-head p{font-size:18.7px;line-height:1.7;color:rgba(26,26,26,.6);max-width:46ch}
-.vg-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.vg-item{display:block;width:100%;text-align:left;background:none;border:none;border-right:var(--bds);border-bottom:var(--bds);padding:0;cursor:pointer;font:inherit;color:inherit}
-.vg-item:last-child{border-right:none}
-.vg-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#f0efed}
-.vg-media img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s ease}
-.vg-item:hover .vg-media img{opacity:.88}
-.vg-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border:1px solid rgba(255,255,255,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .25s ease}
-.vg-item:hover .vg-play{background:rgba(255,255,255,.14)}
-.vg-play::after{content:'';width:0;height:0;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent #fff;margin-left:3px}
-.vg-dur{position:absolute;right:1rem;bottom:1rem;font-size:12.1px;letter-spacing:.1em;color:#fff;font-variant-numeric:tabular-nums}
-.vg-meta{padding:1.4rem 1.5rem 1.9rem}
-.vg-cat{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.42);margin-bottom:.45rem}
-.vg-title{display:block;font-size:1.155rem;font-weight:400;letter-spacing:-.02em;color:var(--w)}
-
-.vmodal{position:fixed;inset:0;background:rgba(255,255,255,.98);z-index:700;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
-.vmodal.open{opacity:1;pointer-events:auto}
-.vmodal-inner{position:relative;width:min(420px,92vw)}
-.vmodal video{width:100%;display:block;max-height:84vh;background:#000}
-.vmodal-x{position:absolute;top:-2.6rem;right:0;background:none;border:none;font-size:12.1px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,.5);cursor:pointer;font-family:var(--fb);padding:0}
-.vmodal-x:hover{color:var(--w)}
-@media(max-width:1100px){.vg-grid{grid-template-columns:repeat(2,1fr)}.vg-item:nth-child(2n){border-right:none}}
-@media(max-width:640px){.vg-grid{grid-template-columns:1fr}.vg-item{border-right:none}.vg-head{padding:3rem 1.5rem 2.2rem}}
-</style>
-
-  <div class="vg-head">
-    <h1><span data-lang="it">Video</span><span data-lang="en">Video</span></h1>
-    <p><span data-lang="it">Spot, reel e frammenti di ciò che accade dentro Studio 33.</span><span data-lang="en">Spots, reels and fragments of what happens inside Studio 33.</span></p>
-  </div>
-
-  <div class="vg-grid">
-      <button class="vg-item" onclick="openVid(0)" aria-label="Vision finds fidelity">
-        <div class="vg-media">
-          <img src="https://bernardini250576.github.io/studio33/video-spot.jpg" alt="Vision finds fidelity — Studio 33" loading="lazy">
-          <span class="vg-play"></span>
-          <span class="vg-dur">0:30</span>
-        </div>
-        <div class="vg-meta">
-          <span class="vg-cat"><span data-lang="it">Spot</span><span data-lang="en">Spot</span></span>
-          <span class="vg-title"><span data-lang="it">Vision finds fidelity</span><span data-lang="en">Vision finds fidelity</span></span>
-        </div>
-      </button>
-      <button class="vg-item" onclick="openVid(1)" aria-label="Shooting">
-        <div class="vg-media">
-          <img src="https://bernardini250576.github.io/studio33/video-shooting.jpg" alt="Shooting — Studio 33" loading="lazy">
-          <span class="vg-play"></span>
-          <span class="vg-dur">0:26</span>
-        </div>
-        <div class="vg-meta">
-          <span class="vg-cat"><span data-lang="it">Location</span><span data-lang="en">Location</span></span>
-          <span class="vg-title"><span data-lang="it">Shooting</span><span data-lang="en">Shooting</span></span>
-        </div>
-      </button>
-      <button class="vg-item" onclick="openVid(2)" aria-label="Musica">
-        <div class="vg-media">
-          <img src="https://bernardini250576.github.io/studio33/video-musica.jpg" alt="Musica — Studio 33" loading="lazy">
-          <span class="vg-play"></span>
-          <span class="vg-dur">0:25</span>
-        </div>
-        <div class="vg-meta">
-          <span class="vg-cat"><span data-lang="it">Live</span><span data-lang="en">Live</span></span>
-          <span class="vg-title"><span data-lang="it">Musica</span><span data-lang="en">Music</span></span>
-        </div>
-      </button>
-      <button class="vg-item" onclick="openVid(3)" aria-label="Eventi">
-        <div class="vg-media">
-          <img src="https://bernardini250576.github.io/studio33/video-eventi.jpg" alt="Eventi — Studio 33" loading="lazy">
-          <span class="vg-play"></span>
-          <span class="vg-dur">0:26</span>
-        </div>
-        <div class="vg-meta">
-          <span class="vg-cat"><span data-lang="it">Eventi</span><span data-lang="en">Events</span></span>
-          <span class="vg-title"><span data-lang="it">Eventi</span><span data-lang="en">Events</span></span>
-        </div>
-      </button>
-  </div>
-
-  <div class="cta-bar">
-    <p class="cta-text"><span data-lang="it">Realizziamo video per <em>il tuo progetto.</em></span><span data-lang="en">We make video for <em>your project.</em></span></p>
-    <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Parliamone →</span><span data-lang="en">Let's talk →</span></a>
-  </div>
-
-</div>
-
-
-
-
-<!-- ══════════════════════════ PAGE: PRIVACY POLICY ══════════════════════════ -->
 <div class="page" id="page-privacy">
 
 <style>
@@ -2939,46 +2843,158 @@ img,video,iframe{max-width:100%;height:auto}
 
 </div>
 
-<!-- ══════════════════════════ PAGE: HAPPENING ══════════════════════════ -->
+
+<!-- ══════════════════════════ PAGE: HAPPENING (video) ══════════════════════════ -->
 <div class="page" id="page-hap">
 
-  <div class="vg-head">
+<style>
+.hv-head{padding:5.5rem 4rem 3.5rem;border-bottom:var(--bds)}
+.hv-head h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:200;letter-spacing:-.035em;
+  line-height:1.04;color:var(--w);margin-bottom:1.1rem}
+.hv-head p{font-size:17px;line-height:1.7;color:rgba(26,26,26,.6);max-width:52ch}
+.hv-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.hv-item{display:block;width:100%;text-align:left;background:none;border:none;
+  border-right:var(--bds);border-bottom:var(--bds);padding:0;cursor:pointer;
+  font:inherit;color:inherit;transition:opacity .2s}
+.hv-item:hover{opacity:.78}
+.hv-item:nth-child(3n){border-right:none}
+.hv-media{position:relative;aspect-ratio:16/9;background-size:cover;
+  background-position:center;background-color:#f0efed}
+.hv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border:1px solid rgba(255,255,255,.9);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.18);
+  transition:background .25s}
+.hv-item:hover .hv-play{background:rgba(0,0,0,.35)}
+.hv-play::after{content:'';border-style:solid;border-width:7px 0 7px 12px;
+  border-color:transparent transparent transparent #fff;margin-left:3px}
+.hv-src{position:absolute;top:.9rem;left:.9rem;font-size:19px;color:#fff;
+  text-shadow:0 1px 8px rgba(0,0,0,.45);z-index:2}
+.hv-dur{position:absolute;right:.9rem;bottom:.9rem;font-size:11px;letter-spacing:.1em;
+  color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5);font-variant-numeric:tabular-nums;z-index:2}
+.hv-meta{padding:1.2rem 1.4rem 1.7rem}
+.hv-cat{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(26,26,26,.42);margin-bottom:.4rem}
+.hv-title{display:block;font-size:1.02rem;font-weight:400;letter-spacing:-.02em;color:var(--w)}
+@media(max-width:1000px){.hv-grid{grid-template-columns:repeat(2,1fr)}
+  .hv-item:nth-child(3n){border-right:var(--bds)}
+  .hv-item:nth-child(2n){border-right:none}}
+@media(max-width:640px){.hv-grid{grid-template-columns:1fr}
+  .hv-item{border-right:none!important}
+  .hv-head{padding:3rem 1.2rem 2.2rem}}
+</style>
+
+  <div class="hv-head">
     <h1>Happening</h1>
-    <p><span data-lang="it">Guarda cosa succede nel nostro Studio — live session, eventi, dietro le quinte.</span><span data-lang="en">See what happens in our Studio — live sessions, events, behind the scenes.</span></p>
+    <p><span data-lang="it">Spot, reel, live session e frammenti di ciò che accade dentro Studio 33.</span><span data-lang="en">Spots, reels, live sessions and fragments of what happens inside Studio 33.</span></p>
   </div>
 
-  <div class="hap-grid">
-    <a class="hap-item" href="#" onclick="openVid(2);return false">
-      <div class="hap-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-musica.jpg')"><i class="ti ti-brand-youtube hap-src"></i><span class="car-play"></span></div>
-      <div class="hap-meta"><span class="car-kind">YouTube · Live</span><span class="car-title"><span data-lang="it">Live session in listening room</span><span data-lang="en">Live session in listening room</span></span></div>
-    </a>
-    <a class="hap-item" href="https://www.instagram.com/studio33trastevere/" target="_blank" rel="noopener">
-      <div class="hap-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-eventi.jpg')"><i class="ti ti-brand-instagram hap-src"></i></div>
-      <div class="hap-meta"><span class="car-kind">Instagram · <span data-lang="it">Evento</span><span data-lang="en">Event</span></span><span class="car-title"><span data-lang="it">Serata evento a Trastevere</span><span data-lang="en">Event night in Trastevere</span></span></div>
-    </a>
-    <a class="hap-item" href="#" onclick="openVid(1);return false">
-      <div class="hap-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-shooting.jpg')"><i class="ti ti-brand-youtube hap-src"></i><span class="car-play"></span></div>
-      <div class="hap-meta"><span class="car-kind">YouTube · Backstage</span><span class="car-title"><span data-lang="it">Dietro le quinte di uno shooting</span><span data-lang="en">Behind the scenes of a shoot</span></span></div>
-    </a>
-    <a class="hap-item" href="#" onclick="openVid(0);return false">
-      <div class="hap-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-spot.jpg')"><i class="ti ti-brand-youtube hap-src"></i><span class="car-play"></span></div>
-      <div class="hap-meta"><span class="car-kind">YouTube · Spot</span><span class="car-title">Vision finds fidelity</span></div>
-    </a>
-    <a class="hap-item" href="https://www.instagram.com/studio33trastevere/" target="_blank" rel="noopener">
-      <div class="hap-media" style="background-image:url('https://bernardini250576.github.io/studio33/resonance-hero.jpg')"><i class="ti ti-brand-instagram hap-src"></i></div>
-      <div class="hap-meta"><span class="car-kind">Instagram · Press</span><span class="car-title">OMA su Dust &amp; Grooves</span></div>
-    </a>
-    <a class="hap-item" href="#" onclick="openVid(3);return false">
-      <div class="hap-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-eventi.jpg')"><i class="ti ti-player-play hap-src"></i><span class="car-play"></span></div>
-      <div class="hap-meta"><span class="car-kind">Reel · <span data-lang="it">Eventi</span><span data-lang="en">Events</span></span><span class="car-title"><span data-lang="it">Eventi e live in Studio 33</span><span data-lang="en">Events and live at Studio 33</span></span></div>
-    </a>
+  <div class="hv-grid">
+      <button class="hv-item" onclick="openMedia(0)" aria-label="Vision finds fidelity">
+        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-spot.jpg')">
+          <span class="hv-play"></span><span class="hv-dur">0:30</span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">Spot</span><span data-lang="en">Spot</span></span>
+          <span class="hv-title"><span data-lang="it">Vision finds fidelity</span><span data-lang="en">Vision finds fidelity</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(1)" aria-label="Shooting">
+        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-shooting.jpg')">
+          <span class="hv-play"></span><span class="hv-dur">0:26</span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">Location</span><span data-lang="en">Location</span></span>
+          <span class="hv-title"><span data-lang="it">Shooting</span><span data-lang="en">Shooting</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(2)" aria-label="Musica">
+        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-musica.jpg')">
+          <span class="hv-play"></span><span class="hv-dur">0:25</span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">Live</span><span data-lang="en">Live</span></span>
+          <span class="hv-title"><span data-lang="it">Musica</span><span data-lang="en">Music</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(3)" aria-label="Eventi">
+        <div class="hv-media" style="background-image:url('https://bernardini250576.github.io/studio33/video-eventi.jpg')">
+          <span class="hv-play"></span><span class="hv-dur">0:26</span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">Eventi</span><span data-lang="en">Events</span></span>
+          <span class="hv-title"><span data-lang="it">Eventi</span><span data-lang="en">Events</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(4)" aria-label="Studio 33">
+        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/CyyuGcd8tzI/hqdefault.jpg')">
+          <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">YouTube</span><span data-lang="en">YouTube</span></span>
+          <span class="hv-title"><span data-lang="it">Studio 33</span><span data-lang="en">Studio 33</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(5)" aria-label="Studio 33">
+        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/oFecVPRzqOk/hqdefault.jpg')">
+          <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">YouTube</span><span data-lang="en">YouTube</span></span>
+          <span class="hv-title"><span data-lang="it">Studio 33</span><span data-lang="en">Studio 33</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(6)" aria-label="Studio 33">
+        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/BgwqRhtAS-E/hqdefault.jpg')">
+          <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">YouTube</span><span data-lang="en">YouTube</span></span>
+          <span class="hv-title"><span data-lang="it">Studio 33</span><span data-lang="en">Studio 33</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(7)" aria-label="Studio 33">
+        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/vatRi9NDiOI/hqdefault.jpg')">
+          <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">YouTube</span><span data-lang="en">YouTube</span></span>
+          <span class="hv-title"><span data-lang="it">Studio 33</span><span data-lang="en">Studio 33</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(8)" aria-label="Studio 33">
+        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/yDXAGZNv6ro/hqdefault.jpg')">
+          <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">YouTube</span><span data-lang="en">YouTube</span></span>
+          <span class="hv-title"><span data-lang="it">Studio 33</span><span data-lang="en">Studio 33</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(9)" aria-label="Studio 33">
+        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/lKp_zMsbI-I/hqdefault.jpg')">
+          <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">YouTube</span><span data-lang="en">YouTube</span></span>
+          <span class="hv-title"><span data-lang="it">Studio 33</span><span data-lang="en">Studio 33</span></span>
+        </div>
+      </button>
+      <button class="hv-item" onclick="openMedia(10)" aria-label="Studio 33">
+        <div class="hv-media" style="background-image:url('https://img.youtube.com/vi/fHH1BdIk1X8/hqdefault.jpg')">
+          <i class="ti ti-brand-youtube hv-src"></i><span class="hv-play"></span>
+        </div>
+        <div class="hv-meta">
+          <span class="hv-cat"><span data-lang="it">YouTube</span><span data-lang="en">YouTube</span></span>
+          <span class="hv-title"><span data-lang="it">Studio 33</span><span data-lang="en">Studio 33</span></span>
+        </div>
+      </button>
   </div>
 
   <div class="cta-bar">
     <p class="cta-text"><span data-lang="it">Seguici per non perdere <em>nessun evento.</em></span><span data-lang="en">Follow us so you don't miss <em>any event.</em></span></p>
-    <div style="display:flex;gap:1.5rem">
-      <a class="btn" href="https://www.instagram.com/studio33trastevere/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram" style="font-size:15.4px"></i> Instagram</a>
-      <a class="btn" href="https://www.youtube.com/@studio33trastevere" target="_blank" rel="noopener"><i class="ti ti-brand-youtube" style="font-size:15.4px"></i> YouTube</a>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
+      <a class="btn" href="https://www.youtube.com/@studio33trastevere" target="_blank" rel="noopener"><i class="ti ti-brand-youtube" style="font-size:15px"></i> YouTube</a>
+      <a class="btn" href="https://www.instagram.com/studio33trastevere/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram" style="font-size:15px"></i> Instagram</a>
     </div>
   </div>
 
@@ -3065,6 +3081,34 @@ function showPage(id) {
 showPage('home');
 setLang('it');
 
+// ── HAPPENING: player unificato mp4 + YouTube ──
+var mediaList = [{"k": "mp4", "src": ""}, {"k": "mp4", "src": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_SHOOTING_MASTER.mp4"}, {"k": "mp4", "src": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_MUSICA_MASTER_HD.mp4"}, {"k": "mp4", "src": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_EVENTI_MASTER_HD.mp4"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}];
+function openMedia(i){
+  var m = mediaList[i];
+  var ov = document.getElementById('vmodal');
+  var pl = document.getElementById('vplayer');
+  var yt = document.getElementById('ytframe');
+  if(m.k === 'yt'){
+    pl.style.display = 'none';
+    yt.style.display = 'block';
+    yt.src = 'https://www.youtube-nocookie.com/embed/' + m.id + '?autoplay=1&rel=0';
+  } else {
+    if(!m.src){
+      alert(document.body.classList.contains('lang-en')
+        ? 'This video is available on request — contact us.'
+        : 'Questo video è disponibile su richiesta — contattaci.');
+      return;
+    }
+    yt.style.display = 'none';
+    pl.style.display = 'block';
+    pl.src = m.src;
+    pl.play().catch(function(){});
+  }
+  ov.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+
 // ── HERO CAROSELLO ──
 var hIdx = 0, hTimer = null;
 function hgo(i){
@@ -3100,7 +3144,9 @@ function openVid(i){
 }
 function closeVid(){
   var m = document.getElementById('vmodal'), p = document.getElementById('vplayer');
+  var y = document.getElementById('ytframe');
   p.pause(); p.removeAttribute('src'); p.load();
+  if(y){ y.src = 'about:blank'; }
   m.classList.remove('open'); document.body.style.overflow='';
 }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVid(); });
@@ -3201,6 +3247,7 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
   <div class="vmodal-inner">
     <button class="vmodal-x" onclick="closeVid()">✕ <span data-lang="it">Chiudi</span><span data-lang="en">Close</span></button>
     <video id="vplayer" controls playsinline preload="none"></video>
+    <iframe id="ytframe" style="display:none;width:100%;aspect-ratio:16/9;border:none;background:#000" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 </body>
