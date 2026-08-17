@@ -1,3 +1,4 @@
+<!-- VERSIONE 13 · menu Hi-End + Works · 11 video · catalogo servizi completo -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -1060,6 +1061,32 @@ img,video,iframe{max-width:100%;height:auto}
   .vmodal-inner{width:94vw}
   .vmodal-x{top:-2.2rem;font-size:10px}
 }
+
+/* ── ACCORDION SERVIZI PRODUZIONE ── */
+.acc-group{margin-bottom:2.2rem}
+.acc-head{font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(26,26,26,.75);padding-bottom:.8rem;margin-bottom:.4rem;
+  border-bottom:1px solid rgba(26,26,26,.16);font-weight:500}
+.acc{border-bottom:var(--bds)}
+.acc summary{cursor:pointer;list-style:none;padding:1rem 1.8rem 1rem 0;
+  font-size:15.5px;color:rgba(26,26,26,.82);position:relative;
+  transition:color .2s;letter-spacing:-.01em}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:'+';position:absolute;right:.2rem;top:50%;
+  transform:translateY(-50%);font-size:17px;color:rgba(26,26,26,.35);
+  transition:transform .25s,color .2s;line-height:1}
+.acc[open] summary::after{content:'−';color:rgba(26,26,26,.75)}
+.acc summary:hover{color:var(--w)}
+.acc summary:hover::after{color:rgba(26,26,26,.7)}
+.acc ul{list-style:none;padding:0 0 1.3rem;margin:0}
+.acc li{font-size:14.5px;line-height:1.72;color:rgba(26,26,26,.6);
+  padding-left:1.1rem;position:relative;margin-bottom:.55rem}
+.acc li::before{content:'—';position:absolute;left:0;color:rgba(26,26,26,.22)}
+.acc li b{font-weight:500;color:rgba(26,26,26,.82)}
+@media(max-width:900px){
+  .acc summary{font-size:15px;padding-right:1.6rem}
+  .acc li{font-size:14px}
+}
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
 <script type="application/ld+json">
@@ -1934,11 +1961,98 @@ img,video,iframe{max-width:100%;height:auto}
     </div>
     <div class="prod-cats">
       <div class="lbl" style="margin-bottom:1.5rem"><span data-lang="it">Aree di intervento</span><span data-lang="en">Areas of expertise</span></div>
-      <div class="prod-cat"><div class="prod-cat-title">Entertainment &amp; Music</div><div class="prod-cat-items"><span data-lang="it">Artist Development · Showcase Events · Album Release<br>Hi-Res Recording · Live Sessions · EPK</span><span data-lang="en">Artist Development · Showcase Events · Album Release<br>Hi-Res Recording · Live Sessions · EPK</span></div></div>
-      <div class="prod-cat"><div class="prod-cat-title">Video Content Creation</div><div class="prod-cat-items"><span data-lang="it">Campagne ADV · Corporate Portraits · Look-book<br>Talk Show · Tavola Rotonda · Event Streaming</span><span data-lang="en">ADV Campaigns · Corporate Portraits · Look-book<br>Talk Show · Round Table · Event Streaming</span></div></div>
-      <div class="prod-cat"><div class="prod-cat-title">Audio &amp; Sonic Identity</div><div class="prod-cat-items"><span data-lang="it">Audio Logo · Podcast Soundtrack · Voiceover<br>Composizione musicale · Sound Thinking Sessions</span><span data-lang="en">Audio Logo · Podcast Soundtrack · Voiceover<br>Music Composition · Sound Thinking Sessions</span></div></div>
+      <p style="font-size:15px;line-height:1.75;color:rgba(26,26,26,.6);margin-bottom:1.8rem"><span data-lang="it">Due macro-aree, dodici servizi. Apri ciascuna voce per il dettaglio.</span><span data-lang="en">Two macro-areas, twelve services. Open each item for details.</span></p>
+
+      <div class="acc-group">
+        <div class="acc-head">Entertainment &amp; Music Industry</div>
+
+        <details class="acc">
+          <summary><span data-lang="it">Artist Development &amp; Showcase Events</span><span data-lang="en">Artist Development &amp; Showcase Events</span></summary>
+          <ul>
+            <li><b>Intimate Live Sessions</b> — <span data-lang="it">concerti showcase per A&amp;R, giornalisti musicali e industry insiders (20-40 persone)</span><span data-lang="en">showcase concerts for A&amp;R, music journalists and industry insiders (20-40 people)</span></li>
+            <li><b>New Talent Launch Events</b> — <span data-lang="it">eventi di lancio per artisti emergenti con livestreaming multi-camera</span><span data-lang="en">launch events for emerging artists with multi-camera livestreaming</span></li>
+            <li><b>Album Release Parties</b> — <span data-lang="it">listening party esclusivi con performance acustica e Q&amp;A</span><span data-lang="en">exclusive listening parties with acoustic performance and Q&amp;A</span></li>
+            <li><b>Industry Networking Nights</b> — <span data-lang="it">networking musicale o cinematografico con live set e DJ</span><span data-lang="en">music or film networking with live sets and DJ</span></li>
+          </ul>
+        </details>
+
+        <details class="acc">
+          <summary><span data-lang="it">Premium Recording &amp; Production Services</span><span data-lang="en">Premium Recording &amp; Production Services</span></summary>
+          <ul>
+            <li><b>Full Album Production</b> — <span data-lang="it">dalla pre-produzione al master finale</span><span data-lang="en">from pre-production to final master</span></li>
+            <li><b>EP &amp; Single Recording</b> — <span data-lang="it">pacchetti agili per release digitali</span><span data-lang="en">agile packages for digital releases</span></li>
+            <li><b>Audio Post-Production &amp; Mixing</b> — <span data-lang="it">mixing professionale in ambiente acusticamente trattato</span><span data-lang="en">professional mixing in an acoustically treated room</span></li>
+            <li><b>Hi-Res Audio Production</b> — <span data-lang="it">registrazioni in alta risoluzione per audiophile releases</span><span data-lang="en">high-resolution recording for audiophile releases</span></li>
+          </ul>
+        </details>
+
+        <details class="acc">
+          <summary><span data-lang="it">Hybrid Music Experiences</span><span data-lang="en">Hybrid Music Experiences</span></summary>
+          <ul>
+            <li><b>Livestream Concert Production</b> — <span data-lang="it">concerti con pubblico ristretto + audience digitale globale</span><span data-lang="en">concerts with limited audience + global digital audience</span></li>
+            <li><b>Virtual Showcase Events</b> — <span data-lang="it">performance catturate in 4K per le piattaforme streaming</span><span data-lang="en">performances captured in 4K for streaming platforms</span></li>
+            <li><b>Interactive Listening Rooms</b> — <span data-lang="it">ascolto immersivo per superfan e collectors</span><span data-lang="en">immersive listening for superfans and collectors</span></li>
+          </ul>
+        </details>
+
+        <details class="acc">
+          <summary><span data-lang="it">Live Recording &amp; Content Capture</span><span data-lang="en">Live Recording &amp; Content Capture</span></summary>
+          <ul>
+            <li><b>Studio Session Videos</b> — <span data-lang="it">registrazione professionale di performance live per contenuti promozionali</span><span data-lang="en">professional recording of live performances for promotional content</span></li>
+            <li><b>Multi-Track Live Recording</b> — <span data-lang="it">registrazione concerti per release future (live album, streaming)</span><span data-lang="en">concert recording for future releases (live albums, streaming)</span></li>
+            <li><b>Behind-the-Scenes Content</b> — <span data-lang="it">documentazione del processo creativo per EPK</span><span data-lang="en">creative process documentation for EPK</span></li>
+            <li><b>Acoustic Sessions for Social</b> — <span data-lang="it">versioni unplugged per Instagram, TikTok, YouTube</span><span data-lang="en">unplugged versions for Instagram, TikTok, YouTube</span></li>
+          </ul>
+        </details>
+
+        <details class="acc">
+          <summary><span data-lang="it">Music for Visual Media</span><span data-lang="en">Music for Visual Media</span></summary>
+          <ul>
+            <li><b>Original Score Composition</b> — <span data-lang="it">colonne sonore originali per spot, corporate video, documentari</span><span data-lang="en">original scores for spots, corporate video, documentaries</span></li>
+            <li><b>Music Supervision &amp; Licensing</b> — <span data-lang="it">consulenza e selezione musicale per progetti audiovisivi</span><span data-lang="en">music consulting and selection for audiovisual projects</span></li>
+            <li><b>Bespoke Audio Branding</b> — <span data-lang="it">jingle, signature sounds e audio logos</span><span data-lang="en">jingles, signature sounds and audio logos</span></li>
+            <li><b>Podcast &amp; Web Series Soundtracks</b> — <span data-lang="it">musiche originali per contenuti digitali serializzati</span><span data-lang="en">original music for serialised digital content</span></li>
+          </ul>
+        </details>
+
+        <details class="acc">
+          <summary><span data-lang="it">Audio Branding &amp; Sonic Identity</span><span data-lang="en">Audio Branding &amp; Sonic Identity</span></summary>
+          <ul>
+            <li><span data-lang="it">Loghi sonori e sound identity per brand</span><span data-lang="en">Sound logos and brand sound identity</span></li>
+            <li><span data-lang="it">Produzione podcast nella listening room o negli studi insonorizzati</span><span data-lang="en">Podcast production in the listening room or soundproofed studios</span></li>
+            <li><span data-lang="it">Colonne sonore per brand video e spot pubblicitari</span><span data-lang="en">Soundtracks for brand videos and ad spots</span></li>
+            <li><b>Sound Thinking Sessions</b> — <span data-lang="it">workshop per executive su come il suono definisce l'identità di marca</span><span data-lang="en">workshops for executives on how sound defines brand identity</span></li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="acc-group">
+        <div class="acc-head">Video Content Creation</div>
+
+        <details class="acc">
+          <summary><span data-lang="it">Visual Storytelling Premium</span><span data-lang="en">Visual Storytelling Premium</span></summary>
+          <ul>
+            <li><span data-lang="it">Shooting fotografici e video-reel per campagne ADV</span><span data-lang="en">Photo shoots and video reels for ADV campaigns</span></li>
+            <li><span data-lang="it">Behind-the-scenes content per i social media</span><span data-lang="en">Behind-the-scenes content for social media</span></li>
+            <li><span data-lang="it">Ritratti corporate per C-level e team executive</span><span data-lang="en">Corporate portraits for C-level and executive teams</span></li>
+            <li><span data-lang="it">Look-book e cataloghi prodotto in ambiente controllato</span><span data-lang="en">Look-books and product catalogues in a controlled environment</span></li>
+          </ul>
+        </details>
+
+        <details class="acc">
+          <summary><span data-lang="it">Content Creation Hub</span><span data-lang="en">Content Creation Hub</span></summary>
+          <ul>
+            <li><span data-lang="it">Studio chiavi-in-mano per produzioni evento — regia, streaming, registrazione</span><span data-lang="en">Turnkey studio for event productions — direction, streaming, recording</span></li>
+            <li><span data-lang="it">Live recording durante eventi</span><span data-lang="en">Live recording during events</span></li>
+            <li><span data-lang="it">Talk show e tavole rotonde con live streaming e recording</span><span data-lang="en">Talk shows and round tables with live streaming and recording</span></li>
+            <li><span data-lang="it">Shooting fotografici di eventi con setup professionale già disponibile</span><span data-lang="en">Event photo shoots with professional setup already in place</span></li>
+            <li><span data-lang="it">Post-produzione immediata on-site</span><span data-lang="en">Immediate on-site post-production</span></li>
+          </ul>
+        </details>
+      </div>
+
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:var(--bds)">
-        <a class="btn" href="mailto:shout@studio33club.com"><span data-lang="it">Richiedi un preventivo</span><span data-lang="en">Request a quote</span></a>
+        <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Richiedi un preventivo →</span><span data-lang="en">Request a quote →</span></a>
       </div>
     </div>
   </div>
