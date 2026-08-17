@@ -1037,6 +1037,10 @@ img,video,iframe{max-width:100%;height:auto}
   .car-item{flex:0 0 84vw}
   .hslide{aspect-ratio:1/1}
 }
+
+/* Unità di misura accanto ai mq */
+.space-unit{font-size:.32em;letter-spacing:.06em;margin-left:.22em;
+  color:rgba(26,26,26,.34);font-weight:400;vertical-align:baseline}
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
 <script type="application/ld+json">
@@ -1108,8 +1112,8 @@ img,video,iframe{max-width:100%;height:auto}
     <li><a href="#" onclick="showPage('home');return false"      id="nl-home">About</a></li>
     <li><a href="#" onclick="showPage('location');return false"  id="nl-location">Location</a></li>
     <li><a href="#" onclick="showPage('prod');return false"      id="nl-prod"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a></li>
-    <li><a href="#" onclick="showPage('audio');return false"     id="nl-audio">Audio</a></li>
-    <li><a href="#" onclick="showPage('hap');return false"       id="nl-hap">Happening</a></li>
+    <li><a href="#" onclick="showPage('audio');return false"     id="nl-audio">Hi-End</a></li>
+    <li><a href="#" onclick="showPage('hap');return false"       id="nl-hap">Works</a></li>
     <li><a href="#" onclick="showPage('form');return false"      id="nl-form"><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a></li>
     <li><a href="#" onclick="showPage('res');return false"       id="nl-res">Resonance</a></li>
     <li><a href="#" onclick="showPage('book');return false"      id="nl-book" class="nav-book"><span data-lang="it">Contattaci</span><span data-lang="en">Contact</span></a></li>
@@ -1133,8 +1137,8 @@ img,video,iframe{max-width:100%;height:auto}
     <a href="#" onclick="showPage('home');closeDrawer()">About</a>
     <a href="#" onclick="showPage('location');closeDrawer()">Location</a>
     <a href="#" onclick="showPage('prod');closeDrawer()"><span data-lang="it">Produzione</span><span data-lang="en">Production</span></a>
-    <a href="#" onclick="showPage('audio');closeDrawer()">Audio</a>
-    <a href="#" onclick="showPage('hap');closeDrawer()">Happening</a>
+    <a href="#" onclick="showPage('audio');closeDrawer()">Hi-End</a>
+    <a href="#" onclick="showPage('hap');closeDrawer()">Works</a>
     <a href="#" onclick="showPage('form');closeDrawer()"><span data-lang="it">Formazione</span><span data-lang="en">Training</span></a>
     <a href="#" onclick="showPage('res');closeDrawer()">Resonance</a>
     <a href="#" onclick="showPage('book');closeDrawer()" class="drawer-book"><span data-lang="it">Contattaci →</span><span data-lang="en">Contact →</span></a>
@@ -1218,7 +1222,7 @@ img,video,iframe{max-width:100%;height:auto}
   <section class="happening">
     <div class="hap-head">
       <div>
-        <h2>Happening</h2>
+        <h2>Works</h2>
         <p><span data-lang="it">Guarda cosa succede nel nostro Studio.</span><span data-lang="en">See what happens in our Studio.</span></p>
       </div>
       <a class="btn" href="#" onclick="showPage('hap');return false" style="margin-top:0"><span data-lang="it">Vedi tutto →</span><span data-lang="en">See all →</span></a>
@@ -1670,22 +1674,22 @@ img,video,iframe{max-width:100%;height:auto}
   <!-- DIVISIONE SPAZI -->
   <div class="spaces-grid">
     <div class="space-item">
-      <div class="space-mq">110</div>
+      <div class="space-mq">110<span class="space-unit"><span data-lang="it">mq</span><span data-lang="en">sqm</span></span></div>
       <div class="space-name"><span data-lang="it">Sala Listening &amp; Format Production</span><span data-lang="en">Listening &amp; Format Production Room</span></div>
       <div class="space-desc"><span data-lang="it">Principale area di ripresa, listening hi-end, eventi e produzioni video</span><span data-lang="en">Main shooting area, hi-end listening, events and video productions</span></div>
     </div>
     <div class="space-item">
-      <div class="space-mq">110</div>
+      <div class="space-mq">110<span class="space-unit"><span data-lang="it">mq</span><span data-lang="en">sqm</span></span></div>
       <div class="space-name"><span data-lang="it">Sala Proiezione Laser 4K</span><span data-lang="en">4K Laser Projection Room</span></div>
       <div class="space-desc"><span data-lang="it">Schermo 12 mq, Sony 4K Laser SXRD, Apple TV, Blu-Ray Panasonic</span><span data-lang="en">12 sqm screen, Sony 4K Laser SXRD, Apple TV, Panasonic Blu-Ray</span></div>
     </div>
     <div class="space-item">
-      <div class="space-mq">22</div>
+      <div class="space-mq">22<span class="space-unit"><span data-lang="it">mq</span><span data-lang="en">sqm</span></span></div>
       <div class="space-name"><span data-lang="it">Studio Produzione Audio</span><span data-lang="en">Audio Production Studio</span></div>
       <div class="space-desc"><span data-lang="it">Studio insonorizzato con regia separata, DAW Ableton Live 11 Suite</span><span data-lang="en">Soundproofed studio with separate control room, Ableton Live 11 Suite</span></div>
     </div>
     <div class="space-item">
-      <div class="space-mq">25</div>
+      <div class="space-mq">25<span class="space-unit"><span data-lang="it">mq</span><span data-lang="en">sqm</span></span></div>
       <div class="space-name"><span data-lang="it">Aree di Supporto</span><span data-lang="en">Support Areas</span></div>
       <div class="space-desc"><span data-lang="it">Zona catering (15mq) · Trucco, parrucco e spogliatoio artisti (10mq)</span><span data-lang="en">Catering area (15 sqm) · Make-up, hair and artists' dressing room (10 sqm)</span></div>
     </div>
@@ -2884,7 +2888,7 @@ img,video,iframe{max-width:100%;height:auto}
 </style>
 
   <div class="hv-head">
-    <h1>Happening</h1>
+    <h1>Works</h1>
     <p><span data-lang="it">Spot, reel, live session e frammenti di ciò che accade dentro Studio 33.</span><span data-lang="en">Spots, reels, live sessions and fragments of what happens inside Studio 33.</span></p>
   </div>
 
