@@ -1,4 +1,4 @@
-<!-- VERSIONE 24 · fix lazy-load che tagliava i loghi -->
+<!-- VERSIONE 27 · hero e galleria Produzione -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -389,7 +389,7 @@ p,.split-body,.hero-sub,.ha-comp-desc{letter-spacing:-.006em;max-width:68ch}
 .metric-n,.space-mq{font-variant-numeric:tabular-nums;letter-spacing:-.04em;font-weight:200}
 
 /* Immagini: rendering nitido, nessun movimento */
-.hero-bg, .split-img-bg, .vbg, .proj-img, .ha-comp-img-bg, .loc-gallery-item img, .ha-hero-bg{
+.hero-bg, .split-img-bg, .vbg, .proj-img, .ha-comp-img-bg, .ha-hero-bg{
   image-rendering:auto;backface-visibility:hidden;transform:none!important
 }
 
@@ -517,8 +517,7 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .press-card, .metric{transition:opacity .22s ease}
 
 /* 5. IMMAGINI: nessun filtro grigio, resa naturale */
-.proj-img, .loc-gallery-item img{filter:none}
-.split-img-bg, .hero-bg, .ha-hero-bg{filter:none}
+.proj-img, .split-img-bg, .hero-bg, .ha-hero-bg{filter:none}
 
 /* 6. BOTTONI: tratto essenziale */
 .btn{border-bottom:1px solid rgba(26,26,26,0.18);padding-bottom:5px;letter-spacing:.22em;font-size:11.5px}
@@ -600,9 +599,6 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 
 /* VIDEO CARD (pagina Video): nessun overlay{filter:none}
 
-/* GALLERY Location: griglia pulita, nessun effetto */
-.loc-gallery-item img{filter:none}
-.loc-gallery{gap:1px;background:rgba(26,26,26,0.06)}
 
 /* GRIGLIA progetti: immagini naturali */
 .proj-img{filter:none}
@@ -687,9 +683,6 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 .split-img{aspect-ratio:4/3}
 .split-img-bg{background-size:cover;background-position:center}
 
-/* Gallery Location: le foto sono 4:3, nessun taglio */
-.loc-gallery-item{aspect-ratio:4/3}
-.loc-gallery-item img{object-fit:cover;width:100%;height:100%}
 
 /* Griglia progetti: molte immagini sono banner 550x100 o quadrate.
    contain su fondo neutro evita di tagliarle */
@@ -1056,6 +1049,53 @@ img,video,iframe{max-width:100%;height:auto}
 .proj-card:hover .proj-img{opacity:1;filter:none}
 
 
+
+/* Topbar: social in alto a destra */
+.topbar{display:flex;justify-content:flex-end;align-items:center;gap:1.1rem;
+  padding:.7rem var(--gut) .2rem}
+.topbar a{font-size:17px;color:rgba(26,26,26,.48);border:none;
+  line-height:1;transition:color .18s}
+.topbar a:hover{color:var(--ink,#1a1a1a)}
+@media(max-width:900px){.topbar{gap:1rem;padding-top:.55rem}.topbar a{font-size:16px}}
+
+/* ── CAROSELLO LOCATION ── */
+.loc-carousel{position:relative;overflow:hidden}
+.lc-track{display:flex;gap:1px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;background:rgba(26,26,26,.06);-webkit-overflow-scrolling:touch}
+.lc-track::-webkit-scrollbar{display:none}
+.lc-track{scrollbar-width:none}
+.lc-slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:3/2;
+  background-size:cover;background-position:center;background-color:#f0efed;
+  position:relative}
+.lc-cap{position:absolute;left:0;bottom:0;padding:1.4rem 1.6rem;
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.55);z-index:2}
+.lc-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.55);
+  background:rgba(0,0,0,.22);backdrop-filter:blur(4px);color:#fff;
+  font-size:22px;line-height:1;cursor:pointer;transition:background .2s;
+  display:flex;align-items:center;justify-content:center;padding:0 0 3px}
+.lc-nav:hover{background:rgba(0,0,0,.45)}
+.lc-prev{left:1.2rem}
+.lc-next{right:1.2rem}
+@media(max-width:900px){
+  .lc-slide{aspect-ratio:4/3}
+  .lc-nav{width:38px;height:38px;font-size:19px}
+  .lc-prev{left:.7rem}.lc-next{right:.7rem}
+}
+
+/* ── GALLERIA PRODUZIONE ── */
+.prod-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(26,26,26,.11);border-top:1px solid rgba(26,26,26,.11)}
+.prod-gal-item{position:relative;aspect-ratio:4/3;background-size:cover;
+  background-position:center;background-color:#f0efed}
+.prod-gal-cap{position:absolute;left:0;bottom:0;padding:1.2rem 1.4rem;
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.55);z-index:2}
+@media(max-width:900px){
+  .prod-gal{grid-template-columns:1fr}
+  .prod-gal-item{aspect-ratio:3/2}
+}
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-hero.jpg" fetchpriority="high">
 <script type="application/ld+json">
@@ -1115,7 +1155,12 @@ img,video,iframe{max-width:100%;height:auto}
 
 <!-- NAV -->
 <a href="#main" class="skip-link">Vai al contenuto</a>
-<div class="topbar"><a href="#" onclick="showPage('privacy');return false">Privacy Policy</a></div>
+<div class="topbar">
+  <a href="https://www.instagram.com/studio33trastevere/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+  <a href="https://www.facebook.com/studio33trastevere" target="_blank" rel="noopener" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+  <a href="https://www.youtube.com/@studio33trastevere" target="_blank" rel="noopener" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+  <a href="https://www.tiktok.com/@studio33trastevere" target="_blank" rel="noopener" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+</div>
 <header>
 <nav class="nav">
   <a class="nav-logo" href="#" onclick="showPage('home');return false" aria-label="Studio 33">
@@ -1389,7 +1434,7 @@ img,video,iframe{max-width:100%;height:auto}
 
   <!-- HERO -->
   <section class="ha-hero">
-    <div class="ha-hero-bg" data-bg="https://bernardini250576.github.io/studio33/audio-hero.jpg" style=""></div>
+    <div class="ha-hero-bg" data-bg="https://bernardini250576.github.io/studio33/hiend-hero.jpg" style=""></div>
     <div class="ha-hero-body">
       <div class="hero-tag"><span data-lang="it">Hi-End Audio · Trastevere, Roma</span><span data-lang="en">Hi-End Audio · Trastevere, Rome</span></div>
       <h1 class="hero-h1"><span data-lang="it">Una boutique<br>del suono,<br><em>curata da noi.</em></span><span data-lang="en">A sound boutique,<br>curated<br><em>by us.</em></span></h1>
@@ -1629,12 +1674,7 @@ img,video,iframe{max-width:100%;height:auto}
 .loc-text p{font-size:20.0px;line-height:1.85;color:rgba(26,26,26,0.74);margin-bottom:1.1rem}
 .loc-text p:last-child{margin-bottom:0}
 .loc-text strong{color:var(--w);font-weight:600}
-.loc-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
-.loc-gallery-item{position:relative;overflow:hidden}
-.loc-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(8%);transition:filter .3s ease}
-.loc-gallery-item:hover img{filter:none}
 
-.loc-gallery-item.wide{grid-column:1/-1}
 /* Spazi */
 .spaces-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--bd);border-bottom:var(--bd)}
 .space-item{padding:2rem 1.8rem;border-right:var(--bds)}
@@ -1667,9 +1707,7 @@ img,video,iframe{max-width:100%;height:auto}
 @media(max-width:900px){
   .loc-intro{grid-template-columns:1fr}
   .loc-text{border-right:none;border-bottom:var(--bd);padding:2.5rem 1.5rem}
-  .loc-gallery{grid-template-columns:1fr}
-  .loc-gallery-item.wide{grid-column:auto}
-  .spaces-grid{grid-template-columns:1fr 1fr}
+      .spaces-grid{grid-template-columns:1fr 1fr}
   .space-item:nth-child(2n){border-right:none}
   .space-item:nth-child(n+3){border-top:var(--bds)}
   .gear-cols{grid-template-columns:1fr}
@@ -1687,7 +1725,7 @@ img,video,iframe{max-width:100%;height:auto}
 
   <!-- HERO -->
   <section class="hero" style="height:70vh;min-height:480px">
-    <div class="hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-17.10.55-2-1.jpeg?resize=1568%2C1046&ssl=1" style=""></div>
+    <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/loc-hero.jpg" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Location · Trastevere, Roma</span><span data-lang="en">Location · Trastevere, Rome</span></div>
       <h1 class="hero-h1" aria-label="Location per Shooting a Roma — Studio Fotografico Trastevere">
@@ -1720,16 +1758,32 @@ img,video,iframe{max-width:100%;height:auto}
         <a class="btn" href="https://wa.me/393347029456" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="font-size:17.0px"></i> WhatsApp</a>
       </div>
     </div>
-    <div class="loc-gallery">
-      <div class="loc-gallery-item wide">
-        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.41.png?resize=750%2C559&ssl=1" alt="Location shooting Roma – Rome Sweet Home HBO Canada – Studio 33 Trastevere" loading="lazy">
+    <div class="loc-carousel">
+      <div class="lc-track" id="lcTrack">
+        <div class="lc-slide" data-bg="https://bernardini250576.github.io/studio33/loc-01.jpg" style="">
+          <span class="lc-cap"><span data-lang="it">Sala principale</span><span data-lang="en">Main room</span></span>
+        </div>
+        <div class="lc-slide" data-bg="https://bernardini250576.github.io/studio33/loc-03.jpg" style="">
+          <span class="lc-cap"><span data-lang="it">Spazio eventi</span><span data-lang="en">Event space</span></span>
+        </div>
+        <div class="lc-slide" data-bg="https://bernardini250576.github.io/studio33/loc-04.jpg" style="">
+          <span class="lc-cap"><span data-lang="it">Piano e listening</span><span data-lang="en">Piano and listening</span></span>
+        </div>
+        <div class="lc-slide" data-bg="https://bernardini250576.github.io/studio33/loc-05.jpg" style="">
+          <span class="lc-cap"><span data-lang="it">Lounge</span><span data-lang="en">Lounge</span></span>
+        </div>
+        <div class="lc-slide" data-bg="https://bernardini250576.github.io/studio33/loc-06.jpg" style="">
+          <span class="lc-cap"><span data-lang="it">Vista d'insieme</span><span data-lang="en">Overview</span></span>
+        </div>
+        <div class="lc-slide" data-bg="https://bernardini250576.github.io/studio33/loc-02.jpg" style="">
+          <span class="lc-cap"><span data-lang="it">Dettagli</span><span data-lang="en">Details</span></span>
+        </div>
+        <div class="lc-slide" data-bg="https://bernardini250576.github.io/studio33/loc-arbore.jpg" style="">
+          <span class="lc-cap"><span data-lang="it">Renzo Arbore in Studio 33</span><span data-lang="en">Renzo Arbore at Studio 33</span></span>
+        </div>
       </div>
-      <div class="loc-gallery-item">
-        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2024/11/Screenshot-2024-11-07-alle-12.27.53.png?resize=750%2C559&ssl=1" alt="Location shooting Roma – Rome Sweet Home HBO Canada – Studio 33 Trastevere" loading="lazy">
-      </div>
-      <div class="loc-gallery-item">
-        <img src="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-alle-13.44.07.jpg?resize=750%2C448&ssl=1" alt="Location riprese TV Roma – Edoardo Ferrario Gialappa Show TV8 – Studio 33" loading="lazy">
-      </div>
+      <button class="lc-nav lc-prev" onclick="lcScroll(-1)" aria-label="Precedente">‹</button>
+      <button class="lc-nav lc-next" onclick="lcScroll(1)" aria-label="Successiva">›</button>
     </div>
   </div>
 
@@ -1915,7 +1969,7 @@ img,video,iframe{max-width:100%;height:auto}
 
   <!-- HERO -->
   <section class="hero" style="height:65vh;min-height:420px">
-    <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/prod-hero.jpg" style=""></div>
+    <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/prod-hero-new.jpg" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Produzione Audio &amp; Video · Roma Trastevere</span><span data-lang="en">Audio &amp; Video Production · Rome Trastevere</span></div>
       <h1 class="hero-h1">
@@ -2044,6 +2098,19 @@ img,video,iframe{max-width:100%;height:auto}
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:var(--bds)">
         <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Richiedi un preventivo →</span><span data-lang="en">Request a quote →</span></a>
       </div>
+    </div>
+  </div>
+
+  <!-- GALLERIA PRODUZIONE -->
+  <div class="prod-gal">
+    <div class="prod-gal-item" data-bg="https://bernardini250576.github.io/studio33/prod-a.jpg" style="">
+      <span class="prod-gal-cap"><span data-lang="it">Ripresa multicamera</span><span data-lang="en">Multi-camera shooting</span></span>
+    </div>
+    <div class="prod-gal-item" data-bg="https://bernardini250576.github.io/studio33/prod-b.jpg" style="">
+      <span class="prod-gal-cap"><span data-lang="it">Regia e streaming</span><span data-lang="en">Direction and streaming</span></span>
+    </div>
+    <div class="prod-gal-item" data-bg="https://bernardini250576.github.io/studio33/prod-c.jpg" style="">
+      <span class="prod-gal-cap"><span data-lang="it">Studio audio insonorizzato</span><span data-lang="en">Soundproofed audio studio</span></span>
     </div>
   </div>
 
@@ -2419,7 +2486,7 @@ img,video,iframe{max-width:100%;height:auto}
 <!-- ══════════════════════════ PAGE: FORMAZIONE ══════════════════════════ -->
 <div class="page" id="page-form">
   <section class="hero" style="height:65vh;min-height:460px">
-    <div class="hero-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/633f336ca15b5c18673d0d5630d93999d88db7bb.jpg?resize=800%2C445&ssl=1" style=""></div>
+    <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/form-hero.jpg" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Formazione · Studio 33 × Tékhne</span><span data-lang="en">Training · Studio 33 × Tékhne</span></div>
       <h1 class="hero-h1" aria-label="Scuola di Musicoterapia a Roma — Corso Triennale Certificato Tékhne">
@@ -2470,7 +2537,7 @@ img,video,iframe{max-width:100%;height:auto}
       </a>
     </div>
     <div class="split-img">
-      <div class="split-img-bg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/633f336ca15b5c18673d0d5630d93999d88db7bb.jpg?resize=800%2C445&ssl=1" style=""></div>
+      <div class="split-img-bg" data-bg="https://bernardini250576.github.io/studio33/form-mid.jpg" style=""></div>
       </div>
   </div>
 
@@ -2554,6 +2621,8 @@ img,video,iframe{max-width:100%;height:auto}
 
 <!-- ══════════════════════════ PAGE: RESONANCE ══════════════════════════ -->
 <div class="page" id="page-res">
+
+  <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/res-hero.jpg" style=""></div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;padding:4.5rem 3rem 3.5rem;border-bottom:var(--bd)">
     <div>
@@ -3181,12 +3250,7 @@ img,video,iframe{max-width:100%;height:auto}
   <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
     <span class="footer-copy">© 2025–2030 The Lens srls — P.IVA IT16132211000</span>
       <a href="#" onclick="showPage('privacy');return false" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,26,26,0.48);margin-left:1.5rem">Privacy Policy</a>
-    <div class="socials">
-      <a href="https://www.youtube.com/@studio33trastevere" target="_blank" rel="noopener" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
-      <a href="https://www.facebook.com/studio33trastevere" target="_blank" rel="noopener" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
-      <a href="https://www.instagram.com/studio33trastevere/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-      <a href="https://www.tiktok.com/@studio33trastevere" target="_blank" rel="noopener" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
-    </div>
+    
   </div>
   <div style="font-family:var(--fb);font-size:13.0px;line-height:1.7;color:rgba(26,26,26,0.74);border-top:.5px solid rgba(26,26,26,0.62);padding-top:1rem">
     <span data-lang="it">Bozza dimostrativa di restyling — non affiliata né approvata ufficialmente. Immagini e contenuti © dei rispettivi proprietari, mostrati a solo scopo illustrativo. Questa anteprima non raccoglie dati personali, non usa cookie e non effettua profilazione. Risorse esterne (Google Fonts, jsDelivr, WordPress.com CDN) sono caricate per il rendering e possono registrare l'indirizzo IP secondo le rispettive informative privacy.</span>
@@ -3257,6 +3321,14 @@ function showPage(id) {
 
 showPage('home');
 setLang('it');
+
+// ── CAROSELLO LOCATION ──
+function lcScroll(dir){
+  var t = document.getElementById('lcTrack');
+  if(!t) return;
+  t.scrollBy({left: dir * t.clientWidth, behavior:'smooth'});
+}
+
 
 // ── HAPPENING: player unificato mp4 + YouTube ──
 var mediaList = [{"k": "mp4", "src": ""}, {"k": "mp4", "src": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_SHOOTING_MASTER.mp4"}, {"k": "mp4", "src": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_MUSICA_MASTER_HD.mp4"}, {"k": "mp4", "src": "https://bernardini250576.github.io/studio33/S33_VFsF_REEL_EVENTI_MASTER_HD.mp4"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}, {"k": "yt", "id": "1KyvuRJh6tQ"}, {"k": "yt", "id": "WyDrpVguz28"}, {"k": "yt", "id": "6tKxVS9Fi8A"}, {"k": "yt", "id": "B6BxBXnB2pM"}, {"k": "yt", "id": "rFxvfyGsTyc"}, {"k": "yt", "id": "2wJ0v4LIan8"}];
