@@ -1,4 +1,4 @@
-<!-- VERSIONE 34 · Formazione: hero invertito + carosello -->
+<!-- VERSIONE 35 · carosello Formazione affiancato al testo -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -1118,6 +1118,18 @@ img,video,iframe{max-width:100%;height:auto}
   .fc-slide{aspect-ratio:4/3}
   .fc-nav{width:38px;height:38px;font-size:19px}
   .fc-prev{left:.7rem}.fc-next{right:.7rem}
+}
+
+/* Carosello Formazione: colonna affiancata al testo, come in Location */
+.form-carousel{position:relative;overflow:hidden;border-top:none;
+  border-left:1px solid rgba(26,26,26,.11)}
+.fc-slide{aspect-ratio:3/2}
+.fc-cap{padding:1.2rem 1.4rem;font-size:11px}
+.fc-nav{width:38px;height:38px;font-size:19px}
+.fc-prev{left:.8rem}.fc-next{right:.8rem}
+@media(max-width:900px){
+  .form-carousel{border-left:none;border-top:1px solid rgba(26,26,26,.11)}
+  .fc-slide{aspect-ratio:4/3}
 }
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-01.jpg" fetchpriority="high">
@@ -2567,27 +2579,25 @@ img,video,iframe{max-width:100%;height:auto}
         <span data-lang="it">Scopri Tékhne →</span><span data-lang="en">Discover Tékhne →</span>
       </a>
     </div>
-  </div>
-
-  <div class="form-carousel">
-      <div class="fc-track" id="fcTrack">
-        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c1.jpg" style="">
-          <span class="fc-cap"><span data-lang="it">Percorso triennale certificato</span><span data-lang="en">Certified three-year programme</span></span>
+    <div class="form-carousel">
+        <div class="fc-track" id="fcTrack">
+          <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c1.jpg" style="">
+            <span class="fc-cap"><span data-lang="it">Percorso triennale certificato</span><span data-lang="en">Certified three-year programme</span></span>
+          </div>
+          <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c2.jpg" style="">
+            <span class="fc-cap"><span data-lang="it">Lezione in aula</span><span data-lang="en">Classroom session</span></span>
+          </div>
+          <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c3.jpg" style="">
+            <span class="fc-cap"><span data-lang="it">Formazione e dispense</span><span data-lang="en">Training and materials</span></span>
+          </div>
+          <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c4.jpg" style="">
+            <span class="fc-cap"><span data-lang="it">Pratica con gli strumenti</span><span data-lang="en">Hands-on with instruments</span></span>
+          </div>
         </div>
-        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c2.jpg" style="">
-          <span class="fc-cap"><span data-lang="it">Lezione in aula</span><span data-lang="en">Classroom session</span></span>
-        </div>
-        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c3.jpg" style="">
-          <span class="fc-cap"><span data-lang="it">Formazione e dispense</span><span data-lang="en">Training and materials</span></span>
-        </div>
-        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c4.jpg" style="">
-          <span class="fc-cap"><span data-lang="it">Pratica con gli strumenti</span><span data-lang="en">Hands-on with instruments</span></span>
-        </div>
+        <button class="fc-nav fc-prev" onclick="fcScroll(-1)" aria-label="Precedente">‹</button>
+        <button class="fc-nav fc-next" onclick="fcScroll(1)" aria-label="Successiva">›</button>
       </div>
-      <button class="fc-nav fc-prev" onclick="fcScroll(-1)" aria-label="Precedente">‹</button>
-      <button class="fc-nav fc-next" onclick="fcScroll(1)" aria-label="Successiva">›</button>
-    </div>
-
+  </div>
   <section style="border-top:var(--bd)">
     <div class="sec-header"><div class="lbl"><span data-lang="it">Percorso triennale</span><span data-lang="en">Three-year programme</span></div></div>
     <div class="col3" style="border-top:none">
