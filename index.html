@@ -1,4 +1,4 @@
-<!-- VERSIONE 35 · carosello Formazione affiancato al testo -->
+<!-- VERSIONE 36 · intro Home su due colonne -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -1131,6 +1131,21 @@ img,video,iframe{max-width:100%;height:auto}
   .form-carousel{border-left:none;border-top:1px solid rgba(26,26,26,.11)}
   .fc-slide{aspect-ratio:4/3}
 }
+
+/* ── INTRO HOME: titolo a sinistra, testo a destra ── */
+.intro-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:4.5rem;align-items:start}
+.intro-left h1{font-size:clamp(31px,4.4vw,56px);font-weight:200;letter-spacing:-.035em;
+  line-height:1.04;color:rgba(26,26,26,.88);margin-bottom:2rem;max-width:none}
+.intro-left h1 em{font-style:normal;color:rgba(26,26,26,.48)}
+.intro-left .btn{margin-top:0}
+.intro-right p{font-size:17px;line-height:1.8;color:rgba(26,26,26,.74);
+  margin-bottom:1.2rem;max-width:none}
+.intro-right p:last-child{margin-bottom:0}
+@media(max-width:900px){
+  .intro-grid{grid-template-columns:1fr;gap:2rem}
+  .intro-left h1{font-size:clamp(25px,7vw,39px);margin-bottom:1.4rem}
+  .intro-right p{font-size:17px}
+}
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-01.jpg" fetchpriority="high">
 <script type="application/ld+json">
@@ -1273,31 +1288,34 @@ img,video,iframe{max-width:100%;height:auto}
 
   <!-- INTRO -->
   <section class="intro">
-    <h1>
-      <span data-lang="it">Location, casa di produzione e <em>hub creativo indipendente.</em></span>
-      <span data-lang="en">Location, production house and <em>independent creative hub.</em></span>
-    </h1>
-    <p>
-      <span data-lang="it">250 mq nel cuore di Trastevere, Roma, Italia. Qui la tecnologia broadcast-quality incontra l'intimità creativa.</span>
-      <span data-lang="en">250 sqm in the heart of Trastevere, Rome, Italy. Where broadcast-quality technology meets creative intimacy.</span>
-    </p>
-    <p>
-      <span data-lang="it">Studio 33 è una piattaforma per creatività, comunità e cultura contemporanea. Uno spazio che promuove l'arte, la musica e il cinema come fonte di ispirazione, di studio e di produzione.</span>
-      <span data-lang="en">Studio 33 is a platform for creativity, community and contemporary culture. A space promoting art, music and cinema as a source of inspiration, study and production.</span>
-    </p>
-    <p>
-      <span data-lang="it">Ex studio fotografico tra i vicoli di Trastevere, diventato oggi uno dei centri di gravità della creatività sonora a Roma.</span>
-      <span data-lang="en">Once a photography studio among the alleys of Trastevere, today one of the centres of gravity of sonic creativity in Rome.</span>
-    </p>
-    <p>
-      <span data-lang="it">Un salotto curato nei minimi dettagli dove perdersi tra migliaia di vinili; con spazio per produzioni artistiche e podcast, esperienze di hi-end listening, presentazioni di progetti ispirati alla musica e formazione.</span>
-      <span data-lang="en">A meticulously curated living room where you can lose yourself among thousands of records; with space for artistic productions and podcasts, hi-end listening experiences, presentations of music-inspired projects and training.</span>
-    </p>
-    <p>
-      <span data-lang="it">In poche parole, un think-tank creativo a tutto tondo.</span>
-      <span data-lang="en">In short, a creative think-tank in the round.</span>
-    </p>
-    <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Contattaci →</span><span data-lang="en">Contact us →</span></a>
+    <div class="intro-grid">
+      <div class="intro-left">
+        <h1>Vision finds<br><em>fidelity.</em></h1>
+        <a class="btn" href="#" onclick="showPage('book');return false"><span data-lang="it">Contattaci →</span><span data-lang="en">Contact us →</span></a>
+      </div>
+      <div class="intro-right">
+        <p>
+          <span data-lang="it">250 mq nel cuore di Trastevere, Roma, Italia. Qui la tecnologia broadcast-quality incontra l'intimità creativa.</span>
+          <span data-lang="en">250 sqm in the heart of Trastevere, Rome, Italy. Where broadcast-quality technology meets creative intimacy.</span>
+        </p>
+        <p>
+          <span data-lang="it">Studio 33 è una piattaforma per creatività, comunità e cultura contemporanea. Uno spazio che promuove l'arte, la musica e il cinema come fonte di ispirazione, di studio e di produzione.</span>
+          <span data-lang="en">Studio 33 is a platform for creativity, community and contemporary culture. A space promoting art, music and cinema as a source of inspiration, study and production.</span>
+        </p>
+        <p>
+          <span data-lang="it">Ex studio fotografico tra i vicoli di Trastevere, diventato oggi uno dei centri di gravità della creatività sonora a Roma.</span>
+          <span data-lang="en">Once a photography studio among the alleys of Trastevere, today one of the centres of gravity of sonic creativity in Rome.</span>
+        </p>
+        <p>
+          <span data-lang="it">Un salotto curato nei minimi dettagli dove perdersi tra migliaia di vinili; con spazio per produzioni artistiche e podcast, esperienze di hi-end listening, presentazioni di progetti ispirati alla musica e formazione.</span>
+          <span data-lang="en">A meticulously curated living room where you can lose yourself among thousands of records; with space for artistic productions and podcasts, hi-end listening experiences, presentations of music-inspired projects and training.</span>
+        </p>
+        <p>
+          <span data-lang="it">In poche parole, un think-tank creativo a tutto tondo.</span>
+          <span data-lang="en">In short, a creative think-tank in the round.</span>
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- BLOCCHI LOCATION + PRODUZIONE -->
