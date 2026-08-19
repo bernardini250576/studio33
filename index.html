@@ -1,4 +1,4 @@
-<!-- VERSIONE 33 · nuove foto Formazione -->
+<!-- VERSIONE 34 · Formazione: hero invertito + carosello -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -1095,6 +1095,29 @@ img,video,iframe{max-width:100%;height:auto}
 @media(max-width:900px){
   .prod-gal{grid-template-columns:1fr}
   .prod-gal-item{aspect-ratio:3/2}
+}
+
+/* ── CAROSELLO FORMAZIONE ── */
+.form-carousel{position:relative;overflow:hidden;border-top:1px solid rgba(26,26,26,.11)}
+.fc-track{display:flex;gap:1px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;background:rgba(26,26,26,.11);scrollbar-width:none}
+.fc-track::-webkit-scrollbar{display:none}
+.fc-slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:3/2;
+  background-size:cover;background-position:center;background-color:#f0efed;position:relative}
+.fc-cap{position:absolute;left:0;bottom:0;padding:1.4rem 1.6rem;
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.55);z-index:2}
+.fc-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.55);
+  background:rgba(0,0,0,.22);backdrop-filter:blur(4px);color:#fff;
+  font-size:22px;line-height:1;cursor:pointer;transition:background .2s;
+  display:flex;align-items:center;justify-content:center;padding:0 0 3px}
+.fc-nav:hover{background:rgba(0,0,0,.45)}
+.fc-prev{left:1.2rem}.fc-next{right:1.2rem}
+@media(max-width:900px){
+  .fc-slide{aspect-ratio:4/3}
+  .fc-nav{width:38px;height:38px;font-size:19px}
+  .fc-prev{left:.7rem}.fc-next{right:.7rem}
 }
 </style>
 <link rel="preload" as="image" href="https://bernardini250576.github.io/studio33/home-01.jpg" fetchpriority="high">
@@ -2494,7 +2517,7 @@ img,video,iframe{max-width:100%;height:auto}
 <!-- ══════════════════════════ PAGE: FORMAZIONE ══════════════════════════ -->
 <div class="page" id="page-form">
   <section class="hero" style="height:65vh;min-height:460px">
-    <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/form-hero2.jpg" style=""></div>
+    <div class="hero-bg" data-bg="https://bernardini250576.github.io/studio33/form-hero3.jpg" style=""></div>
     <div class="hero-body">
       <div class="hero-tag"><span data-lang="it">Formazione · Studio 33 × Tékhne</span><span data-lang="en">Training · Studio 33 × Tékhne</span></div>
       <h1 class="hero-h1" aria-label="Scuola di Musicoterapia a Roma — Corso Triennale Certificato Tékhne">
@@ -2544,10 +2567,26 @@ img,video,iframe{max-width:100%;height:auto}
         <span data-lang="it">Scopri Tékhne →</span><span data-lang="en">Discover Tékhne →</span>
       </a>
     </div>
-    <div class="split-img">
-      <div class="split-img-bg" data-bg="https://bernardini250576.github.io/studio33/form-mid2.jpg" style=""></div>
-      </div>
   </div>
+
+  <div class="form-carousel">
+      <div class="fc-track" id="fcTrack">
+        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c1.jpg" style="">
+          <span class="fc-cap"><span data-lang="it">Percorso triennale certificato</span><span data-lang="en">Certified three-year programme</span></span>
+        </div>
+        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c2.jpg" style="">
+          <span class="fc-cap"><span data-lang="it">Lezione in aula</span><span data-lang="en">Classroom session</span></span>
+        </div>
+        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c3.jpg" style="">
+          <span class="fc-cap"><span data-lang="it">Formazione e dispense</span><span data-lang="en">Training and materials</span></span>
+        </div>
+        <div class="fc-slide" data-bg="https://bernardini250576.github.io/studio33/form-c4.jpg" style="">
+          <span class="fc-cap"><span data-lang="it">Pratica con gli strumenti</span><span data-lang="en">Hands-on with instruments</span></span>
+        </div>
+      </div>
+      <button class="fc-nav fc-prev" onclick="fcScroll(-1)" aria-label="Precedente">‹</button>
+      <button class="fc-nav fc-next" onclick="fcScroll(1)" aria-label="Successiva">›</button>
+    </div>
 
   <section style="border-top:var(--bd)">
     <div class="sec-header"><div class="lbl"><span data-lang="it">Percorso triennale</span><span data-lang="en">Three-year programme</span></div></div>
@@ -2625,6 +2664,7 @@ img,video,iframe{max-width:100%;height:auto}
       Open Day Tékhne
     </a>
   </div>
+
 </div>
 
 <!-- ══════════════════════════ PAGE: RESONANCE ══════════════════════════ -->
@@ -3329,6 +3369,14 @@ function showPage(id) {
 
 showPage('home');
 setLang('it');
+
+// ── CAROSELLO FORMAZIONE ──
+function fcScroll(dir){
+  var t = document.getElementById('fcTrack');
+  if(!t) return;
+  t.scrollBy({left: dir * t.clientWidth, behavior:'smooth'});
+}
+
 
 // ── CAROSELLO LOCATION ──
 function lcScroll(dir){
