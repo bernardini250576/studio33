@@ -1,4 +1,4 @@
-<!-- VERSIONE 37 · titolo e loghi ingranditi -->
+<!-- VERSIONE 38 · caroselli Location e Formazione automatici -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -3398,10 +3398,56 @@ function showPage(id) {
 showPage('home');
 setLang('it');
 
+// ── AUTOPLAY caroselli Location e Formazione ──
+(function(){
+  function autoScroll(trackId, ms){
+    var t = document.getElementById(trackId);
+    if(!t) return;
+    var timer = null, paused = false;
+
+    function step(){
+      if(paused) return;
+      var w = t.clientWidth;
+      // se siamo all'ultima slide, torna all'inizio
+      if(t.scrollLeft + w >= t.scrollWidth - 8){
+        t.scrollTo({left:0, behavior:'smooth'});
+      } else {
+        t.scrollBy({left:w, behavior:'smooth'});
+      }
+    }
+    function start(){ if(!timer) timer = setInterval(step, ms); }
+    function stop(){ clearInterval(timer); timer = null; }
+
+    // ferma quando l'utente interagisce, riparte dopo 6 secondi
+    var resume;
+    function pause(){
+      paused = true;
+      clearTimeout(resume);
+      resume = setTimeout(function(){ paused = false; }, 6000);
+    }
+    ['pointerdown','wheel','touchstart'].forEach(function(ev){
+      t.addEventListener(ev, pause, {passive:true});
+    });
+    t.addEventListener('mouseenter', function(){ paused = true; });
+    t.addEventListener('mouseleave', function(){ paused = false; });
+
+    // scorre solo quando la pagina è visibile
+    document.addEventListener('visibilitychange', function(){
+      document.hidden ? stop() : start();
+    });
+    start();
+  }
+
+  autoScroll('lcTrack', 5000);
+  autoScroll('fcTrack', 5000);
+})();
+
+
 // ── CAROSELLO FORMAZIONE ──
 function fcScroll(dir){
   var t = document.getElementById('fcTrack');
   if(!t) return;
+  t.dispatchEvent(new Event('pointerdown'));
   t.scrollBy({left: dir * t.clientWidth, behavior:'smooth'});
 }
 
@@ -3410,6 +3456,7 @@ function fcScroll(dir){
 function lcScroll(dir){
   var t = document.getElementById('lcTrack');
   if(!t) return;
+  t.dispatchEvent(new Event('pointerdown'));
   t.scrollBy({left: dir * t.clientWidth, behavior:'smooth'});
 }
 
